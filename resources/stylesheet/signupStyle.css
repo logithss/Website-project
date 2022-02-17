@@ -1,0 +1,143 @@
+:root{
+    --clr: #006194;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-rows: 150px 80vh 200px;
+    font-family: "Nunito", sans-serif;
+    box-sizing: border-box;
+    
+}
+
+header{
+    width: 100px;
+    height: 10vh;
+}
+
+main{
+    min-width: 237px;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    align-items: center;
+    width: 100%;
+    height: 80vh; 
+    font-family: "Nunito", sans-serif;
+    
+}
+
+.form{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    overflow: hidden;
+    width: 80%;
+    max-width: 300px;
+}
+
+.form-input, .form-button{
+    font-family: inherit;
+    font-weight: 800;
+    font-size: 10px;
+    letter-spacing: 1.2px;
+    border: 0; 
+}
+
+.form-input{
+    padding: 1.5em;
+    width: 90%;
+    border-bottom: 1px solid rgb(200, 197, 197);
+}
+
+.form-input::placeholder{
+    opacity: 0.35;
+}
+
+.form-input:focus::placeholder{
+    color: var(--clr);
+}
+
+.form-button{
+    background-color: var(--clr);
+    color: white;
+    padding: 1.25em 2em;
+    font-size:small;
+}
+
+.form-button:hover{
+    opacity: 0.95;
+}
+
+.form-input:focus{
+    background-color: #b4cedb65;
+    outline-width: 0;
+}
+
+.signup-text{
+    position: relative;
+    text-align: center;
+    font-size:medium;
+    width: 100%;    
+    
+}    
+
+.homey-logo{
+    margin-top: 1em;
+}
+
+
+ @media only screen and (min-width: 550px){
+     main{
+         min-width: 593px;
+     }
+
+    .form{
+        all: unset;
+        
+        width: 50%;
+        height: 80%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+        border-radius: 5em;
+        overflow: hidden;
+        justify-items:center;
+        align-items: center;
+        
+        
+    }
+    
+    .form-item{
+        width: 70%;
+    }
+
+    .form-input{
+        border: 1px solid rgb(218, 218, 218);
+        border-radius: 2em;
+        font-size: 1em;
+        width: inherit;
+    }
+
+    .signup-text{
+        grid-column: 1/3;
+        text-align: center;
+        font-size: x-large;
+        width: 100%;
+        
+    }
+
+    .form-button{
+        grid-column: 1/3;
+        width: 50%;
+        height: 40%;
+        border-radius: 4em;
+    }
+
+    
+} 
