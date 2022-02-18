@@ -243,10 +243,12 @@ section{
 
 
 @media screen and (min-width:600px) {
+    
     .container{
-       height: 80vh;
+       height: 900px;
        overflow:hidden;
    }
+    
     .product-description{
         display: grid;
         padding: 0;
