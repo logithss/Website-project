@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <link rel="stylesheet" href="/resources/stylesheet/backstore-styles.css">
+    <link rel="stylesheet" href="/resources/stylesheet/header-footer.css">
+    <meta name ="viewport" content="width-device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <script>
+        let optionHidden = false;
+        let tabs = document.getElementsByClassName("tab");
+        hideTabs();
+        function hideTabs(){
+            for(var i = 0, length = tabs.length; i < length; i ++){
+                tabs.style.display = 'none';
+            }
+        }
+        function myFunction() {
+            if(!optionHidden){
+                for(var i = 0, length = tabs.length; i < length; i ++){
+                    tabs[i].style.display = 'none';
+                    optionHidden = true;
+                }
+            }else{
+                for(var i = 0, length = tabs.length; i < length; i ++){
+                    tabs.style.display = 'flex';
+                    optionHidden = false;
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+<section class="header">
+    <!-- Using nav we will create the logo using img tag -->
+    <nav>
+        <h1>Homey Market</h1>
+        <a href="index.html"
+        ><img class="logo" src="/resources/img/logo.png" alt="Logo" />
+        </a>
+
+        <!-- Then we use nav to create links, and create a list of them  -->
+        <div class="nav-links">
+            <ul>
+                <li><a href="">HOME</a></li>
+                <li><a href="">AISLES</a></li>
+                <li><a href="">LOG IN</a></li>
+                <li><a href="">SIGN UP</a></li>
+                <li class="shopping-cart-icon"><a href="">
+                    <img class="cart" src="/resources/img/cart.png" alt="cart">
+                </a>
+                </li>
+            </ul>
+        </div>
+        <i class="fa fa-bars"></i>
+    </nav>
+</section>
+<div class = "grid-container">
+    <div class = "left-column">
+            <a class="current-tab">
+                <button class="current-button" onclick="myFunction()">
+                [CURRENT OPTION]
+                </button>
+            </a>
+
+            <a class="tab inventory-tab">
+                <h1>
+                     <span class="material-icons-outlined">
+                        inventory
+                     </span>
+                    Inventory
+                </h1>
+            </a>
+            <a class="tab order-tab" id="hello">
+                <h1>
+                    <span class="material-icons-outlined">
+                        list_alt
+                    </span>
+                    Orders
+                </h1>
+            </a>
+            <a class="tab user-tab">
+                <h1>
+                    <span class="material-icons-outlined">
+                        portrait
+                    </span>
+                    Users
+                </h1>
+            </a>
+            <a class="tab settings-tab">
+                <h1><span class="material-icons-outlined">
+                        settings
+                        </span>
+                    Settings
+                </h1>
+            </a>
+
+
+
+    </div>
+
+<!--    <div class ="main-content">-->
+<!--        <div class = "content-title">-->
+<!--            <h1>Inventory</h1>-->
+<!--        </div>-->
+
+<!--        <div class = "content-grid">-->
+<!--            <div class = "item-box">-->
+<!--                <h1>Item Div</h1>-->
+<!--                -->
+<!--               -->
+<!--            </div>-->
+<!--            -->
+<!--            <div class = "item-box">-->
+<!--                <h1>Item Div</h1>-->
+<!--            </div>-->
+<!--            <div class = "item-box">-->
+<!--                <h1>Item Div</h1>-->
+<!--            </div>-->
+<!--            <div class = "item-box">-->
+<!--                <h1>Item Div</h1>-->
+<!--            </div>-->
+<!--            <div class = "item-box">-->
+<!--                <h1>Item Div</h1>-->
+<!--            </div>-->
+<!--        </div>-->
+
+
+<!--    </div>-->
+
+
+</div>
+
+
+</body>
+</html>
