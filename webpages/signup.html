@@ -5,21 +5,52 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Up</title>
+    <title>SIGN UP</title>
+    <!--FONT-->
     <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="../resources/stylesheet/signupStyle.css">
-
+    <!-- link for HEADER icons -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
 </head>
 
 <body>
-    <header>
-        <!--header-->
+    <header class="header">
+        <!-- Using nav we will create the logo using img tag -->
+        <nav class="nav-bar">
+            <h1>Homey Market</h1>
+        
+            <a href="#" class="logo-link"><img class="logo" src="../resources/img/logo.png" alt="Logo" />
+            </a>
+        
+            <!-- Then we use nav to create links, and create a list of them  -->
+            <div class="nav-links">
+                <ul class="nav-links-ul">
+                    <li>
+                        <a href="#">HOME</a>
+                    </li>
+                    <li>
+                        <a href="#">AISLES</a>
+                    </li>
+                    <li>
+                        <a href="#">LOG IN</a>
+                    </li>
+                    <li>
+                        <a href="#">SIGN UP</a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img class="cart" src="../resources/img/cart.png" alt="cart" /></a>
+                    </li>
+                </ul>
+            </div>
+            <i class="fa fa-bars"></i>
+        </nav>
     </header>
 
     <main>
         <form action="#" class="form">
             <div class="signup-text">
-                <img class="homey-logo" src="./img/logo_simplified.png" alt="aroma simplified logo" width="100px">
+                <img class="homey-logo" src="../resources/img/logo_simplified.png" alt="aroma simplified logo" width="100px">
                 <p>
                     <b>Create a Homey Market&#8482; ID</b><br>
                     Sign up to support your local Homey Market
@@ -50,7 +81,8 @@
                 <input type="password" class="form-input" placeholder="Confirm Password" aria-label="password">
             </div>
 
-            <input type="submit" value="SIGN UP" class="form-button">
+            <input type="submit" value="SIGN UP" class="signup-button">
+            <input type="submit" value="RESET" class="reset-button">
         </form>
 
     </main>

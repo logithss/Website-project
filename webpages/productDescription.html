@@ -12,26 +12,60 @@
     <link rel="stylesheet" href="../resources/stylesheet/productDescriptionStyle.css">
     <!--ICONS-->
     <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+
+    <!-- link for HEADER icons -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
 </head>
 
 <body>
-    <header>
-        <!--to be done-->
+    
+    <header class="header">
+        <!-- Using nav we will create the logo using img tag -->
+        <nav class="nav-bar">
+            <h1>Homey Market</h1>
+
+            <a href="#" class="logo-link"><img class="logo" src="../resources/img/logo.png" alt="Logo" />
+            </a>
+
+            <!-- Then we use nav to create links, and create a list of them  -->
+            <div class="nav-links">
+                <ul class="nav-links-ul">
+                    <li>
+                        <a href="#">HOME</a>
+                    </li>
+                    <li>
+                        <a href="#">AISLES</a>
+                    </li>
+                    <li>
+                        <a href="#">LOG IN</a>
+                    </li>
+                    <li>
+                        <a href="#">SIGN UP</a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img class="cart" src="../resources/img/cart.png" alt="cart" /></a>
+                    </li>
+                </ul>
+            </div>
+            <i class="fa fa-bars"></i>
+        </nav>
     </header>
+    
 
 
     <main>
         <div class="container">
             <div class="content1">
                 <div class="wrap">
-                    <p class="logo">HOMEY MARKET</p>
+                    <p class="unofficial-logo">HOMEY MARKET</p>
                 </div>
 
                 <div class="product-description">
 
-                    <img src="./img/baguette.png" alt="item" class="product-img">
+                    <img src="../resources/img/baguette.png" alt="item" class="product-img">
 
-                    <ul>
+                    <ul class="description-ul">
                         <li>
                             <h1 id="top">Product Name</h1>
                             <!--CHNAGE-->
