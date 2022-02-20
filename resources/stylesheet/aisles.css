@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
 }
 :root{
     --main-bg-color: #f9fafa;
@@ -9,7 +10,6 @@
 body {
     height: 100%;
     width: 100%;
-    font-family: 'Nunito', sans-serif;
     font-weight: normal;
     color: #5e5e5e;
     background-color: var(--main-bg-color);
@@ -20,7 +20,8 @@ body {
     background-image: url("/resources/img/fruits_banner_croped.png");
     background-size: cover;
     font-weight: bold;
-    color: #282828;
+    margin: 20px;
+    color: #2f2f2f;
     text-align: center;
     font-size:60px;
 }
@@ -30,16 +31,8 @@ body {
     padding: 50px 25% 0 25%;
     color: lightgray;
 }
-
 .item-anchor{
     text-decoration: none;
-}
-.aisle_title{
-    font-weight: bold;
-    font-size:60px;
-    color: #090909;
-    padding-top: 20px;
-    text-align: center;
 }
 .aisle_sorting{
     padding: 5px 0 5px 0;
@@ -84,17 +77,16 @@ select{
     justify-content: center;
 }
 
-.product_grid{
+.product-list{
     width: 100%;
     height: 100%;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
     gap: 30px;
-
+    list-style-type: none;
     display: grid;
     flex-flow: column;
-
-
+    margin-bottom: 70px;
 }
 .item .product-image{
     background-size: cover;
@@ -187,7 +179,7 @@ h2{
     zoom: 1.0;
 }
 @media all and (max-width: 630px) {
-    .product_grid{
+    .product-list{
         grid-template-columns: 1fr;
         transition: 100ms ease-in;
     }
@@ -197,7 +189,7 @@ h2{
 }
 
 @media all and (max-width: 1300px) and (min-width: 630px) {
-    .product_grid{
+    .product-list{
         grid-template-columns: 1fr 1fr 1fr;
         transition: 100ms ease-in;
     }
@@ -207,7 +199,7 @@ h2{
 }
 
 @media all and (max-width: 960px) and (min-width: 630px) {
-    .product_grid{
+    .product-list{
         grid-template-columns: 1fr 1fr;
         transition: 100ms ease-in;
     }

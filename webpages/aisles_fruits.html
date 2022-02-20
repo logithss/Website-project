@@ -3,12 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="/resources/stylesheet/aisles.css">
+    <link rel="stylesheet" href="/resources/stylesheet/header-footer.css">
     <meta name ="viewport" content="width-device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap"rel="stylesheet"/>
     <title>Fruits Aisles</title>
 </head>
 
 <body>
+<section class="header">
+    <!-- Using nav we will create the logo using img tag -->
+    <nav>
+        <h1>Homey Market</h1>
+        <a href="index.html"
+        ><img class="logo" src="/resources/img/logo.png" alt="Logo" />
+        </a>
+
+        <!-- Then we use nav to create links, and create a list of them  -->
+        <div class="nav-links">
+            <ul>
+                <li><a href="">HOME</a></li>
+                <li><a href="">AISLES</a></li>
+                <li><a href="">LOG IN</a></li>
+                <li><a href="">SIGN UP</a></li>
+                <li><a href="">
+                        <img class="cart" src="/resources/img/cart.png" alt="cart">
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <i class="fa fa-bars"></i>
+    </nav>
+</section>
 <div class="sidebar-cart">
     <div class="toggle-btn">
         <span></span>
@@ -37,115 +62,113 @@
                         Sort By:
                     </div>
         </div>
-        <div class="product_grid">
-            <a class ="item-anchor" href="#">
-                <div class="item" >
-                    <img class ="product-image" src="/resources/img/products/apple.png">
-                    <h3>Apple</h3>
-                    <h2>1.99$</h2>
-                    <div class="quantity" >
-                        <button class="btn minus-btn disabled" type="button">-</button>
-                        <input type="text" id="quantity" value="1">
-                        <button class="btn plus-btn" type="button">+</button>
+        <ul class="product-list">
+            <li><a class ="item-anchor" href="#">
+                        <div class="item" >
+                            <img class ="product-image" src="/resources/img/products/apple.png">
+                            <h3>Apple</h3>
+                            <h2>1.99$</h2>
+                            <div class="quantity" >
+                                <button class="btn minus-btn disabled" type="button">-</button>
+                                <input type="text" id="quantity" value="1">
+                                <button class="btn plus-btn" type="button">+</button>
+                            </div>
+                            <button class="add_button">
+                                Add to cart
+                            </button>
+                        </div>
+                    </a></li>
+            <li><a class ="item-anchor" href="#">
+                    <div class="item" >
+                        <img class ="product-image" src="/resources/img/products/orange.png">
+                        <h3>Orange</h3>
+                        <h2>1.99$</h2>
+                        <div class="quantity" >
+                            <button class="btn minus-btn disabled" type="button">-</button>
+                            <input type="text" id="quantity" value="1">
+                            <button class="btn plus-btn" type="button">+</button>
+                        </div>
+                        <button class="add_button">
+                            Add to cart
+                        </button>
                     </div>
-                    <button class="add_button">
-                        Add to cart
-                    </button>
-                </div>
-            </a>
-            <a class ="item-anchor" href="#">
-                <div class="item" >
-                    <img class ="product-image" src="/resources/img/products/orange.png">
-                    <h3>Orange</h3>
-                    <h2>1.99$</h2>
-                    <div class="quantity" >
-                        <button class="btn minus-btn disabled" type="button">-</button>
-                        <input type="text" id="quantity" value="1">
-                        <button class="btn plus-btn" type="button">+</button>
+                </a></li>
+            <li><a class ="item-anchor" href="#">
+                    <div class="item" >
+                        <img class ="product-image" src="/resources/img/products/banana.png">
+                        <h3>Banana</h3>
+                        <h2>1.99$</h2>
+                        <div class="quantity" >
+                            <button class="btn minus-btn disabled" type="button">-</button>
+                            <input type="text" id="quantity" value="1">
+                            <button class="btn plus-btn" type="button">+</button>
+                        </div>
+                        <button class="add_button">
+                            Add to cart
+                        </button>
                     </div>
-                    <button class="add_button">
-                        Add to cart
-                    </button>
-                </div>
-            </a>
-            <a class ="item-anchor" href="#">
-                <div class="item" >
-                    <img class ="product-image" src="/resources/img/products/banana.png">
-                    <h3>Banana</h3>
-                    <h2>1.99$</h2>
-                    <div class="quantity" >
-                        <button class="btn minus-btn disabled" type="button">-</button>
-                        <input type="text" id="quantity" value="1">
-                        <button class="btn plus-btn" type="button">+</button>
+                </a></li>
+            <li><a class ="item-anchor" href="#">
+                    <div class="item" >
+                        <img class ="product-image" src="/resources/img/products/avocado.png">
+                        <h3>Avocado</h3>
+                        <h2>1.99$</h2>
+                        <div class="quantity" >
+                            <button class="btn minus-btn disabled" type="button">-</button>
+                            <input type="text" id="quantity" value="1">
+                            <button class="btn plus-btn" type="button">+</button>
+                        </div>
+                        <button class="add_button">
+                            Add to cart
+                        </button>
                     </div>
-                    <button class="add_button">
-                        Add to cart
-                    </button>
-                </div>
-            </a>
-            <a class ="item-anchor" href="#">
-                <div class="item" >
-                    <img class ="product-image" src="/resources/img/products/avocado.png">
-                    <h3>Avocado</h3>
-                    <h2>1.99$</h2>
-                    <div class="quantity" >
-                        <button class="btn minus-btn disabled" type="button">-</button>
-                        <input type="text" id="quantity" value="1">
-                        <button class="btn plus-btn" type="button">+</button>
+                </a></li>
+            <li><a class ="item-anchor" href="#">
+                    <div class="item" >
+                        <img class ="product-image" src="/resources/img/products/lime.png">
+                        <h3>Lime</h3>
+                        <h2>1.99$</h2>
+                        <div class="quantity" >
+                            <button class="btn minus-btn disabled" type="button">-</button>
+                            <input type="text" id="quantity" value="1">
+                            <button class="btn plus-btn" type="button">+</button>
+                        </div>
+                        <button class="add_button">
+                            Add to cart
+                        </button>
                     </div>
-                    <button class="add_button">
-                        Add to cart
-                    </button>
-                </div>
-            </a>
-            <a class ="item-anchor" href="#">
-                <div class="item" >
-                    <img class ="product-image" src="/resources/img/products/lime.png">
-                    <h3>Lime</h3>
-                    <h2>1.99$</h2>
-                    <div class="quantity" >
-                        <button class="btn minus-btn disabled" type="button">-</button>
-                        <input type="text" id="quantity" value="1">
-                        <button class="btn plus-btn" type="button">+</button>
+                </a></li>
+            <li><a class ="item-anchor" href="#">
+                    <div class="item" >
+                        <img class ="product-image" src="/resources/img/products/grapes.png">
+                        <h3>Grapes</h3>
+                        <h2>1.99$</h2>
+                        <div class="quantity" >
+                            <button class="btn minus-btn disabled" type="button">-</button>
+                            <input type="text" id="quantity" value="1">
+                            <button class="btn plus-btn" type="button">+</button>
+                        </div>
+                        <button class="add_button">
+                            Add to cart
+                        </button>
                     </div>
-                    <button class="add_button">
-                        Add to cart
-                    </button>
-                </div>
-            </a>
-            <a class ="item-anchor" href="#">
-                <div class="item" >
-                    <img class ="product-image" src="/resources/img/products/grapes.png">
-                    <h3>Grapes</h3>
-                    <h2>1.99$</h2>
-                    <div class="quantity" >
-                        <button class="btn minus-btn disabled" type="button">-</button>
-                        <input type="text" id="quantity" value="1">
-                        <button class="btn plus-btn" type="button">+</button>
+                </a></li>
+            <li><a class ="item-anchor" href="#">
+                    <div class="item" >
+                        <img class ="product-image" src="/resources/img/products/strawberry.png">
+                        <h3>Strawberry</h3>
+                        <h2>1.99$</h2>
+                        <div class="quantity" >
+                            <button class="btn minus-btn disabled" type="button">-</button>
+                            <input type="text" id="quantity" value="1">
+                            <button class="btn plus-btn" type="button">+</button>
+                        </div>
+                        <button class="add_button">
+                            Add to cart
+                        </button>
                     </div>
-                    <button class="add_button">
-                        Add to cart
-                    </button>
-                </div>
-            </a>
-            <a class ="item-anchor" href="#">
-                <div class="item" >
-                    <img class ="product-image" src="/resources/img/products/strawberry.png">
-                    <h3>Strawberry</h3>
-                    <h2>1.99$</h2>
-                    <div class="quantity" >
-                        <button class="btn minus-btn disabled" type="button">-</button>
-                        <input type="text" id="quantity" value="1">
-                        <button class="btn plus-btn" type="button">+</button>
-                    </div>
-                    <button class="add_button">
-                        Add to cart
-                    </button>
-                </div>
-            </a>
-
-
-        </div>
+                </a></li>
+        </ul>
 </div>
 <div class="footer">
     Footer
