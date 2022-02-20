@@ -1,3 +1,9 @@
+*, *:before, *:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Nunito', sans-serif;
+}
 
 .header {
   height: 180px;
@@ -14,10 +20,12 @@
   color: white;
 }
 
+
+
 /* Now design the nav bar  */
 nav {
   display: flex;
-  padding: 2% 2% 0 2%;
+  padding: 40px 2% 0 2%;
   justify-content: space-between;
   align-items: center;
 }
@@ -35,6 +43,9 @@ nav {
   flex: 1;
   text-align: right;
 }
+.nav-links::after :not(.shopping-cart-icon){
+  margin-bottom: 1rem;
+}
 
 .nav-links ul li {
   list-style: none;
@@ -50,7 +61,7 @@ nav {
 }
 
 /* Add the bar under the menu hide it with 0% width */
-.nav-links ul li::after {
+.nav-links ul li::after{
   content: "";
   width: 0%;
   height: 2px;
@@ -76,20 +87,20 @@ nav .fa {
   }
 
   nav .fa {
-    display: none;
+    display: flex;
   }
 }
 
 @media (max-width: 600px) {
-  .nav-links {
+  .nav-links ul:not(#shopping-cart-icon){
     display: none;
   }
 
-  nav .fa {
-    display: block;
-    color: white;
-    margin: 30px;
-    font-size: 40px;
-    cursor: pointer;
-  }
+  /*nav .fa {*/
+  /*  display: block;*/
+  /*  color: white;*/
+  /*  margin: 30px;*/
+  /*  font-size: 40px;*/
+  /*  cursor: pointer;*/
+  /*}*/
 }
