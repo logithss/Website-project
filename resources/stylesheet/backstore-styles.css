@@ -6,7 +6,7 @@
 }
 :root{
     --main-bg-color: #f9fafa;
-    --accent-color: rgb(19, 56, 19);
+    --accent-color: rgb(199, 199, 199);
 }
 
 .container {
@@ -141,6 +141,14 @@ body{
     border-radius: 4px;
     padding-top: 10px;
     padding-bottom: 10px;
+}
+.add-user-btn:after{
+    box-shadow: 10px 5px 15px rgba(0,0,0,0.3);
+    transition: opacity 0.3s ease-in-out;
+    opacity: 1;
+}
+.add-user-btn:hover::after{
+    opacity: 1;
 }
 .add-user-btn:hover{
     background-color: #eaeaea;

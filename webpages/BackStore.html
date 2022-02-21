@@ -3,6 +3,8 @@
 
 
 <head>
+    <title>BACKSTORE</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="/resources/stylesheet/backstore-styles.css">
     <link rel="stylesheet" href="/resources/stylesheet/header-footer.css">
     <meta name ="viewport" content="width-device-width, initial-scale=1">
@@ -11,29 +13,11 @@
     <script>
         let tabsHidden = true;
         let tabs = document.getElementsByClassName("tab");
-        // hideTabs();
-        function hideTabs(){
-            for(var i = 0, length = tabs.length; i < length; i ++){
-                tabs.style.display = 'none';
-            }
-        }
         function myFunction() {
             for(var i = 0, length = tabs.length; i < length; i ++){
                 tabs[i].classList.toggle('show')
-                document.body.classList.toggle('tabs-shown')
+                // document.body.classList.toggle('tabs-shown')
             }
-            // if(!tabsHidden){
-            //     for(var i = 0, length = tabs.length; i < length; i ++){
-            //         tabs[i].style.display = 'none';
-            //         tabsHidden = true;
-            //     }
-            // }else{
-            //     for(var i = 0, length = tabs.length; i < length; i ++){
-            //         tabs[i].css('display','flex');
-            //         tabsHidden = false;
-            //         console.log("yo")
-            //     }
-            // }
         }
     </script>
 </head>
