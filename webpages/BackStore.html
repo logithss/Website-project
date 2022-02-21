@@ -43,7 +43,7 @@
     <!-- Using nav we will create the logo using img tag -->
     <nav>
         <h1>Homey Market</h1>
-        <a href="index.html"
+        <a href="/webpages/BackStore.html"
         ><img class="logo" src="/resources/img/logo.png" alt="Logo" />
         </a>
 
@@ -63,8 +63,8 @@
         <i class="fa fa-bars"></i>
     </nav>
 </section>
-<div class = "grid-container">
-    <div class = "left-column">
+<div class = "container">
+    <div class = "nav-bars">
             <a class="current-tab">
                 <button class="current-button" onclick="myFunction()">
                 [CURRENT OPTION]
@@ -73,7 +73,7 @@
 
             <a class="tab inventory-tab">
                 <h1>
-                     <span class="material-icons-outlined">
+                     <span class="tab-icon material-icons-outlined">
                         inventory
                      </span>
                     Inventory
@@ -81,7 +81,7 @@
             </a>
             <a class="tab order-tab" id="hello">
                 <h1>
-                    <span class="material-icons-outlined">
+                    <span class="tab-icon material-icons-outlined">
                         list_alt
                     </span>
                     Orders
@@ -89,52 +89,97 @@
             </a>
             <a class="tab user-tab">
                 <h1>
-                    <span class="material-icons-outlined">
+                    <span class="tab-icon material-icons-outlined">
                         portrait
                     </span>
                     Users
                 </h1>
             </a>
             <a class="tab settings-tab">
-                <h1><span class="material-icons-outlined">
+                <h1><span class="tab-icon material-icons-outlined">
                         settings
                         </span>
                     Settings
                 </h1>
             </a>
-
-
-
     </div>
+    <div class="content-title">
+        Users
+    </div>
+    <div class="main-content">
 
-<!--    <div class ="main-content">-->
-<!--        <div class = "content-title">-->
-<!--            <h1>Inventory</h1>-->
-<!--        </div>-->
+        <div class="user-list">
+            <div class="add-user-btn-box">
+                <button class="add-user-btn">Add new User</button>
+            </div>
+            <div class="user">
+                <div class="user-profile">
+                    <span class="user-icon material-icons-outlined">
+                    person_outline
+                    </span>
+                    <div class="user-name">Ismail Feham</div>
 
-<!--        <div class = "content-grid">-->
-<!--            <div class = "item-box">-->
-<!--                <h1>Item Div</h1>-->
-<!--                -->
-<!--               -->
-<!--            </div>-->
-<!--            -->
-<!--            <div class = "item-box">-->
-<!--                <h1>Item Div</h1>-->
-<!--            </div>-->
-<!--            <div class = "item-box">-->
-<!--                <h1>Item Div</h1>-->
-<!--            </div>-->
-<!--            <div class = "item-box">-->
-<!--                <h1>Item Div</h1>-->
-<!--            </div>-->
-<!--            <div class = "item-box">-->
-<!--                <h1>Item Div</h1>-->
-<!--            </div>-->
-<!--        </div>-->
+                </div>
+                <div class="user-btns">
+                    <button class ="edit-user-btn">Edit user</button>
+                    <button class ="delete-user-btn">Delete user</button>
+                </div>
+            </div>
+            <div class="user">
+                <div class="user-profile">
+                    <span class="user-icon material-icons-outlined">
+                    person_outline
+                    </span>
+                    <div class="user-name">Sathu Saththyvel</div>
 
+                </div>
+                <div class="user-btns">
+                    <button class ="edit-user-btn">Edit user</button>
+                    <button class ="delete-user-btn">Delete user</button>
+                </div>
+            </div>
+            <div class="user">
+                <div class="user-profile">
+                    <span class="user-icon material-icons-outlined">
+                    person_outline
+                    </span>
+                    <div class="user-name">Merouane Issad</div>
 
-<!--    </div>-->
+                </div>
+                <div class="user-btns">
+                    <button class ="edit-user-btn">Edit user</button>
+                    <button class ="delete-user-btn">Delete user</button>
+                </div>
+            </div>
+            <div class="user">
+                <div class="user-profile">
+                    <span class="user-icon material-icons-outlined">
+                    person_outline
+                    </span>
+                    <div class="user-name">Gevorg Gev</div>
+
+                </div>
+                <div class="user-btns">
+                    <button class ="edit-user-btn">Edit user</button>
+                    <button class ="delete-user-btn">Delete user</button>
+                </div>
+            </div>
+            <div class="user">
+                <div class="user-profile">
+                    <span class="user-icon material-icons-outlined">
+                    person_outline
+                    </span>
+                    <div class="user-name">Sarah A.</div>
+
+                </div>
+                <div class="user-btns">
+                    <button class ="edit-user-btn">Edit user</button>
+                    <button class ="delete-user-btn">Delete user</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
 
 
 </div>
