@@ -6,7 +6,7 @@ body{
     margin: 0;
     padding: 0;
     display: grid;
-    grid-template-rows: 150px 80vh 200px;
+    grid-template-rows: 180px 80vh 200px;
     font-family: "Nunito", sans-serif;
     box-sizing: border-box;
     
@@ -15,10 +15,9 @@ body{
 /* HEADER */
 
 .header {
-  height: fit-content;
+  height: 180px;
   width: 100%;
   min-height: 10vh;
-  width: 100%;
   /* progressive background color */
   background-color: rgb(9, 51, 13);
   background-position: center;
@@ -35,7 +34,7 @@ body{
 /* Now design the nav bar  */
 .nav-bar {
   display: flex;
-  padding: 0% 2%;
+  padding: 25px 2% 0 2%;
   justify-content:space-between;
   align-items: center;
 }
@@ -120,6 +119,7 @@ body{
 
 
 main{
+    padding-top: 1em;
     min-width: 237px;
     display: grid;
     grid-template-columns: 1fr;

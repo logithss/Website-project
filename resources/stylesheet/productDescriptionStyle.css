@@ -10,8 +10,7 @@ body{
 
 
 .header {
-  height: fit-content;
-  width: 100%;
+  height: 180px;
   min-height: 10vh;
   width: 100%;
   /* progressive background color */
@@ -30,7 +29,7 @@ body{
 /* Now design the nav bar  */
 .nav-bar {
   display: flex;
-  padding: 0% 2%;
+  padding: 25px 2% 0 2%;
   justify-content:space-between;
   align-items: center;
 }
