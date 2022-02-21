@@ -1,0 +1,174 @@
+
+.user-list{
+    height:100%;
+    width:100%;
+    /*display: flex;*/
+    flex-direction: column;
+    float:left;
+    align-items: center;
+    display: none;
+    visibility: hidden;
+
+}
+
+.add-user-btn{
+    width: clamp(100px, 2vw, 120px);
+    height: clamp(30px, 7.5vw, 50px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--main-bg-color);
+    outline:none;
+    border: #2d2d2d 1px solid;
+    border-radius: 4px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.add-user-btn:hover{
+    background-color: #e9ffe8;
+    border: var(--accent-color) 1px solid;
+    color: black;
+    transition: 120ms ease-in;
+}
+
+.user{
+    width: 100%;
+    height: 100%;
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    vertical-align: bottom;
+    padding: .5rem;
+}
+.user::after{
+    content: "";
+    border-bottom: 1px solid #8d8d8d;
+    width: 20%;
+    height: 0;
+    display: block;
+    transition: 0.3s;
+    /*margin: 0 auto;*/
+}
+.user:hover:after{
+    width: 80%;
+}
+.user:hover{
+    background-color: rgba(176, 176, 176, 0.37);
+    transition: 150ms ease-in;
+}
+.user-profile{
+    width: fit-content;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    vertical-align: bottom;
+}
+.user-name{
+    font-size: clamp(12px, 1.2vw, 20px);
+}
+.user-btns{
+    display:inline-flex;
+    justify-content: center;
+    margin: .5rem  0 .3rem 0;
+    gap:3%;
+    width: 80%;
+}
+.edit-user-btn, .delete-user-btn{
+    padding: .2rem;
+    font-size: clamp(12px, 1.2vw, 16px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--main-bg-color);
+    outline: none;
+    border: #777777 1px solid;
+    border-radius: 2px;
+}
+.edit-user-btn:hover,.delete-user-btn:hover{
+    background-color: #eaeaea;
+    transition: 120ms ease-in;
+}
+.user-icon{
+    font-size: 18px !important;
+    padding-top: 2px;
+}
+
+
+@media all and (min-width: 600px) {
+    .main-content{
+        margin-top: 0;
+        padding-left: clamp(9.375rem, 25vw, 16rem);
+    }
+    .content-title{
+        margin: 0;
+    }
+    .user{
+        grid-template-columns: 2fr 3fr;
+        display: grid;
+        /*margin-left: 5%;*/
+    }
+    .user-profile{
+        /*padding-left: 10%;*/
+        position: relative;
+        left: 40%;
+        justify-items: center;
+        display: inline-flex;
+    }
+    .user::after{
+        position: relative;
+        justify-self: center;
+        justify-items: center;
+        justify-content: center;
+        left: 75%;
+        width: 80%;
+    }
+    .user:hover:after{
+        border-color: #757575;
+        width: 220%;
+    }
+    .user-btns{
+        position: relative;
+        left:20%;
+        width: fit-content;
+        margin: .4rem 0;
+        gap: 2vw;
+    }
+
+    .edit-user-btn, .delete-user-btn{
+        width: clamp(80px, 8vw, 120px);
+        height: clamp(20px, 4vw, 30px);
+
+    }
+    .nav-bars{
+        position: fixed;
+        padding: 0;
+        width: clamp(140px, 22vw, 200px);
+    }
+    .tab{
+        padding: 1.8rem 1.1rem 1.8rem .9rem;
+        display:flex;
+        justify-content: flex-start;
+    }
+
+    .container{
+        display: flex;
+        gap: 2%;
+        flex-direction: row;
+        /*display: grid;*/
+        /*grid-template-columns: 1fr 3fr;*/
+        /*grid-template-rows: 1fr;*/
+        /*gap: 5%;*/
+        padding: 0 5%;
+    }
+}
+
+@viewport {
+    zoom: 1.0;
+}
+@-ms-viewport  {
+    zoom: 1.0;
+}

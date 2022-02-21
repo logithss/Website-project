@@ -5,21 +5,33 @@
 <head>
     <title>BACKSTORE</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="/resources/stylesheet/backstore-styles.css">
+    <link rel="stylesheet" href="/resources/stylesheet/backstore-mainstyle.css">
+    <link rel="stylesheet" href="/resources/stylesheet/backstore-users.css">
+    <link rel="stylesheet" href="/resources/stylesheet/backstore-inventory-list.css">
     <link rel="stylesheet" href="/resources/stylesheet/header-footer.css">
     <meta name ="viewport" content="width-device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
     <script>
-        let tabsHidden = true;
         let tabs = document.getElementsByClassName("tab");
-        function myFunction() {
+        let products = document.getElementsByClassName("product");
+        // changeAvailabilityColor();
+        // function changeAvailabilityColor(){
+        //     for(var i = 0, length = products.length; i < length; i ++){
+        //         products[i].
+        //     }
+        // }
+        function toggleTabsVisibility() {
             for(var i = 0, length = tabs.length; i < length; i ++){
                 tabs[i].classList.toggle('show')
-                // document.body.classList.toggle('tabs-shown')
+                document.body.classList.toggle('tabs-shown')
             }
         }
+
+
+        
     </script>
+    
 </head>
 
 <body>
@@ -50,7 +62,7 @@
 <div class = "container">
     <div class = "nav-bars">
             <a class="current-tab">
-                <button class="current-button" onclick="myFunction()">
+                <button class="current-button" onclick="toggleTabsVisibility()">
                 [CURRENT OPTION]
                 </button>
             </a>
@@ -87,11 +99,95 @@
                 </h1>
             </a>
     </div>
-    <div class="content-title">
-        Users
-    </div>
-    <div class="main-content">
 
+    <div class="main-content">
+        <div class="content-title">
+            Users
+        </div>
+        <div class="product-list">
+                <button class="add-product-btn">
+                    <div class="add-product-img">
+                        <img class="box-img" src ="https://icon-library.com/images/inventory-icon-png/inventory-icon-png-17.jpg" >
+                        <img class="plus-img" src = "https://www.freeiconspng.com/thumbs/plus-icon/plus-icon-black-2.png" >
+                    </div>
+                    <h3>Add a new product</h3>
+                </button>
+            <div class="product">
+                <div class="product-info">
+                    <div class="product-img">
+                        <img src="/resources/img/products/apple.png">
+                    </div>
+                    <div class="product-name">
+                        Apple
+                    </div>
+
+                    <div class="product-price">
+                        $1.99
+                    </div>
+                    <div class="product-quantity">
+                        Quantity: 100
+                    </div>
+                    <div class="product-availability">
+                        In stock
+                    </div>
+                </div>
+
+                <div class="product-btns">
+                    <button class ="edit-product-btn">Edit</button>
+                    <button class ="delete-product-btn">Delete</button>
+                </div>
+            </div>
+            <div class="product">
+                <div class="product-info">
+                    <div class="product-img">
+                        <img src="/resources/img/products/orange.png">
+                    </div>
+                    <div class="product-name">
+                        Orange
+                    </div>
+
+                    <div class="product-price">
+                        $1.95
+                    </div>
+                    <div class="product-quantity">
+                        Quantity: 120
+                    </div>
+                    <div class="product-availability">
+                        In stock
+                    </div>
+                </div>
+
+                <div class="product-btns">
+                    <button class ="edit-product-btn">Edit</button>
+                    <button class ="delete-product-btn">Delete</button>
+                </div>
+            </div>
+            <div class="product">
+                <div class="product-info">
+                    <div class="product-img">
+                        <img src="/resources/img/products/grapes.png">
+                    </div>
+                    <div class="product-name">
+                        Grapes
+                    </div>
+
+                    <div class="product-price">
+                        $0.99
+                    </div>
+                    <div class="product-quantity">
+                        Quantity: 20
+                    </div>
+                    <div class="product-availability">
+                        In stock
+                    </div>
+                </div>
+
+                <div class="product-btns">
+                    <button class ="edit-product-btn">Edit</button>
+                    <button class ="delete-product-btn">Delete</button>
+                </div>
+            </div>
+        </div>
         <div class="user-list">
             <div class="add-user-btn-box">
                 <button class="add-user-btn">Add new User</button>
@@ -114,7 +210,7 @@
                     <span class="user-icon material-icons-outlined">
                     person_outline
                     </span>
-                    <div class="user-name">Sathu Saththyvel</div>
+                    <div class="user-name">Ismail Feham</div>
 
                 </div>
                 <div class="user-btns">
@@ -127,7 +223,59 @@
                     <span class="user-icon material-icons-outlined">
                     person_outline
                     </span>
-                    <div class="user-name">Merouane Issad</div>
+                    <div class="user-name">Ismail Feham</div>
+
+                </div>
+                <div class="user-btns">
+                    <button class ="edit-user-btn">Edit user</button>
+                    <button class ="delete-user-btn">Delete user</button>
+                </div>
+            </div>
+            <div class="user">
+                <div class="user-profile">
+                    <span class="user-icon material-icons-outlined">
+                    person_outline
+                    </span>
+                    <div class="user-name">Ismail Feham</div>
+
+                </div>
+                <div class="user-btns">
+                    <button class ="edit-user-btn">Edit user</button>
+                    <button class ="delete-user-btn">Delete user</button>
+                </div>
+            </div>
+            <div class="user">
+                <div class="user-profile">
+                    <span class="user-icon material-icons-outlined">
+                    person_outline
+                    </span>
+                    <div class="user-name">Ismail Feham</div>
+
+                </div>
+                <div class="user-btns">
+                    <button class ="edit-user-btn">Edit user</button>
+                    <button class ="delete-user-btn">Delete user</button>
+                </div>
+            </div>
+            <div class="user">
+                <div class="user-profile">
+                    <span class="user-icon material-icons-outlined">
+                    person_outline
+                    </span>
+                    <div class="user-name">Ismail Feham</div>
+
+                </div>
+                <div class="user-btns">
+                    <button class ="edit-user-btn">Edit user</button>
+                    <button class ="delete-user-btn">Delete user</button>
+                </div>
+            </div>
+            <div class="user">
+                <div class="user-profile">
+                    <span class="user-icon material-icons-outlined">
+                    person_outline
+                    </span>
+                    <div class="user-name">Sathu Saththyvel</div>
 
                 </div>
                 <div class="user-btns">
@@ -161,6 +309,8 @@
                     <button class ="delete-user-btn">Delete user</button>
                 </div>
             </div>
+
+
 
         </div>
     </div>
