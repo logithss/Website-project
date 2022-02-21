@@ -1,0 +1,118 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- my font-->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+
+    <!-- header css-->
+    <link rel="stylesheet" href="../resources/stylesheet/header-footer.css" />
+
+    <!-- my css-->
+    <link rel="stylesheet" href="../resources/stylesheet/loginStyle.css">
+
+    
+    <title>LogIn</title>
+
+    <script>
+        function login() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            var errorText = document.getElementById("errorText");
+            console.log(errorText);
+
+            if (username == "user1" && password == "123") {
+                console.log("login successful");
+                errorText.style.display = "none";
+                window.location.href = "login_logged.html";
+            }
+            else {
+                console.log("login failed");
+                if (errorText.style.display == "block") {
+                    errorText.style.display = "none";
+                    //display after delay if message was already shown
+                    setTimeout(() => { errorText.style.display = "block"; }, 100);
+                }
+                else {
+                    errorText.style.display = "block";
+                }
+            }
+        }
+    </script>
+
+</head>
+
+  <body>
+
+    <!-- Header Section -->
+    <section class="header">
+        <!-- Using nav we will create the logo using img tag -->
+        <nav>
+            <h1>Homey Market</h1>
+            <a href="index.html"
+            ><img class="logo" src="../resources/img/logo.png" alt="Logo" />
+            </a>
+
+            <!-- Then we use nav to create links, and create a list of them  -->
+            <div class="nav-links">
+                <ul>
+                    <li>
+                        <a href="">HOME</a>
+                    </li>
+                    <li>
+                        <a href="">AISLES</a>
+                    </li>
+                    <li>
+                        <a href="login.html">LOG IN</a>
+                    </li>
+                    <li>
+                        <a href="">SIGN UP</a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img class="cart" src="../resources/img/cart.png" alt="cart"
+                            /></a>
+                    </li>
+                </ul>
+            </div>
+            <i class="fa fa-bars"></i>
+        </nav>
+    </section>
+
+
+    <div class="main-box">
+
+        <!---left side-->
+        <img class="logo-hide" src="../resources/img/logo_simplified_big.png">
+
+        <!---right side-->
+        <div class="login-box">
+
+            <h1>Login</h1>
+            <!-- username input -->
+            <input class="form-input" type="email" id="username" placeholder="Enter a valid email address"/>
+            <p class="label-form">Email address</p>
+
+
+            <!-- Password input -->
+            <input class="form-input" type="password" id="password" placeholder="Enter a valid email address"/>
+            <p class="label-form">Password</p>
+            <a href="login_passwordForgotten.html">Forgot password?</a>
+
+            <!-- Login error Label -->
+            <br />
+            <h4 class="label-error" id="errorText"> Your login information is incorrect</h4>
+
+            <!-- submit input -->
+            <br />
+            <input class="form-button" type="submit" value="Login" onclick="login()" /><br>
+
+        </div>
+    </div>
+
+    </body>
+</html>
