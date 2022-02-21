@@ -10,7 +10,7 @@ body{
 
 
 .header {
-  height: fit-content;
+  height: 180px;
   width: 100%;
   min-height: 10vh;
   width: 100%;
@@ -30,7 +30,7 @@ body{
 /* Now design the nav bar  */
 .nav-bar {
   display: flex;
-  padding: 20px 2% 0 2%;
+  padding: 25px 2% 0 2%;
   justify-content:space-between;
   align-items: center;
 }
