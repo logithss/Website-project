@@ -44,15 +44,20 @@ body{
     padding-left: 1rem;
     margin-top: 2rem;
 }
-.left-column > a:not(.current-tab) {
-    display: flex;
+
+.tab {
+    display: none;
     justify-content: center;
     width:100%;
-
-    /*height: 100%;*/
-
     padding: 1rem;
 }
+.tab.show{
+    display: flex;
+}
+.tab-shown{
+    overflow: hidden;
+}
+
 .current-tab{
     background-color: #028154;
 }
