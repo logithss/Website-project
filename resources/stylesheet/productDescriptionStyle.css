@@ -30,7 +30,7 @@ body{
 /* Now design the nav bar  */
 .nav-bar {
   display: flex;
-  padding: 0% 2%;
+  padding: 20px 2% 0 2%;
   justify-content:space-between;
   align-items: center;
 }
