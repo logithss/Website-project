@@ -18,7 +18,7 @@ body {
     font-size: 20px;
 }
 .fruits_header{
-    background-image: url("/resources/img/fruits_banner_croped.png");
+    background-image: url("../resources/img/fruits_banner_croped.png");
     background-size: cover;
     font-weight: bold;
     margin-top: 40px;
