@@ -416,21 +416,47 @@
             </div>
         </div>
         <div class="edit-container">
-
-            <div class="field num-field">
-                <div class="previous-value">
-                    (Current: 123456)
+            <div class="edit-order-container">
+                <div class="field num-field">
+                    <div class="previous-value">
+                        (Current: 123456)
+                    </div>
+                    <input type="number" placeholder="Order id (6 digits)" class="user-input num-input">
                 </div>
-                <input type="number" placeholder="Order id (6 digits)" class="user-input num-input">
+                <div class="order-type" >
+                    <select>
+                        <option value="" disabled selected>Order type</option>
+                        <option value="Pickup">Pickup</option>
+                        <option value="Delivery">Delivery</option>
+                    </select>
+                </div>
+                <button class="save-changes-btn">
+                    Save changes
+                </button>
+                <button class="cancel-order-btn">
+                    Cancel order
+                </button>
+        </div>
+            <div class="edit-product-container">
+                <div id="product-name" class="field txt-field">
+                    <div class="previous-value">
+                        (Current: Apple)
+                    </div>
+                    <input type="text" placeholder="Product name" class="user-input num-input">
+                </div>
+                <div id="unit-price" class="field txt-field">
+                    <div class="previous-value">
+                        (Current: 1.99$)
+                    </div>
+                    <input type="number" placeholder="Unit price" class="user-input num-input">
+                </div>
+                <div id="quantity" class="field txt-field">
+                    <div class="previous-value">
+                        (Current: 100)
+                    </div>
+                    <input type="number" placeholder="Quantity" class="user-input num-input">
+                </div>
             </div>
-            <button class="save-changes-btn">
-                Save changes
-            </button>
-            <button class="cancel-order-btn">
-                Cancel order
-            </button>
-
-
         </div>
     </div>
 
