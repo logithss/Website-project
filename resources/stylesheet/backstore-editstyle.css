@@ -1,27 +1,34 @@
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
-.edit-container{
-    padding-top: 2rem;
-    height:100%;
+.edit-container > *{
+    font-size: calc(clamp(.6rem, 3vw, 1rem) + .3rem);
+    padding-top: 1.5rem;
+    height: fit-content;
     width:100%;
     display: flex;
     gap: 20px;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    /*display: none;*/
+    /*visibility: hidden;*/
+}
+.edit-order-container{
+    display:none;
+    visibility: hidden;
+
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
 .field{
-
+    font-size: inherit;
     height:fit-content;
     width:100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
 }
 
 .user-input:focus{
@@ -30,8 +37,8 @@ input::-webkit-inner-spin-button {
     border-left: none;
     border-right: none;
 }
-
 .user-input{
+    font-size: inherit;
     margin: 5px 0;
     padding: 4px;
     width: 100%;
@@ -41,12 +48,21 @@ input::-webkit-inner-spin-button {
     border-right: none;
     /*border-radius: 8px;*/
     outline: none;
-    font-size: 1rem;
     text-align: center;
+}
+.order-type{
+    outline: none;
+    border:none;
+}
+.order-type > select{
+    padding: 5%;
+    font-size: calc(clamp(.6rem, 3vw, 1rem) + .2rem);
+    color: black;
 }
 
 .cancel-order-btn{
     background-color: transparent;
+    font-weight: bold;
     border: none;
     outline: none;
     width: 100%;
@@ -61,10 +77,12 @@ input::-webkit-inner-spin-button {
 .save-changes-btn{
     background-color: transparent;
     border: none;
+    font-weight: bold;
     outline: none;
     width: 100%;
-    height: calc(clamp(.6rem, 3vw, 1rem) + 2rem);
-    font-size: clamp(.6rem, 3vw, 1rem);
+    padding: 4% 0;
+    height: fit-content;
+    font-size: calc(0.5*(clamp(.6rem, 3vw, 1rem) + 1rem));
 }
 .save-changes-btn:hover{
     background-color: rgba(0, 154, 173, 0.94);
@@ -87,6 +105,14 @@ input::-webkit-inner-spin-button {
     .user-input:focus{
         border: 1px #000000 solid;
         transition: 0.3s ease-in;
+    }
+    .save-changes-btn{
+        padding: 1rem 0;
+        height: fit-content;
+    }
+    .cancel-order-btn{
+        padding: 1rem 0;
+        height: fit-content;
     }
 
 
