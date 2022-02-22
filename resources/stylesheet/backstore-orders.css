@@ -1,12 +1,11 @@
 .order-list{
     height:100%;
     width:100%;
-    display: flex;
+    /*display: flex;*/
     flex-direction: column;
-    float:left;
     align-items: center;
-    /*display: none;*/
-    /*visibility: hidden;*/
+    display: none;
+    visibility: hidden;
 }
 .order {
     width: 100%;

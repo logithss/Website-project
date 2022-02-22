@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito&display=swap"
+      rel="stylesheet"
+    />
+    <!-- link for icons -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="styling_cart.css" />
+  </head>
+  <body>
+    
+    <section class="header">
+      <!-- Using nav we will create the logo using img tag -->
+      <nav>
+        <h1>Homey Market</h1>
+        <a href="index.html"
+          ><img class="logo" src="/resources/img/products/logo.png" alt="Logo" />
+        </a>
+
+        <!-- Then we use nav to create links, and create a list of them  -->
+        <div class="nav-links">
+          <ul>
+            <li>
+              <a href="">HOME</a>
+            </li>
+            <li>
+              <a href="">AISLES</a>
+            </li>
+            <li>
+              <a href="">LOG IN</a>
+            </li>
+            <li>
+              <a href="">SIGN UP</a>
+            </li>
+            <li>
+              <a href="">
+                <img class="cart" src="/resources/img/products/cart.png" alt="cart"
+              /></a>
+            </li>
+          </ul>
+        </div>
+        <i class="fa fa-bars"></i>
+      </nav>
+    </section>
+    <!-- <div class="MyCart"> -->
+    <div class="container">
+      <div class="item-list">
+        <h2 id="cart"><img src="/resources/img/products/shoppingCart.png" id="shoppingCartImage" alt="cart"></i> My cart</h2>
+        <div id="item1" class="item">
+          <img 
+            src="/resources/img/products/strawberries"
+            alt="apple"
+            height="100"
+            id="item"
+          />
+          <div class="popup" onclick="myFunction()"> <h3>&#63;</h3>
+            <span class="popuptext" id="myPopup"><h5>
+            This is a sample description of the product 1</h5></span>
+          </div>
+          <input
+            type="number"
+            id="quantity1"
+            min="0"
+            step="1"
+            value="0"
+          />
+          <h5 id="totalPrice">Price: $0,00</h5>
+          
+          <input type="submit" value="&#9747" id="x" />
+           </div>
+        <div id="item2" class="item">
+          <img 
+          src="/resources/img/products/oranges"
+          alt="apple"
+          height="100"
+          id="item"
+        />
+        
+        <div class="popup" onclick="myFunction()"> <h3>&#63;</h3>
+          <span class="popuptext" id="myPopup"><h5>
+          This is a sample description of the product 2</h5></span>
+        </div>
+        <input
+          type="number"
+          id="quantity1"
+          min="0"
+          step="1"
+          value="0"
+        />
+        <h5 id="totalPrice">Price: $0,00</h5>
+        <input type="submit" value="&#9747" id="x" />
+        </div>
+        <div id="item3" class="item">
+          <img 
+          src="/resources/img/products/grapes"
+          alt="apple"
+          height="100"
+          id="item"
+        />
+        <div class="popup" onclick="myFunction()"> <h3>&#63;</h3>
+          <span class="popuptext" id="myPopup"><h5>
+          This is a sample description of the product3</h5></span>
+        </div>
+        <input
+          type="number"
+          id="quantity1"
+          min="0"
+          step="1"
+          value="0"
+        />
+        <h5 id="totalPrice">Price: $0,00</h5>
+        <input type="submit" value="&#9747" id="x" />
+        </div>
+        <div id="item4" class="item">
+          <img 
+          src="/resources/img/products/Banana"
+          alt="apple"
+          height="100"
+          id="item"
+        />
+        
+        <div class="popup" onclick="myFunction()"> <h3>&#63;</h3>
+          <span class="popuptext" id="myPopup"><h5>
+          This is a sample description of the product</h5></span>
+        </div>
+        <input
+          type="number"
+          id="quantity1"
+          min="0"
+          step="1"
+          value="0"
+        />
+        <h5 id="totalPrice">Price: $0,00</h5>
+        <input type="submit" value="&#9747" id="x" />
+        </div>
+      </div>
+
+      <div class="orderSummary">
+        <h2 id="order"> &#9777; Order Summary</h2>
+        <h3 id="l1">Total items: 0</h3>
+        <h3 id="l2">Subtotal: </h3>
+        <h3 id="l3">Estimated QST(9.975): $0,00</h3>
+        <h3 id="l4">Estimated GST(5%): $0,00</h3>
+        <h3 id="l5">Total: $0,00</h3>
+        <hr class="l6" />
+
+        <input type="submit" value="Checkout" id="buttonCheckout" />
+      </div>
+      <script>
+        // When the user clicks on div, open the popup
+        function myFunction() {
+          var popup = document.getElementById("myPopup");
+          popup.classList.toggle("show");
+        }
+        </script>
+    </div>
+ 
+
+     <section class="footer">
+        <h1>Contact Information</h1>
+        <p>
+          email: HomeyMarket@Info.ca <br />
+          Adress: 60211 Valley Street <br />
+          Join our team! Call us at 1-888-490-3404
+        </p>
+      </section>
+  </body>
+
+</html>
