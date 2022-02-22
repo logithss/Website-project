@@ -7,12 +7,14 @@
 :root{
     --main-bg-color: #f9fafa;
     --accent-color: rgb(24, 50, 16);
+    --default-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.2);
 }
 .container {
     height: 100%;
     width: 100%;
     padding: 0 clamp(1rem, 8vw, 20rem);
     margin-top: 2rem;
+
     /*grid-template-columns: 1fr 1fr 1fr;*/
 }
 
@@ -24,19 +26,19 @@ body{
 
 .nav-bars {
     font-size: clamp(.5rem, 1.6vw, .6rem);
-    /*height: 100%;*/
     width:100%;
     display: flex;
     flex-direction: column;
-    /*align-items: center;*/
+    box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.2);
 }
-.settings-tab{
-    border-bottom: 1px #6e6e6e solid;
+.tab > h1{
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+    gap: 5px;
 }
-
 .tab {
-    border-left: 1px #6e6e6e solid;
-    border-right: 1px #6e6e6e solid;
     display: none;
     align-items: center;
     justify-content: center;
@@ -84,17 +86,55 @@ body{
     flex-grow: 1;
     justify-content: center;
     margin-top: 1rem;
+    box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
 
 
 .content-title{
-    font-size: clamp(16px, 3vw, 30px);
+    background-color: #f5f5f5;
+    font-size: calc(clamp(.4rem, 3vw, 1rem) + .7rem);
+    border-bottom: 1px rgb(230, 230, 230) solid;
     font-weight: bold;
+    padding: 14px 0;
     display:flex;
     flex-direction: column;
     justify-content: center;
     align-content: center;
     align-items: center;
-    border: 10px black;
+}
+
+@media all and (min-width: 600px) {
+    .main-content {
+        margin-top: 0;
+        margin-left: clamp(9.375rem, 25vw, 16rem);
+        /*box-shadow: none;*/
+    }
+
+    .content-title {
+        margin: 0;
+    }
+
+    .container {
+        display: flex;
+        gap: 2%;
+        flex-direction: row;
+        /*display: grid;*/
+        /*grid-template-columns: 1fr 3fr;*/
+        /*grid-template-rows: 1fr;*/
+        /*gap: 5%;*/
+        padding: 0 5%;
+    }
+
+    .nav-bars {
+        position: fixed;
+        padding: 0;
+        width: clamp(140px, 22vw, 200px);
+    }
+
+    .tab {
+        padding: 1.8rem 1.1rem 1.8rem .9rem;
+        display: flex;
+        justify-content: flex-start;
+    }
 }

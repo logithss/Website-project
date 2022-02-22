@@ -12,6 +12,7 @@
     height:100%;
     width:100%;
     margin-top: 2%;
+    gap:10px;
     /*display: flex;*/
     flex-direction: column;
     float:left;
@@ -21,10 +22,11 @@
 }
 .add-product-btn{
     border: none;
+    margin: 2%;
     background-color: transparent;
-    padding: 5px;
+    padding: 15px;
     height: fit-content;
-    width: 60%;
+    width: 100%;
     align-items: center;
 }
 .add-product-btn:hover{
@@ -126,6 +128,9 @@ h3{
 }
 
 @media all and (min-width: 600px) {
+    .product-list{
+        gap: 0;
+    }
     .product-btns{
         padding-bottom: 1%;
     }
