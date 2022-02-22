@@ -1,10 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Change TITLE-->
+    <title>Pita</title>
+    <!--CHNAGE-->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet" />
+    <!--CSS-->
+    <link rel="stylesheet" href="../resources/stylesheet/productDescriptionStyle.css">
+    <!--ICONS-->
+    <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+
+    <!-- link for HEADER icons -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
 </head>
+
 <body>
 
+    <header class="header">
+        <!-- Using nav we will create the logo using img tag -->
+        <nav class="nav-bar">
+            <h1>Homey Market</h1>
+
+            <a href="#" class="logo-link"><img class="logo" src="../resources/img/logo.png" alt="Logo" />
+            </a>
+
+            <!-- Then we use nav to create links, and create a list of them  -->
+            <div class="nav-links">
+                <ul class="nav-links-ul">
+                    <li>
+                        <a href="./index.html">HOME</a>
+                    </li>
+                    <li>
+                        <a href="./aisles_fruits.html">AISLES</a>
+                    </li>
+                    <li>
+                        <a href="./login.html">LOG IN</a>
+                    </li>
+                    <li>
+                        <a href="./signup.html">SIGN UP</a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img class="cart" src="../resources/img/cart.png" alt="cart" /></a>
+                    </li>
+                </ul>
+            </div>
+            <i class="fa fa-bars"></i>
+        </nav>
+    </header>
+
+
+
+    <main>
+        <div class="container">
+            <div class="content1">
+                <div class="wrap">
+                    <p class="unofficial-logo">HOMEY MARKET</p>
+                </div>
+
+                <div class="product-description">
+
+                    <img src="../resources/img/products/pita.png" alt="item" class="product-img">
+
+                    <ul class="description-ul">
+                        <li>
+                            <h1 id="top">Pita</h1>
+                            <!--CHNAGE-->
+                        </li>
+                        <li>
+                            <h3>1$/pc</h3>
+                            <!--CHNAGE-->
+                        </li>
+                        <li>
+                            <p>Quantity:</p>
+                        </li>
+                        <li>
+                            <form action="" class="form">
+                                <div class="quantity-control">
+                                    <input class="minus-button" type="button" value="-">
+                                    <input class="quantity" type="number" name="quantity" id="quantity" value="1">
+                                    <input class="plus-button" type="button" value="+">
+                                </div>
+
+                                <input class="add-button" type="button" value="ADD">
+                                <br>
+                                <div class="price">
+                                    <span><b>$10.00</b></span>
+                                    <!--calculator needed-->
+                                </div>
+                                <br>
+
+                                <section>
+                                    <div class="accordion-container">
+                                        <div class="accordion">
+                                            <div class="accordion-item" id="accordion-item">
+                                                <a class="accordion-link" href="#accordion-item">
+                                                    Product Description
+                                                    <i class="icon ion-md-add"></i>
+                                                    <i class="icon ion-md-remove"></i>
+                                                </a>
+                                                <div class="description">
+                                                    <p>
+                                                        Fresh Pita
+                                                        <br><br>
+                                                        <a href="#top">Close Description</a>
+                                                    </p>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+
+
+            </div>
+        </div>
+
+    </main>
+
+
+
+    <footer>
+        <!--to be done-->
+    </footer>
+    <script>
+
+    </script>
 </body>
+
 </html>
