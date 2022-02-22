@@ -10,7 +10,7 @@
   width: 100%;
   /* progressive background color */
   background-image: linear-gradient(rgb(0, 0, 0), rgba(255, 255, 255, 0)),
-    url(./images/greenback.png);
+    url(../resources/img/greenback.png);
   background-position: center;
   background-size: cover;
   position: relative;
@@ -174,7 +174,7 @@ nav .fa {
 
 .footer {
   min-height: 40vh;
-  background-image: url(./images/bannerBg.jpg);
+  background-image: url(../resources/img/bannerBg.jpg);
 }
 
 .footer h1 {
