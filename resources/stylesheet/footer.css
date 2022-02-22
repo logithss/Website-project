@@ -1,0 +1,27 @@
+footer{
+  width: 100%;
+  height: 18%;
+  background-image: url(../img/bannerBg.jpg);
+  text-align: left;
+  padding-bottom: 1em;
+  background-size: 100%;
+
+  position : absolute;
+  bottom : 0;
+
+}
+
+.footer-container{
+  padding-left: 1em;
+  width: fit-content;
+  text-align: center;
+}
+
+footer h1 {
+  color: white;
+}
+
+footer p {
+  color: white;
+  margin: 0;
+}
