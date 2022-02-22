@@ -34,7 +34,6 @@
     height: 0;
     display: block;
     transition: 0.3s;
-    /*margin: 0 auto;*/
 }
 .order:hover:after{
     width: 80%;

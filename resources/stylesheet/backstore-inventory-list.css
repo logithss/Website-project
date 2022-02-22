@@ -1,24 +1,14 @@
-*, *:before, *:after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Nunito', sans-serif;
-}
-:root{
-    --main-bg-color: #f9fafa;
-    --accent-color: rgb(24, 50, 16);
-}
 .product-list{
     height:100%;
     width:100%;
     margin-top: 2%;
     gap:10px;
-    /*display: flex;*/
+    display: flex;
     flex-direction: column;
     float:left;
     align-items: center;
-    display: none;
-    visibility: hidden;
+    /*display: none;*/
+    /*visibility: hidden;*/
 }
 .add-product-btn{
     border: none;
@@ -89,16 +79,15 @@
     flex-direction: column;
 }
 .product-name, .product-img, .product-quantity, .product-price, .product-availability{
-    font-size: clamp(.5rem, 2.4vw, 1.9rem);
+    font-size: clamp(.6rem, 2vw, 1.2rem);
     width: fit-content;
     display: flex;
     flex-direction: row;
 }
 .product-availability{
     font-weight: bold;
-    font-size: calc(clamp(.5rem, 2.4vw, 1.9rem) + 4px);
+    font-size: calc(clamp(.6rem, 2vw, 1.2rem) + 2px);
     color: #00a92b;
-
 }
 h3{
     font-size: clamp(.6rem, 3vw, 1rem);
@@ -134,13 +123,21 @@ h3{
     .product-btns{
         padding-bottom: 1%;
     }
+    .product-img{
+        height: fit-content;
+        width: fit-content;
+        justify-content: flex-end;
+    }
     .product-img > img{
-        padding-right: 15%;
+        height: 50% !important;
+        width: 50% !important;
     }
     .product-info{
+        height: fit-content;
         width: 100%;
         flex-direction: row;
         gap: 2%;
+        align-items: end;
         padding: 1% 5% 0 5%;
     }
     .product-name, .product-img, .product-quantity, .product-price, .product-availability{
