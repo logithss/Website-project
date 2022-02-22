@@ -442,7 +442,7 @@ input[type="submit"] {
 
 .footer {
   min-height: 40vh;
-  background-image: url(./images/bannerBg.jpg);
+  background-image: url(/resources/img/products/bannerBg.jpg);
 }
 
 .footer h1 {
