@@ -6,6 +6,7 @@
     <title>BACKSTORE</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="/resources/stylesheet/backstore-mainstyle.css">
+    <link rel="stylesheet" href="/resources/stylesheet/backstore-editstyle.css">
     <link rel="stylesheet" href="/resources/stylesheet/backstore-users.css">
     <link rel="stylesheet" href="/resources/stylesheet/backstore-inventory-list.css">
     <link rel="stylesheet" href="/resources/stylesheet/backstore-orders.css">
@@ -414,11 +415,33 @@
                 </div>
             </div>
         </div>
+        <div class="edit-container">
+
+            <div class="field num-field">
+                <div class="previous-value">
+                    (Current: 123456)
+                </div>
+                <input type="number" placeholder="Order id (6 digits)" class="user-input num-input">
+            </div>
+            <button class="save-changes-btn">
+                Save changes
+            </button>
+            <button class="cancel-order-btn">
+                Cancel order
+            </button>
+
+
+        </div>
     </div>
 
 
 </div>
-
+<!--<div class="field txt-field">-->
+<!--    <div class="field-title">-->
+<!--        Order id: (Current: 123456)-->
+<!--    </div>-->
+<!--    <input type="text" class="user-input txt-input">-->
+<!--</div>-->
 
 </body>
 </html>
