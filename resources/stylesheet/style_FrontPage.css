@@ -10,7 +10,7 @@
   width: 100%;
   /* progressive background color */
   background-image: linear-gradient(rgb(0, 0, 0), rgba(255, 255, 255, 0)),
-    url(./images/greenback.png);
+    url(../img/greenback.png);
   background-position: center;
   background-size: cover;
   position: relative;
@@ -172,29 +172,33 @@ nav .fa {
 
 /* ********** FOOTER **********/
 
-.footer {
-  min-height: 40vh;
-  background-image: url(./images/bannerBg.jpg);
+/*FOOTER*/
+footer{
+  width: 100%;
+  height: 100%;
+  background-image: url(../img/bannerBg.jpg);
+  text-align: left;
+  padding-bottom: 1em;
+  background-size: 100%;
+  
+  
 }
 
-.footer h1 {
-  font-size: 30px;
-  font-weight: 100;
-  color: white;
-  position: relative;
-  padding-top: 30px;
-  top: 150%;
-  left: 10%;
+.footer-container{
+  padding-left: 1em;
+  width: fit-content;
+  text-align: center;
 }
 
-.footer p {
-  font-size: 20px;
+footer h1 {
   color: white;
-  position: relative;
-  padding-top: 50px;
-  top: 150%;
-  left: 10%;
 }
+
+footer p {
+  color: white;
+  margin: 0;
+}
+/*footer*/
 
 /* ******************* RESPONSIVENESS ****************** */
 

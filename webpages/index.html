@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Homey Market</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../resources/stylesheet/style_FrontPage.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <!-- Link for font -->
@@ -25,27 +25,27 @@
       <!-- Using nav we will create the logo using img tag -->
       <nav>
         <h1>Homey Market</h1>
-        <a href="index.html"><img src="./images/logo.png" alt="Logo" /> </a>
+        <a href="index.html"><img src="../resources/img/logo.png" alt="Logo" /> </a>.  
 
         <!-- Then we use nav to create links, and create a list of them  -->
         <div class="nav-links">
           <i class="fa fa-window-close"></i>
           <ul>
             <li>
-              <a href="">HOME</a>
+              <a href="./index.html">HOME</a>
             </li>
             <li>
-              <a href="">AISLES</a>
+              <a href="#aisle">AISLES</a>
             </li>
             <li>
-              <a href="">LOG IN</a>
+              <a href="./login.html">LOG IN</a>
             </li>
             <li>
-              <a href="">SIGN UP</a>
+              <a href="./signup.html">SIGN UP</a>
             </li>
             <li>
-              <a href="">
-                <img class="cart" src="./images/cart.png" alt="cart"
+              <a href="#">
+                <img class="cart" src="../resources/img/cart.png" alt="cart"
               /></a>
             </li>
           </ul>
@@ -64,44 +64,49 @@
 
     <!-- Aisles Section -->
 
-    <section class="aisle">
+    <section class="aisle" id="aisle">
       <h1>Choose an aisle</h1>
       <div class="row-aisle">
         <div class="aisle-col">
           <h3>BAKERIES</h3>
           <div class="aisle-img">
-            <img src="./images/bake.png" alt="bakeries" />
+             <a href="aisles_bakery.html"><img src="../resources/img/bake.png" alt="bakeries" /></a>
           </div>
         </div>
 
         <div class="aisle-col">
           <h3>MEAT</h3>
           <div class="aisle-img">
-            <img src="./images/meat.png" alt="meat" />
+             <a href="aisles_meat.html"><img src="../resources/img/meat.png" alt="meat" /></a>
+            
           </div>
         </div>
         <div class="aisle-col">
           <h3>SNAKCS</h3>
           <div class="aisle-img">
-            <img src="./images/snacks.png" alt="snacks" />
+             <a href="aisles_snacks.html"><img src="../resources/img/snacks.png" alt="snacks" /></a>
+            
           </div>
         </div>
         <div class="aisle-col">
           <h3>VEGETABLES</h3>
           <div class="aisle-img">
-            <img src="./images/veg.png" alt="vegetables" />
+             <a href="aisles_vegetables.html"><img src="../resources/img/veg.png" alt="vegetables" /></a>
+            
           </div>
         </div>
         <div class="aisle-col">
           <h3>FRUITS</h3>
           <div class="aisle-img">
-            <img src="./images/fruits.png" alt="fruits" />
+             <a href="aisles_fruits.html"> <img src="../resources/img/fruits.png" alt="fruits" /></a>
+           
           </div>
         </div>
         <div class="aisle-col">
           <h3>DAIRY</h3>
           <div class="aisle-img">
-            <img src="./images/dairy.png" alt="dairies" />
+             <a href=""><img src="../resources/img/dairy.png" alt="dairies" /></a>
+            
           </div>
         </div>
       </div>
@@ -117,7 +122,7 @@
         <div class="product-col">
           <h3>Chicken Breast</h3>
           <div class="img">
-            <img src="./images/chickenbreast.png" alt="ChickenBreast" />
+            <img src="../resources/img/chickenbreast.png" alt="ChickenBreast" />
           </div>
           <p>10% OFF</p>
         </div>
@@ -126,7 +131,7 @@
           <h3>Popcorn</h3>
 
           <div class="img">
-            <img src="./images/popcorn.png" alt="Popcorn" />
+            <img src="../resources/img/popcorn.png" alt="Popcorn" />
           </div>
 
           <p>20% OFF</p>
@@ -136,7 +141,7 @@
           <h3>Milk</h3>
 
           <div class="img">
-            <img src="./images/milk.png" alt="Milk" />
+            <img src="../resources/img/milk.png" alt="Milk" />
           </div>
 
           <p>30% OFF</p>
@@ -146,7 +151,7 @@
           <h3>Eggs</h3>
 
           <div class="img">
-            <img src="./images/eggs.png" alt="Eggs" />
+            <img src="../resources/img/eggs.png" alt="Eggs" />
           </div>
 
           <p>20% OFF</p>
@@ -155,13 +160,16 @@
     </section>
 
     <!-- ****************** Footer ****************** -->
-    <section class="footer">
-      <h1>Contact Information</h1>
-      <p>
-        email: HomeyMarket@Info.ca <br />
-        Adress: 60211 Valley Street <br />
-        Join our team! Call us at 1-888-490-3404
-      </p>
-    </section>
+    <footer>
+      <div class="footer-container">
+        <h1>Contact Information</h1>
+        <a href="">Back Store</a>
+        <p>
+          email: HomeyMarket@Info.ca <br />
+          Adress: 60211 Valley Street <br />
+          Join our team! Call us at 1-888-490-3404
+        </p>
+      </div>
+    </footer>
   </body>
 </html>

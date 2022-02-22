@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../resources/stylesheet/styleSnackAisle.css" />
+    <meta name="viewport" content="width-device-width, initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito&display=swap"
+      rel="stylesheet"
+    />
+    <title>Snack Aisles</title>
+  </head>
+
+  <body>
+    <section class="header">
+      <!-- Using nav we will create the logo using img tag -->
+      <nav>
+        <h1>Homey Market</h1>
+        <a href="index.html"
+          ><img class="logo" src="../resources/img/logo.png" alt="Logo" />
+        </a>
+
+        <!-- Then we use nav to create links, and create a list of them  -->
+        <div class="nav-links">
+          <ul>
+            <li><a href="">HOME</a></li>
+            <li><a href="">AISLES</a></li>
+            <li><a href="">LOG IN</a></li>
+            <li><a href="">SIGN UP</a></li>
+            <li class="shopping-cart-icon">
+              <a href="">
+                <img class="cart" src="../resources/img/cart.png" alt="cart" />
+              </a>
+            </li>
+          </ul>
+        </div>
+        <i class="fa fa-bars"></i>
+      </nav>
+    </section>
+    <div class="sidebar-cart">
+      <div class="toggle-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul></ul>
+    </div>
+    <section class="aisle-header">
+      <div class="aisle-title">Snacks</div>
+    </section>
+    <div class="container">
+      <div class="aisle_sorting">
+        <div class="sort-select">
+          <select>
+            <option value="0">Default:</option>
+            <option value="1">Name (A - Z)</option>
+            <option value="2">Name (Z - A)</option>
+            <option value="3">Price (Low > High)</option>
+            <option value="4">Price (High > Low)</option>
+          </select>
+        </div>
+        <div id="sort-text">Sort By:</div>
+      </div>
+      <ul class="product-list">
+        <li>
+          <a class="item-anchor" href="#">
+            <div class="item">
+              <img class="product-image" src="../resources/img/nuts.png" />
+              <h3>Mixed nuts</h3>
+              <h2>3.99$</h2>
+              <div class="quantity">
+                <button class="btn minus-btn disabled" type="button">-</button>
+                <input type="text" id="quantity" value="1" />
+                <button class="btn plus-btn" type="button">+</button>
+              </div>
+              <button class="add_button">Add to cart</button>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a class="item-anchor" href="#">
+            <div class="item">
+              <img class="product-image" src="../resources/img/chocolate.png" />
+              <h3>Chocolate</h3>
+              <h2>1.99$</h2>
+              <div class="quantity">
+                <button class="btn minus-btn disabled" type="button">-</button>
+                <input type="text" id="quantity" value="1" />
+                <button class="btn plus-btn" type="button">+</button>
+              </div>
+              <button class="add_button">Add to cart</button>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a class="item-anchor" href="#">
+            <div class="item">
+              <img class="product-image" src="../resources/img/macarons2.png" />
+              <h3>Macarons</h3>
+              <h2>4.99$</h2>
+              <div class="quantity">
+                <button class="btn minus-btn disabled" type="button">-</button>
+                <input type="text" id="quantity" value="1" />
+                <button class="btn plus-btn" type="button">+</button>
+              </div>
+              <button class="add_button">Add to cart</button>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a class="item-anchor" href="#">
+            <div class="item">
+              <img class="product-image" src="../resources/img/popcorn.png" />
+              <h3>Popcorn</h3>
+              <h2>1.99$</h2>
+              <div class="quantity">
+                <button class="btn minus-btn disabled" type="button">-</button>
+                <input type="text" id="quantity" value="1" />
+                <button class="btn plus-btn" type="button">+</button>
+              </div>
+              <button class="add_button">Add to cart</button>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a class="item-anchor" href="#">
+            <div class="item">
+              <img class="product-image" src="../resources/img/granola.png" />
+              <h3>Granola bar</h3>
+              <h2>2.99$</h2>
+              <div class="quantity">
+                <button class="btn minus-btn disabled" type="button">-</button>
+                <input type="text" id="quantity" value="1" />
+                <button class="btn plus-btn" type="button">+</button>
+              </div>
+              <button class="add_button">Add to cart</button>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a class="item-anchor" href="#">
+            <div class="item">
+              <img class="product-image" src="../resources/img/chips.png" />
+              <h3>Chips</h3>
+              <h2>1.49$</h2>
+              <div class="quantity">
+                <button class="btn minus-btn disabled" type="button">-</button>
+                <input type="text" id="quantity" value="1" />
+                <button class="btn plus-btn" type="button">+</button>
+              </div>
+              <button class="add_button">Add to cart</button>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a class="item-anchor" href="#">
+            <div class="item">
+              <img class="product-image" src="../resources/img/cookies.png" />
+              <h3>Cookies</h3>
+              <h2>2.49$</h2>
+              <div class="quantity">
+                <button class="btn minus-btn disabled" type="button">-</button>
+                <input type="text" id="quantity" value="1" />
+                <button class="btn plus-btn" type="button">+</button>
+              </div>
+              <button class="add_button">Add to cart</button>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="footer">Footer</div>
+  </body>
+</html>
