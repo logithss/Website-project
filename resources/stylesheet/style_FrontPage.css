@@ -10,7 +10,7 @@
   width: 100%;
   /* progressive background color */
   background-image: linear-gradient(rgb(0, 0, 0), rgba(255, 255, 255, 0)),
-    url(..resources/img/greenback.png);
+    url(../resources/img/greenback.png);
   background-position: center;
   background-size: cover;
   position: relative;
