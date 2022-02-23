@@ -8,10 +8,13 @@
     display: none;
     visibility: hidden;
 }
+.user-list.show{
+    display: flex;
+    visibility: visible;
+}
 
 .add-user-btn{
     width: 100%;
-    margin: 10px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -86,6 +89,7 @@
     border-radius: 2px;
 }
 .edit-user-btn:hover,.delete-user-btn:hover{
+    cursor: pointer;
     background-color: #eaeaea;
     transition: 120ms ease-in;
 }

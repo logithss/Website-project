@@ -7,6 +7,16 @@
     display: none;
     visibility: hidden;
 }
+.order-list.show{
+    display: flex;
+    visibility: visible;
+}
+.order-box{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
 .order {
     width: 100%;
     height: 100%;
@@ -44,7 +54,6 @@
 }
 .add-order-btn{
     width: 100%;
-    margin: 10px;
     background-color: transparent;
     border: none;
     display: flex;
@@ -67,13 +76,17 @@
 .order-id{
     font-size: calc(clamp(.6rem, 3vw, 1rem) - 2px);
 }
-.material-icons-outlined{
+.order-icon > .material-icons-outlined {
+    font-size: calc(clamp(.6rem, 3vw, 1rem) + .5rem) !important;
+}
+.add-person-icon{
     font-size: calc(clamp(.6rem, 3vw, 1rem) + .5rem) !important;
 }
 
 .edit-order-btn, .delete-order-btn{
+    cursor: pointer;
     padding: .1rem .4rem;
-    font-size: calc(clamp(.6rem, 3vw, 1rem));
+    font-size: clamp(.6rem, 3vw, 1rem);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -104,25 +117,20 @@
     .order::after{
         grid-column: 2;
         width: 200%;
-        /*width: 100%;*/
-        /*flex-direction: column;*/
-        /*left: 75%;*/
     }
     .order:hover::after{
         width: 400%;
-        /*width: 100%;*/
-        /*flex-direction: column;*/
-        /*left: 75%;*/
     }
     .edit-order-btn, .delete-order-btn{
-        width: 30%;
+        padding: .2rem .4rem;
+        width: clamp(3.6rem, 2vw, 4rem);
     }
     .order-icon{
+        padding-right: 18%;
         display: inline-flex;
         flex-direction: row;
         width: 100%;
         justify-content: flex-end;
-
     }
 }
 

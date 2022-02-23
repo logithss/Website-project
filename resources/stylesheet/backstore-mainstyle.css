@@ -41,8 +41,10 @@ body{
     display: none;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
+    padding: 1.2rem 0;
+    height: 100%;
     width:100%;
-    padding: 1.2rem 1.1rem 1.2rem .9rem;
 }
 .tab.show{
     display: flex;
@@ -51,28 +53,24 @@ body{
     overflow: hidden;
 }
 .tab-icon{
-    font-size: clamp(.7rem, 2vw, 1rem) !important;
+    font-size: calc(clamp(2rem, 2vw, 1rem) - .8rem) !important;
 }
 
-.current-tab{
+.current-tab {
     background-color: var(--accent-color);
-}
-
-.current-button{
-    font-size: clamp(.7rem, 2.2vw, 1rem) !important;
-    color: var(--main-bg-color);
-    padding: 1rem;
-    height: 100%;
-    width: 100%;
 }
 
 .nav-bars > .tab:hover{
     background-color: #dedede;
     transition: 100ms linear;
 }
-.current-button{
+#current-button{
+    color: var(--main-bg-color);
+    padding: 1rem;
+    height: 100%;
+    width: 100%;
     font-family: 'Nunito', sans-serif;
-    font-size: 1.5rem;
+    font-size: calc(clamp(1.8rem, 4vw, 2rem) - .8rem);
     font-weight: bold;
     background-color:transparent;
     outline:none;
@@ -89,8 +87,7 @@ body{
 }
 
 
-
-.content-title{
+#content-title{
     background-color: #f5f5f5;
     font-size: calc(clamp(.4rem, 3vw, 1rem) + .7rem);
     border-bottom: 1px rgb(230, 230, 230) solid;

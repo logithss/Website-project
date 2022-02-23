@@ -10,12 +10,15 @@
     justify-content: center;
     justify-items: center;
 }
-
 .edit-order-container{
     display:none;
     visibility: hidden;
 }
 .edit-product-container{
+    display:none;
+    visibility: hidden;
+}
+.edit-user-container{
     display:none;
     visibility: hidden;
 }

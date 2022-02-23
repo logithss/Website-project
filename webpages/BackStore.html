@@ -5,35 +5,60 @@
 <head>
     <title>BACKSTORE</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="/resources/stylesheet/backstore-mainstyle.css">
-    <link rel="stylesheet" href="/resources/stylesheet/backstore-editstyle.css">
-    <link rel="stylesheet" href="/resources/stylesheet/backstore-users.css">
-    <link rel="stylesheet" href="/resources/stylesheet/backstore-inventory-list.css">
-    <link rel="stylesheet" href="/resources/stylesheet/backstore-orders.css">
-    <link rel="stylesheet" href="/resources/stylesheet/header-footer.css">
+    <link rel="stylesheet" href="../resources/stylesheet/backstore-mainstyle.css">
+    <link rel="stylesheet" href="../resources/stylesheet/backstore-editstyle.css">
+    <link rel="stylesheet" href="../resources/stylesheet/backstore-users.css">
+    <link rel="stylesheet" href="../resources/stylesheet/backstore-inventory-list.css">
+    <link rel="stylesheet" href="../resources/stylesheet/backstore-orders.css">
+    <link rel="stylesheet" href="../resources/stylesheet/header-footer.css">
     <meta name ="viewport" content="width-device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
     <script>
         let tabs = document.getElementsByClassName("tab");
-        let products = document.getElementsByClassName("product");
-        // changeAvailabilityColor();
-        // function changeAvailabilityColor(){
-        //     for(var i = 0, length = products.length; i < length; i ++){
-        //         products[i].
-        //     }
-        // }
-        function toggleTabsVisibility() {
-            for(var i = 0, length = tabs.length; i < length; i ++){
-                tabs[i].classList.toggle('show')
-                document.body.classList.toggle('tabs-shown')
-            }
+        function changeContentTitle(title){
+            const content_title = document.getElementById("content-title");
+            const current_button = document.getElementById("current-button");
+            content_title.textContent = title;
+            current_button.textContent = title;
         }
 
+        function toggleTabsVisibility() {
+            for(var i = 0, length = tabs.length; i < length; i ++){
+                tabs[i].classList.toggle('show');
+                document.body.classList.toggle('tabs-shown');
+            }
+        }
+        function removeContent(){
+            let backdoorLists = document.querySelectorAll(".list");
+            let backdoorEdits = document.querySelectorAll(".edit");
+            backdoorEdits.forEach(e => {
+                e.style.display = 'none';
+                e.style.visibility = 'hidden';
+            });
+            backdoorLists.forEach(e => {
+                e.style.display = 'none';
+                e.style.visibility = 'hidden';
+            });
+        }
+        function changeEditContent(type){
+            removeContent();
 
-        
+            let content = document.querySelector(".edit-"+type+"-container");
+            console.log(content.className);
+            content.style.display = 'flex';
+            content.style.visibility = 'visible';
+
+        }
+        function changeMainContent(type){
+            removeContent();
+            let content = document.querySelector("."+type+"-list");
+            content.style.display = 'flex';
+            content.style.visibility = 'visible';
+            console.log(content.className);
+        }
+
     </script>
-    
 </head>
 
 <body>
@@ -42,7 +67,7 @@
     <nav>
         <h1>Homey Market</h1>
         <a href="/webpages/BackStore.html"
-        ><img class="logo" src="/resources/img/logo.png" alt="Logo" />
+        ><img class="logo" src="../resources/img/logo.png" alt="Logo" />
         </a>
 
         <!-- Then we use nav to create links, and create a list of them  -->
@@ -53,7 +78,7 @@
                 <li><a href="">LOG IN</a></li>
                 <li><a href="">SIGN UP</a></li>
                 <li class="shopping-cart-icon"><a href="">
-                    <img class="cart" src="/resources/img/cart.png" alt="cart">
+                    <img class="cart" src="../resources/img/cart.png" alt="cart">
                 </a>
                 </li>
             </ul>
@@ -63,21 +88,15 @@
 </section>
 <div class = "container">
     <div class = "nav-bars">
-            <a class="current-tab">
-                <button class="current-button" onclick="toggleTabsVisibility()">
-                [CURRENT OPTION]
-                </button>
-            </a>
-
-            <a class="tab inventory-tab">
-                <h1>
-                     <span class="tab-icon material-icons-outlined">
+            <a class="current-tab"><button id="current-button" onclick="toggleTabsVisibility()">Inventory</button></a>
+            <a class="tab inventory-tab" onclick="changeContentTitle('Inventory'),changeMainContent('product')" >
+                <h1><span class="tab-icon material-icons-outlined">
                         inventory
-                     </span>
-                    Inventory
+                    </span>
+                        Inventory
                 </h1>
             </a>
-            <a class="tab order-tab">
+            <a class="tab order-tab" onclick="changeContentTitle('Orders'),changeMainContent('order')">
                 <h1>
                     <span class="tab-icon material-icons-outlined">
                         list_alt
@@ -85,7 +104,7 @@
                     Orders
                 </h1>
             </a>
-            <a class="tab user-tab">
+            <a class="tab user-tab" onclick="changeContentTitle('Users'),changeMainContent('user')">
                 <h1>
                     <span class="tab-icon material-icons-outlined">
                         portrait
@@ -93,7 +112,7 @@
                     Users
                 </h1>
             </a>
-            <a class="tab settings-tab">
+            <a class="tab settings-tab disable" >
                 <h1><span class="tab-icon material-icons-outlined">
                         settings
                         </span>
@@ -102,10 +121,10 @@
             </a>
     </div>
     <div class="main-content">
-        <div class="content-title">
-            Users
+        <div id="content-title">
+            Inventory
         </div>
-        <div class="product-list">
+            <div class="list product-list">
                 <button class="add-product-btn">
                     <div class="add-product-img">
                         <img class="box-img" src ="https://icon-library.com/images/inventory-icon-png/inventory-icon-png-17.jpg" >
@@ -113,309 +132,303 @@
                     </div>
                     <h3>Add a new product</h3>
                 </button>
-            <div class="product">
-                <div class="product-info">
-                    <div class="product-img">
-                        <img src="/resources/img/products/apple.png">
-                    </div>
-                    <div class="product-name">
-                        Apple
-                    </div>
+                <div class="product">
+                    <div class="product-info">
+                        <div class="product-img">
+                            <img src="../resources/img/products/apple.png">
+                        </div>
+                        <div class="product-name">
+                            Apple
+                        </div>
 
-                    <div class="product-price">
-                        $1.99
+                        <div class="product-price">
+                            $1.99
+                        </div>
+                        <div class="product-quantity">
+                            Quantity: 100
+                        </div>
+                        <div class="product-availability">
+                            In stock
+                        </div>
                     </div>
-                    <div class="product-quantity">
-                        Quantity: 100
-                    </div>
-                    <div class="product-availability">
-                        In stock
+                    <div class="product-btns">
+                        <button class ="edit-product-btn" onclick="changeEditContent('product')">Edit</button>
+                        <button class ="delete-product-btn">Delete</button>
                     </div>
                 </div>
+                <div class="product">
+                    <div class="product-info">
+                        <div class="product-img">
+                            <img src="../resources/img/products/lime.png">
+                        </div>
+                        <div class="product-name">
+                            Lime
+                        </div>
+                        <div class="product-price">
+                            $1.95
+                        </div>
+                        <div class="product-quantity">
+                            Quantity: 120
+                        </div>
+                        <div class="product-availability">
+                            In stock
+                        </div>
+                    </div>
+                    <div class="product-btns">
+                        <button class ="edit-product-btn" onclick="changeEditContent('product')">Edit</button>
+                        <button class ="delete-product-btn">Delete</button>
+                    </div>
+                </div>
+                <div class="product">
+                    <div class="product-info">
+                        <div class="product-img">
+                            <img src="../resources/img/products/grapes.png">
+                        </div>
+                        <div class="product-name">
+                            Grapes
+                        </div>
 
-                <div class="product-btns">
-                    <button class ="edit-product-btn">Edit</button>
-                    <button class ="delete-product-btn">Delete</button>
+                        <div class="product-price">
+                            $0.99
+                        </div>
+                        <div class="product-quantity">
+                            Quantity: 20
+                        </div>
+                        <div class="product-availability">
+                            In stock
+                        </div>
+                    </div>
+                    <div class="product-btns">
+                        <button class ="edit-product-btn" onclick="changeEditContent('product')">Edit</button>
+                        <button class ="delete-product-btn">Delete</button>
+                    </div>
                 </div>
             </div>
-            <div class="product">
-                <div class="product-info">
-                    <div class="product-img">
-                        <img src="/resources/img/products/lime.png">
-                    </div>
-                    <div class="product-name">
-                        Lime
-                    </div>
-                    <div class="product-price">
-                        $1.95
-                    </div>
-                    <div class="product-quantity">
-                        Quantity: 120
-                    </div>
-                    <div class="product-availability">
-                        In stock
-                    </div>
-                </div>
-
-                <div class="product-btns">
-                    <button class ="edit-product-btn">Edit</button>
-                    <button class ="delete-product-btn">Delete</button>
-                </div>
-            </div>
-            <div class="product">
-                <div class="product-info">
-                    <div class="product-img">
-                        <img src="/resources/img/products/grapes.png">
-                    </div>
-                    <div class="product-name">
-                        Grapes
-                    </div>
-
-                    <div class="product-price">
-                        $0.99
-                    </div>
-                    <div class="product-quantity">
-                        Quantity: 20
-                    </div>
-                    <div class="product-availability">
-                        In stock
-                    </div>
-                </div>
-
-                <div class="product-btns">
-                    <button class ="edit-product-btn">Edit</button>
-                    <button class ="delete-product-btn">Delete</button>
-                </div>
-            </div>
-        </div>
-        <div class="user-list">
+            <div class="list user-list">
                 <button class="add-user-btn">
-                    <span class="material-icons-outlined">
+                    <span class="add-person-icon material-icons-outlined">
                     person_add
                     </span>
                     Add new User
                 </button>
-            <div class="user">
-                <div class="user-profile">
+                <div class="user">
+                    <div class="user-profile">
                     <span class="user-icon material-icons-outlined">
                     person_outline
                     </span>
-                    <div class="user-name">Ismail Feham</div>
+                        <div class="user-name">Ismail Feham</div>
 
+                    </div>
+                    <div class="user-btns">
+                        <button class ="edit-user-btn" onclick="changeEditContent('user')">Edit user</button>
+                        <button class ="delete-user-btn">Delete user</button>
+                    </div>
                 </div>
-                <div class="user-btns">
-                    <button class ="edit-user-btn">Edit user</button>
-                    <button class ="delete-user-btn">Delete user</button>
-                </div>
-            </div>
-            <div class="user">
-                <div class="user-profile">
+                <div class="user">
+                    <div class="user-profile">
                     <span class="user-icon material-icons-outlined">
                     person_outline
                     </span>
-                    <div class="user-name">Ismail Feham</div>
+                        <div class="user-name">Ismail Feham</div>
 
+                    </div>
+                    <div class="user-btns">
+                        <button class ="edit-user-btn" onclick="changeEditContent('user')">Edit user</button>
+                        <button class ="delete-user-btn">Delete user</button>
+                    </div>
                 </div>
-                <div class="user-btns">
-                    <button class ="edit-user-btn">Edit user</button>
-                    <button class ="delete-user-btn">Delete user</button>
-                </div>
-            </div>
-            <div class="user">
-                <div class="user-profile">
+                <div class="user">
+                    <div class="user-profile">
                     <span class="user-icon material-icons-outlined">
                     person_outline
                     </span>
-                    <div class="user-name">Ismail Feham</div>
+                        <div class="user-name">Ismail Feham</div>
 
+                    </div>
+                    <div class="user-btns">
+                        <button class ="edit-user-btn" onclick="changeEditContent('user')">Edit user</button>
+                        <button class ="delete-user-btn">Delete user</button>
+                    </div>
                 </div>
-                <div class="user-btns">
-                    <button class ="edit-user-btn">Edit user</button>
-                    <button class ="delete-user-btn">Delete user</button>
-                </div>
-            </div>
-            <div class="user">
-                <div class="user-profile">
+                <div class="user">
+                    <div class="user-profile">
                     <span class="user-icon material-icons-outlined">
                     person_outline
                     </span>
-                    <div class="user-name">Ismail Feham</div>
+                        <div class="user-name">Ismail Feham</div>
 
+                    </div>
+                    <div class="user-btns">
+                        <button class ="edit-user-btn" onclick="changeEditContent('user')">Edit user</button>
+                        <button class ="delete-user-btn">Delete user</button>
+                    </div>
                 </div>
-                <div class="user-btns">
-                    <button class ="edit-user-btn">Edit user</button>
-                    <button class ="delete-user-btn">Delete user</button>
-                </div>
-            </div>
-            <div class="user">
-                <div class="user-profile">
+                <div class="user">
+                    <div class="user-profile">
                     <span class="user-icon material-icons-outlined">
                     person_outline
                     </span>
-                    <div class="user-name">Ismail Feham</div>
+                        <div class="user-name">Ismail Feham</div>
 
+                    </div>
+                    <div class="user-btns">
+                        <button class ="edit-user-btn" onclick="changeEditContent('user')">Edit user</button>
+                        <button class ="delete-user-btn">Delete user</button>
+                    </div>
                 </div>
-                <div class="user-btns">
-                    <button class ="edit-user-btn">Edit user</button>
-                    <button class ="delete-user-btn">Delete user</button>
-                </div>
-            </div>
-            <div class="user">
-                <div class="user-profile">
+                <div class="user">
+                    <div class="user-profile">
                     <span class="user-icon material-icons-outlined">
                     person_outline
                     </span>
-                    <div class="user-name">Ismail Feham</div>
+                        <div class="user-name">Ismail Feham</div>
 
+                    </div>
+                    <div class="user-btns">
+                        <button class ="edit-user-btn" onclick="changeEditContent('user')">Edit user</button>
+                        <button class ="delete-user-btn">Delete user</button>
+                    </div>
                 </div>
-                <div class="user-btns">
-                    <button class ="edit-user-btn">Edit user</button>
-                    <button class ="delete-user-btn">Delete user</button>
-                </div>
-            </div>
-            <div class="user">
-                <div class="user-profile">
+                <div class="user">
+                    <div class="user-profile">
                     <span class="user-icon material-icons-outlined">
                     person_outline
                     </span>
-                    <div class="user-name">Sathu Saththyvel</div>
+                        <div class="user-name">Sathu Saththyvel</div>
 
+                    </div>
+                    <div class="user-btns">
+                        <button class ="edit-user-btn" onclick="changeEditContent('user')">Edit user</button>
+                        <button class ="delete-user-btn">Delete user</button>
+                    </div>
                 </div>
-                <div class="user-btns">
-                    <button class ="edit-user-btn">Edit user</button>
-                    <button class ="delete-user-btn">Delete user</button>
-                </div>
-            </div>
-            <div class="user">
-                <div class="user-profile">
+                <div class="user">
+                    <div class="user-profile">
                     <span class="user-icon material-icons-outlined">
                     person_outline
                     </span>
-                    <div class="user-name">Gevorg Gev</div>
+                        <div class="user-name">Gevorg Gev</div>
 
+                    </div>
+                    <div class="user-btns">
+                        <button class ="edit-user-btn" onclick="changeEditContent('user')">Edit user</button>
+                        <button class ="delete-user-btn">Delete user</button>
+                    </div>
                 </div>
-                <div class="user-btns">
-                    <button class ="edit-user-btn">Edit user</button>
-                    <button class ="delete-user-btn">Delete user</button>
-                </div>
-            </div>
-            <div class="user">
-                <div class="user-profile">
+                <div class="user">
+                    <div class="user-profile">
                     <span class="user-icon material-icons-outlined">
                     person_outline
                     </span>
-                    <div class="user-name">Sarah A.</div>
+                        <div class="user-name">Sarah A.</div>
 
-                </div>
-                <div class="user-btns">
-                    <button class ="edit-user-btn">Edit user</button>
-                    <button class ="delete-user-btn">Delete user</button>
+                    </div>
+                    <div class="user-btns">
+                        <button class ="edit-user-btn" onclick="changeEditContent('user')">Edit user</button>
+                        <button class ="delete-user-btn">Delete user</button>
+                    </div>
                 </div>
             </div>
-
-
-
-        </div>
-        <div class="order-list">
-            <button class="add-order-btn">
+            <div class="list order-list">
+                <button class="add-order-btn">
                 <span class="material-icons-outlined">
                     note_add
                 </span>
-                <h3>Add a new order</h3>
-            </button>
-            <div class="order">
-                <div class="order-icon">
+                    <h3>Add a new order</h3>
+                </button>
+                <div class="order">
+                    <div class="order-icon">
+                <span class="material-icons-outlined">
+                receipt_long
+            </span>
+                    </div>
+                    <div class="order-id">
+                        <h3>Order id: </h3>
+                        123456
+                    </div>
+                    <div class="order-btns">
+                        <button class ="edit-order-btn" onclick="changeEditContent('order')">Edit</button>
+                        <button class ="delete-order-btn">Delete</button>
+                    </div>
+                </div>
+                <div class="order">
+                    <div class="order-icon">
                     <span class="material-icons-outlined">
                     receipt_long
                 </span>
+                    </div>
+                    <div class="order-id">
+                        <h3>Order id: </h3>
+                        123456
+                    </div>
+                    <div class="order-btns">
+                        <button class ="edit-order-btn" onclick="changeEditContent('order')">Edit</button>
+                        <button class ="delete-order-btn">Delete</button>
+                    </div>
                 </div>
-                <div class="order-id">
-                    <h3>Order id: </h3>
-                    123456
-                </div>
-                <div class="order-btns">
-                    <button class ="edit-order-btn">Edit</button>
-                    <button class ="delete-order-btn">Delete</button>
-                </div>
-            </div>
-            <div class="order">
-                <div class="order-icon">
+                <div class="order">
+                    <div class="order-icon">
                     <span class="material-icons-outlined">
                     receipt_long
                 </span>
+                    </div>
+                    <div class="order-id">
+                        <h3>Order id: </h3>
+                        123456
+                    </div>
+                    <div class="order-btns">
+                        <button class ="edit-order-btn" onclick="changeEditContent('order')">Edit</button>
+                        <button class ="delete-order-btn">Delete</button>
+                    </div>
                 </div>
-                <div class="order-id">
-                    <h3>Order id: </h3>
-                    123456
-                </div>
-                <div class="order-btns">
-                    <button class ="edit-order-btn">Edit</button>
-                    <button class ="delete-order-btn">Delete</button>
-                </div>
-            </div>
-            <div class="order">
-                <div class="order-icon">
+                <div class="order">
+                    <div class="order-icon">
                     <span class="material-icons-outlined">
                     receipt_long
                 </span>
+                    </div>
+                    <div class="order-id">
+                        <h3>Order id: </h3>
+                        123456
+                    </div>
+                    <div class="order-btns">
+                        <button class ="edit-order-btn" onclick="changeEditContent('order')">Edit</button>
+                        <button class ="delete-order-btn">Delete</button>
+                    </div>
                 </div>
-                <div class="order-id">
-                    <h3>Order id: </h3>
-                    123456
-                </div>
-                <div class="order-btns">
-                    <button class ="edit-order-btn">Edit</button>
-                    <button class ="delete-order-btn">Delete</button>
-                </div>
-            </div>
-            <div class="order">
-                <div class="order-icon">
+                <div class="order">
+                    <div class="order-icon">
                     <span class="material-icons-outlined">
                     receipt_long
                 </span>
+                    </div>
+                    <div class="order-id">
+                        <h3>Order id: </h3>
+                        321654
+                    </div>
+                    <div class="order-btns">
+                        <button class ="edit-order-btn" onclick="changeEditContent('order')">Edit</button>
+                        <button class ="delete-order-btn">Delete</button>
+                    </div>
                 </div>
-                <div class="order-id">
-                    <h3>Order id: </h3>
-                    123456
-                </div>
-                <div class="order-btns">
-                    <button class ="edit-order-btn">Edit</button>
-                    <button class ="delete-order-btn">Delete</button>
-                </div>
-            </div>
-            <div class="order">
-                <div class="order-icon">
+                <div class="order">
+                    <div class="order-icon">
                     <span class="material-icons-outlined">
                     receipt_long
                 </span>
-                </div>
-                <div class="order-id">
-                    <h3>Order id: </h3>
-                    321654
-                </div>
-                <div class="order-btns">
-                    <button class ="edit-order-btn">Edit</button>
-                    <button class ="delete-order-btn">Delete</button>
-                </div>
-            </div>
-            <div class="order">
-                <div class="order-icon">
-                    <span class="material-icons-outlined">
-                    receipt_long
-                </span>
-                </div>
-                <div class="order-id">
-                    <h3>Order id: </h3>
-                    987654
-                </div>
-                <div class="order-btns">
-                    <button class ="edit-order-btn">Edit</button>
-                    <button class ="delete-order-btn">Delete</button>
+                    </div>
+                    <div class="order-id">
+                        <h3>Order id: </h3>
+                        987654
+                    </div>
+                    <div class="order-btns">
+                        <button class ="edit-order-btn" onclick="changeEditContent('order')">Edit</button>
+                        <button class ="delete-order-btn">Delete</button>
+                    </div>
                 </div>
             </div>
-        </div>
         <div class="edit-container">
-            <div class="edit-order-container">
+            <div class="edit edit-order-container">
                 <div class="field num-field">
                     <div class="previous-value">
                         (Current: 123456)
@@ -436,7 +449,7 @@
                     Cancel order
                 </button>
         </div>
-            <div class="edit-product-container">
+            <div class="edit edit-product-container">
                 <div id="product-name" class="field txt-field">
                     <div class="previous-value">
                         (Current: Apple)
@@ -467,17 +480,41 @@
                     Save changes
                 </button>
             </div>
+            <div class="edit edit-user-container">
+                <div id="user-firstname" class="field txt-field">
+                    <div class="previous-value">
+                        (Current: Ismail)
+                    </div>
+                    <input type="text" placeholder="First name" class="user-input txt-input">
+                </div>
+                <div id="user-lastname" class="field txt-field">
+                    <div class="previous-value">
+                        (Current: Feham)
+                    </div>
+                    <input type="text" placeholder="Last name" class="user-input txt-input">
+                </div>
+                <div id="user-email" class="field txt-field">
+                    <div class="previous-value">
+                        (Current: ismailfeham@gmail.com)
+                    </div>
+                    <input type="text" placeholder="Email address" class="user-input txt-input">
+                </div>
+                <div id="user-location-address" class="field txt-field">
+                    <div class="previous-value">
+                        (Current: 124 Conch St., Bikini Bottom)
+                    </div>
+                    <input type="text" placeholder="Home address" class="user-input txt-input">
+                </div>
+                <button class="save-changes-btn">
+                    Save changes
+                </button>
+            </div>
         </div>
     </div>
 
 
 </div>
-<!--<div class="field txt-field">-->
-<!--    <div class="field-title">-->
-<!--        Order id: (Current: 123456)-->
-<!--    </div>-->
-<!--    <input type="text" class="user-input txt-input">-->
-<!--</div>-->
+
 
 </body>
 </html>
