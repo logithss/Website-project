@@ -3,18 +3,21 @@
     padding-top: 1.5rem;
     height: fit-content;
     width:100%;
-    display: flex;
     gap: 20px;
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    /*display: none;*/
-    /*visibility: hidden;*/
+    justify-items: center;
 }
+
 .edit-order-container{
     display:none;
     visibility: hidden;
-
+}
+.edit-product-container{
+    display:none;
+    visibility: hidden;
 }
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -22,40 +25,61 @@ input::-webkit-inner-spin-button {
     margin: 0;
 }
 .field{
-    font-size: inherit;
+    font-weight: bold;
+    font-size: clamp(.6rem, 3vw, 1rem);
     height:fit-content;
     width:100%;
+    gap: 5px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
-
+#item-description > textarea{
+    resize: none;
+    overflow-y: hidden;
+}
+#upload-image-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width:100%;
+}
+.image-box{
+    width:  70%;
+    padding: 2%;
+    margin: 2%;
+    border: 1px #95b4c2 solid;
+    border-radius: 8px;
+}
 .user-input:focus{
-    border: 1px #000000 solid;
-    transition: 0.3s ease-in;
+    background-color: rgb(225, 233, 239);
+    transition: 0.2s ease-in;
     border-left: none;
     border-right: none;
 }
 .user-input{
     font-size: inherit;
-    margin: 5px 0;
     padding: 4px;
     width: 100%;
     height: 100%;
-    border: 1px #a2a2a2 solid;
+    border: 1px #95b4c2 solid;
     border-left: none;
     border-right: none;
-    /*border-radius: 8px;*/
     outline: none;
     text-align: center;
 }
 .order-type{
+    width: 100%;
+    display: flex;
+    height: fit-content;
+    justify-content: center;
     outline: none;
     border:none;
 }
 .order-type > select{
-    padding: 5%;
+
+    padding: 1%;
     font-size: calc(clamp(.6rem, 3vw, 1rem) + .2rem);
     color: black;
 }
@@ -76,14 +100,14 @@ input::-webkit-inner-spin-button {
 }
 .save-changes-btn{
     background-color: transparent;
-    border: none;
     font-weight: bold;
+    border: none;
     outline: none;
     width: 100%;
-    padding: 4% 0;
-    height: fit-content;
-    font-size: calc(0.5*(clamp(.6rem, 3vw, 1rem) + 1rem));
+    height: calc(clamp(.6rem, 3vw, 1rem) + 2rem);
+    font-size: clamp(.6rem, 3vw, 1rem);
 }
+
 .save-changes-btn:hover{
     background-color: rgba(0, 154, 173, 0.94);
     transition: 0.3s ease-in;
@@ -91,20 +115,19 @@ input::-webkit-inner-spin-button {
 }
 
 @media all and (min-width: 600px) {
-    .user-input{
-        margin: 5px 0;
+    .user-input {
         padding: 4px;
         width: 70%;
         height: 100%;
-        border: 1px #a2a2a2 solid;
+        border: 1px #95b4c2 solid;
         border-radius: 8px;
         outline: none;
         font-size: 1rem;
         text-align: center;
     }
     .user-input:focus{
-        border: 1px #000000 solid;
-        transition: 0.3s ease-in;
+        border: 1px #95b4c2 solid;
+        transition: 0.15s ease-in;
     }
     .save-changes-btn{
         padding: 1rem 0;
@@ -114,6 +137,4 @@ input::-webkit-inner-spin-button {
         padding: 1rem 0;
         height: fit-content;
     }
-
-
 }

@@ -11,7 +11,7 @@
 
 .add-user-btn{
     width: 100%;
-    margin: 10px;
+    margin: 10px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -99,12 +99,10 @@
     .user{
         grid-template-columns: 2fr 3fr;
         display: grid;
-        /*margin-left: 5%;*/
     }
     .user-profile{
-        /*padding-left: 10%;*/
         position: relative;
-        left: 40%;
+        left: 50%;
         justify-items: center;
         display: inline-flex;
     }
@@ -114,11 +112,11 @@
         justify-items: center;
         justify-content: center;
         left: 75%;
-        width: 80%;
+        width: 120%;
     }
     .user:hover:after{
         border-color: #757575;
-        width: 220%;
+        width: 250%;
     }
     .user-btns{
         position: relative;
@@ -133,14 +131,4 @@
         height: clamp(20px, 4vw, 30px);
 
     }
-
-
-
-}
-
-@viewport {
-    zoom: 1.0;
-}
-@-ms-viewport  {
-    zoom: 1.0;
 }

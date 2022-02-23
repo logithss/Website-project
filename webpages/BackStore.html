@@ -109,7 +109,7 @@
                 <button class="add-product-btn">
                     <div class="add-product-img">
                         <img class="box-img" src ="https://icon-library.com/images/inventory-icon-png/inventory-icon-png-17.jpg" >
-                        <img class="plus-img" src = "https://www.freeiconspng.com/thumbs/plus-icon/plus-icon-black-2.png" >
+                        <img class="plus-img" src="https://img.icons8.com/ios-glyphs/30/000000/plus-math.png"/>
                     </div>
                     <h3>Add a new product</h3>
                 </button>
@@ -141,12 +141,11 @@
             <div class="product">
                 <div class="product-info">
                     <div class="product-img">
-                        <img src="/resources/img/products/orange.png">
+                        <img src="/resources/img/products/lime.png">
                     </div>
                     <div class="product-name">
-                        Orange
+                        Lime
                     </div>
-
                     <div class="product-price">
                         $1.95
                     </div>
@@ -442,7 +441,7 @@
                     <div class="previous-value">
                         (Current: Apple)
                     </div>
-                    <input type="text" placeholder="Product name" class="user-input num-input">
+                    <input type="text" placeholder="Product name" class="user-input txt-input">
                 </div>
                 <div id="unit-price" class="field txt-field">
                     <div class="previous-value">
@@ -456,6 +455,17 @@
                     </div>
                     <input type="number" placeholder="Quantity" class="user-input num-input">
                 </div>
+                <div id="item-description" class="field txt-field">
+                    <div class="field-title">Description:</div>
+                    <textarea placeholder="Product description" class="user-input description-input" oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"'></textarea>
+                </div>
+                <div id="upload-image-container" class="field txt-field">
+                    <div class="field-title">Change image:</div>
+                    <img class="image-box" src="https://i.stack.imgur.com/x3KMH.jpg">
+                </div>
+                <button class="save-changes-btn">
+                    Save changes
+                </button>
             </div>
         </div>
     </div>
