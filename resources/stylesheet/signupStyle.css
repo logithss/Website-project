@@ -6,10 +6,9 @@ body{
     margin: 0;
     padding: 0;
     display: grid;
-    grid-template-rows: 180px 80vh 200px;
+    grid-template-rows: 180px auto 200px;
     font-family: "Nunito", sans-serif;
     box-sizing: border-box;
-    
 }
 
 /* HEADER */
@@ -121,6 +120,7 @@ body{
 main{
     padding-top: 1em;
     min-width: 237px;
+    min-height: 650px;
     display: grid;
     grid-template-columns: 1fr;
     justify-items: center;
@@ -207,20 +207,22 @@ main{
 
 /*FOOTER*/
 footer{
+  grid-row: 3/4;
   width: 100%;
   height: 100%;
   background-image: url(../img/veggie_banner.jpg);
-  text-align: left;
   padding-bottom: 1em;
   background-size: 100%;
-  
-  
 }
 
 .footer-container{
-  padding-left: 1em;
-  width: fit-content;
+  width: 100%;
   text-align: center;
+  font-size: large;
+}
+
+.footer-container a{
+  color: blue;
 }
 
 footer h1 {
@@ -236,6 +238,7 @@ footer p {
  @media only screen and (min-width: 550px){
      main{
          min-width: 593px;
+         min-height: 850px;
      }
 
     .form{
@@ -281,5 +284,9 @@ footer p {
         border-radius: 4em;
     }
 
+    .footer-container{
+      text-align: left;
+      padding-left: 1em;
+    }
     
 } 
