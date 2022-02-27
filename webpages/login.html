@@ -50,30 +50,38 @@
   <body>
 
     <!-- Header Section -->
-    <section class="header">
+    <header class="header">
         <!-- Using nav we will create the logo using img tag -->
-        <nav>
+        <nav class="nav-bar">
             <h1>Homey Market</h1>
-            <a href="index.html"
-            ><img class="logo" src="../resources/img/logo.png" alt="Logo" />
+
+            <a href="#" class="logo-link"><a href="./index.html"><img class="logo" src="../resources/img/logo.png" alt="Logo" /></a>
             </a>
 
             <!-- Then we use nav to create links, and create a list of them  -->
             <div class="nav-links">
-                <ul>
-                    <li><a href="index.html">HOME</a></li>
-                    <li><a href="index.html #aisle">AISLES</a></li>
-                    <li><a href="login.html">LOG IN</a></li>
-                    <li><a href="signup.html">SIGN UP</a></li>
-                    <li class="shopping-cart-icon"><a href="shoppingcart.html">
-                        <img class="cart" src="../resources/img/cart.png" alt="cart">
-                    </a>
+                <ul class="nav-links-ul">
+                    <li>
+                        <a href="./index.html">HOME</a>
+                    </li>
+                    <li>
+                        <a href="./index.html">AISLES</a>
+                    </li>
+                    <li>
+                        <a href="./login.html">LOG IN</a>
+                    </li>
+                    <li>
+                        <a href="./signup.html">SIGN UP</a>
+                    </li>
+                    <li>
+                        <a href="./shoppingcart.html">
+                            <img class="cart" src="../resources/img/cart.png" alt="cart" /></a>
                     </li>
                 </ul>
             </div>
             <i class="fa fa-bars"></i>
         </nav>
-    </section>
+    </header>
 
 
     <div class="main-box">
@@ -105,6 +113,7 @@
 
         </div>
     </div>
+
 
     </body>
 </html>
