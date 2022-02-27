@@ -19,30 +19,39 @@
     <link rel="stylesheet" href="../resources/stylesheet/header-footer.css">
   </head>
   <body>
-    
-    <section class="header">
-    <!-- Using nav we will create the logo using img tag -->
-    <nav>
-        <h1>Homey Market</h1>
-        <a href="index.html"
-        ><img class="logo" src="../resources/img/logo.png" alt="Logo" />
-        </a>
-        <!-- Then we use nav to create links, and create a list of them  -->
-        <div class="nav-links">
-            <ul>
-                <li><a href="">HOME</a></li>
-                <li><a href="">AISLES</a></li>
-                <li><a href="">LOG IN</a></li>
-                <li><a href="">SIGN UP</a></li>
-                <li class="shopping-cart-icon"><a href="">
-                        <img class="cart" src="../resources/img/cart.png" alt="cart">
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <i class="fa fa-bars"></i>
-    </nav>
-</section>
+
+  <header class="header">
+      <!-- Using nav we will create the logo using img tag -->
+      <nav class="nav-bar">
+          <h1>Homey Market</h1>
+
+          <a href="#" class="logo-link"><a href="./index.html"><img class="logo" src="../resources/img/logo.png" alt="Logo" /></a>
+          </a>
+
+          <!-- Then we use nav to create links, and create a list of them  -->
+          <div class="nav-links">
+              <ul class="nav-links-ul">
+                  <li>
+                      <a href="./index.html">HOME</a>
+                  </li>
+                  <li>
+                      <a href="./index.html">AISLES</a>
+                  </li>
+                  <li>
+                      <a href="./login.html">LOG IN</a>
+                  </li>
+                  <li>
+                      <a href="./signup.html">SIGN UP</a>
+                  </li>
+                  <li>
+                      <a href="./shoppingcart.html">
+                          <img class="cart" src="../resources/img/cart.png" alt="cart" /></a>
+                  </li>
+              </ul>
+          </div>
+          <i class="fa fa-bars"></i>
+      </nav>
+  </header>
     <!-- <div class="MyCart"> -->
     <div class="container">
       <div class="item-list">
@@ -114,7 +123,7 @@
         </div>
         <div id="item4" class="item">
           <img 
-          src="../resources/img/products/Banana.png"
+          src="../resources/img/products/banana.png"
           alt="apple"
           height="100"
           id="item"
@@ -155,16 +164,20 @@
         }
         </script>
     </div>
- 
 
-     <section class="footer">
-        <h1>Contact Information</h1>
-        <p>
-          email: HomeyMarket@Info.ca <br />
-          Adress: 60211 Valley Street <br />
-          Join our team! Call us at 1-888-490-3404
-        </p>
-      </section>
+  <footer>
+      <div class="footer-container">
+          <h1>Contact Information</h1>
+          <a href="./BackStore.html">Back Store</a>
+          <p>
+              email: HomeyMarket@Info.ca <br />
+              Adress: 60211 Valley Street <br />
+              Join our team! Call us at 1-888-490-3404
+          </p>
+      </div>
+  </footer>
+
+
   </body>
 
 </html>
