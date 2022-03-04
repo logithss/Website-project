@@ -25,8 +25,10 @@
     </head>
 
     <body>
+        <!-- HEADER -->
         <div id="header"></div>
         
+        <!-- CONTENT -->
         <main>
             <form action="#" class="form">
                 <div class="signup-text">
@@ -38,40 +40,39 @@
                 </div>
 
                 <div class="form-item first-name">
-                    <input type="text" class="form-input" placeholder="First Name" aria-label="first name">
+                    <input type="text" class="form-input complete-name" placeholder="First Name" id="first-name">
                 </div>
 
                 <div class="form-item last-name">
-                    <input type="text" class="form-input" placeholder="Last Name" aria-label="last name">
+                    <input type="text" class="form-input complete-name" placeholder="Last Name" id="last-name">
                 </div>
 
                 <div class="form-item mail">
-                    <input type="email" class="form-input" placeholder="example@gmail.com" aria-label="email">
+                    <input type="email" class="form-input" placeholder="example@gmail.com" id="email">
                 </div>
 
                 <div class="form-item zip-code">
-                    <input type="text" class="form-input" placeholder="Zip Code" aria-label="zip code">
+                    <input type="text" class="form-input" placeholder="Zip Code" id="zip-code">
                 </div>
 
                 <div class="form-item password">
-                    <input type="password" class="form-input" placeholder="Password" aria-label="password">
+                    <input type="password" class="form-input" placeholder="Password" id="password">
                 </div>
 
                 <div class="form-item confirm-password">
-                    <input type="password" class="form-input" placeholder="Confirm Password" aria-label="password">
+                    <input type="password" class="form-input" placeholder="Confirm Password" id="confirm-password">
                 </div>
 
-                <input type="submit" value="SIGN UP" class="signup-button">
+                <input type="submit" value="SIGN UP" class="signup-button" id="submit">
                 <input type="reset" value="RESET" class="reset-button">
             </form>
 
         </main>
 
-
-
-
-
+        <!-- FOOTER -->
         <div id="footer"></div>
+
+        <script src="../JS/signup.js"></script>
     </body>
 
 </html>
