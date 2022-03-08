@@ -106,80 +106,8 @@ main{
 
 }
 
-section{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.accordion-container{
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 1em;
-}
-
-.accordion-item{
-    
-    border-radius: .4rem;
-    padding: 1rem;
-    box-shadow: .5rem 2px .5rem rgba(0,0,0,0.1);
-}
-
-.accordion-link{
-    font-size: 1.3rem;
-    text-decoration: none;
-    color: black;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1rem 0;;
-}
-
-.accordion-link i{
-    padding: .5rem;
-}
-
-.accordion-link .ion-md-remove{
-    display: none;
-}
-
-.description{ 
-    max-height: 0;
-    overflow-y: scroll; 
-    position: relative;
-    background-color: white;
-    transition: max-height 650ms;
-}
-
-.description::before{
-    content: "";
-    position: absolute;
-    width: 0.6rem;
-    height: 70%;
-    background-color: #adf175;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
-}
-
-.description p{
-    font-size: 1rem;
-    padding: 2rem;
-}
-
-.accordion-item:target .description{
-    max-height: 20rem;
-}
-
-.accordion-item:target .accordion-link .ion-md-add{
-    display: none;
-}
-
 
 .wrap {
-    
     width: 100%;
     margin: 0 auto;
     text-align: center;
@@ -193,7 +121,24 @@ section{
     background: linear-gradient(30deg, #adf175 50%, #FFF 50%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-}    
+}   
+
+details{
+    box-shadow: 0.5rem 2px 0.5rem rgb(0 0 0 / 10%);
+    border-radius: 1em;
+    padding: 1em;
+    margin-top: 2em;
+}
+
+details>summary{
+    font-size: 1.3rem;
+}
+
+
+details>p{
+    margin-top: 1.5em;
+}
+ 
 
 
 @media screen and (min-width:600px) {
@@ -237,10 +182,6 @@ section{
         grid-column: 2 / 3; 
     }
 
-    .accordion-button{
-        margin-top: 2em;
-        
-    }
     
     .wrap{
         position: absolute;
@@ -252,9 +193,6 @@ section{
       flex-direction: column;
     }
 
-    .section{
-      margin-top: 20%;
-    }
 
 }
 
