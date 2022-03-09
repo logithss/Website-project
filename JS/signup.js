@@ -1,6 +1,7 @@
 
 var signupBtn = document.querySelector('#signup');
 var zipCode = document.querySelector('#zip-code');
+var completeName = document.querySelectorAll('.complete-name');
 
 function allLetters(input) {
     let letters = /^[A-Za-z]+$/;
@@ -11,7 +12,7 @@ function allLetters(input) {
     }
 }
 
-document.querySelectorAll('.complete-name').forEach(item => {
+completeName.forEach(item => {
     item.addEventListener('keyup', event => {
         if (item.value != "") {
             if (!allLetters(item)) {
@@ -43,5 +44,8 @@ zipCode.addEventListener('keyup', event => {
 
 
 signupBtn.addEventListener("click", function () {
+    // if(completeName.forEach(item =>{item.value!=''})||){
+
+    // }
     window.alert("SIGN UP");
 });
