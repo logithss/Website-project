@@ -51,16 +51,21 @@ main{
     
 }
 
+.price-details{
+    font-size:large;
+    font-weight: bolder;
+}
+
 .add-button{
     margin: 1em;
 }
 
 .quantity{
-    width: 2em;
+    width: 3em;
     text-align: center;
 }
 
-.price span{
+.total-ptice-label{
     padding-left: 2px;
     border-left: 4px solid rgb(255,177,33);
 }

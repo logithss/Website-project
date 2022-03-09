@@ -44,8 +44,9 @@
                             <h1 id="top">Product Name</h1>
                             <!--CHNAGE-->
                         </li>
-                        <li>
-                            <h3>Price/Details</h3>
+                        <li class="price-details">
+                            <span id="unit-price">4.99</span>$ /
+                            <span>Details</span>
                             <!--CHNAGE-->
                         </li>
                         <li>
@@ -54,15 +55,18 @@
                         <li>
                             <form action="" class="form">
                                 <div class="quantity-control">
-                                    <input class="minus-button" type="button" value="-">
-                                    <input class="quantity" type="number" name="quantity" id="quantity" value="1">
-                                    <input class="plus-button" type="button" value="+">
+                                    <input class="minus-button" type="button" value="-" id="minus-button">
+                                    <input class="quantity" type="number" name="quantity" id="quantity" min="1"
+                                        value="1">
+                                    <input class="plus-button" type="button" value="+" id="plus-button">
                                 </div>
 
-                                <input class="add-button" type="button" value="ADD">
+                                <input class="add-button" type="button" value="ADD" id="add-button">
                                 <br>
                                 <div class="price">
-                                    <span><b>$30.00</b></span>
+                                    <span class="total-ptice-label">
+                                        <b>$<span id="total-price"></span></b>
+                                    </span>
                                     <!--calculator needed-->
                                 </div>
                                 <br>
@@ -91,6 +95,7 @@
     <!-- FOOTER -->
     <div id="footer"></div>
 
+    <script src="../JS/productDescription.js"></script>
 </body>
 
 </html>
