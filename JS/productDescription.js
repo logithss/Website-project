@@ -6,6 +6,7 @@ let unitprice = document.querySelector('#unit-price');
 let totalPrice = document.querySelector('#total-price');
 
 function updatePrice() {
+
     totalPrice.innerHTML = (quantityInput.value * unitprice.innerHTML).toFixed(2);
     //storeValue("totalPrice", totalPrice.innerHTML);
 }
@@ -30,38 +31,63 @@ minusBtn.addEventListener('click', function () {
 
 });
 
-quantityInput.addEventListener('keyup', function () {
+quantityInput.addEventListener('input', function () {
     if (quantityInput.value < 0) {
         window.alert("Quantity cannot be lower than 0");
         quantityInput.value = 0;
     } else if (quantityInput.value.includes('.')) {
         window.alert("Quantity cannot be decimal");
         quantityInput.value = 0;
-    } else if (quantityInput.value == -0) {
+    } 
+    updatePrice();
+    /*else if (quantityInput.value === -0) {
         window.alert("Quantity cannot be -0");
         quantityInput.value = 0;
     }
-    updatePrice();
+    
     //storeValue("ammount", quantityInput.value);
+    */
 });
 
 
 
 /*
-function storeValue(key, value) {
-    localStorage.setItem(key, value);
+    function storeValue(key, value) {
+        localStorage.setItem(key, value);
+    }
+
+    function getStoredValue(key) {
+        return localStorage.getItem(key);
+    }
+
+    // window.onunload = function(){
+//     localStorage.clear()
+// }
+*/
+
+
+
+
+
+if (window.performance) {
+    console.info("window.performance work's fine on this browser");
 }
+if (performance.navigation.type == 1) {
+    //storing ang getting when reload
+    window.onbeforeunload = function () {
+        localStorage.setItem("quantityInput", quantityInput.value);
+        localStorage.setItem("totalPrice", totalPrice.innerHTML);
+    }
 
-function getStoredValue(key) {
-    return localStorage.getItem(key);
-}*/
+    window.onload = function () {
+        quantityInput.value = localStorage.getItem("quantityInput");
+        totalPrice.innerHTML = localStorage.getItem("totalPrice");
+    }
 
-window.onbeforeunload = function () {
-    localStorage.setItem("quantityInput", quantityInput.value);
-    localStorage.setItem("totalPrice", totalPrice.innerHTML);
-}
+} else {
+        //clearing on close
+        window.onunload = function () {
+        localStorage.clear()
+    }
 
-window.onload = function () {
-    quantityInput.value = localStorage.getItem("quantityInput");
-    totalPrice.innerHTML = localStorage.getItem("totalPrice");
 }
