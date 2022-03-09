@@ -49,7 +49,16 @@ quantityInput.addEventListener('input', function () {
     */
 });
 
+//storing ang getting when reload
+window.onbeforeunload = function () {
+    localStorage.setItem("quantityInput", quantityInput.value);
+    localStorage.setItem("totalPrice", totalPrice.innerHTML);
+}
 
+window.onload = function () {
+    quantityInput.value = localStorage.getItem("quantityInput");
+    totalPrice.innerHTML = localStorage.getItem("totalPrice");
+}
 
 /*
     function storeValue(key, value) {
@@ -68,7 +77,7 @@ quantityInput.addEventListener('input', function () {
 
 
 
-
+/*
 if (window.performance) {
     console.info("window.performance work's fine on this browser");
 }
@@ -91,3 +100,4 @@ if (performance.navigation.type == 1) {
     }
 
 }
+*/
