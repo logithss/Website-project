@@ -1,5 +1,5 @@
 
-var submitBtn = document.querySelector('#submit');
+var signupBtn = document.querySelector('#signup');
 var zipCode = document.querySelector('#zip-code');
 
 function allLetters(input) {
@@ -13,15 +13,18 @@ function allLetters(input) {
 
 document.querySelectorAll('.complete-name').forEach(item => {
     item.addEventListener('keyup', event => {
-        if(item.value!=""){
-            if (!allLetters(item))
-                window.alert("ONLY LETTERS")
+        if (item.value != "") {
+            if (!allLetters(item)) {
+                window.alert("Please input valid name")
+                item.value = "";
+            }
+
         }
     })
 });
 
 function noSpecialChar(input) {
-    var letters = /^[^a-zA-Z0-9]+$/;
+    var letters = /^[a-zA-Z0-9]+$/;
     if (input.value.match(letters)) {
         return true;
     } else {
@@ -30,13 +33,15 @@ function noSpecialChar(input) {
 }
 
 zipCode.addEventListener('keyup', event => {
-    if(noSpecialChar(zipCode)){
-        window.alert("NO SPECIAL CHAR")
+    if (zipCode.value != "") {
+        if (!noSpecialChar(zipCode)) {
+            window.alert("Please input valid ZIP code");
+            zipCode.value = "";
+        }
     }
 });
 
-/*
-submitBtn.addEventListener("click", function () {
-    window.alert("")
+
+signupBtn.addEventListener("click", function () {
+    window.alert("SIGN UP");
 });
-*/
