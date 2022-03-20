@@ -227,11 +227,6 @@ nav .fa {
     display: block;
   }
 
-  nav img {
-    width: 75px;
-    align-items: left;
-  }
-
   .nav-links {
     position: absolute;
     background: rgb(18, 32, 13);
