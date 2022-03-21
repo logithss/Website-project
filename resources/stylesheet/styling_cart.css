@@ -139,11 +139,16 @@ input {
   float: right;
   grid-area: l7;
   margin-top: 2%;
+  color: rgb(3, 82, 13);
 }
 
-input[type="submit"]:hover {
+#buttonCheckout:hover {
   background-color: rgb(3, 82, 13);
   color: rgb(255, 255, 255);
+}
+
+.price-item {
+  width: 9rem;
 }
 
 input[type="submit"] {
@@ -172,24 +177,24 @@ input[type="submit"] {
   flex-direction: row;
   align-items: center;
 }
-#item1 {
+#strawberries { {
   grid-area: it1;
 }
-#item2 {
+#oranges {
   grid-area: it2;
 }
-#item3 {
+#grapes {
   grid-area: it3;
 }
-#item4 {
+#Banana {
   grid-area: it4;
 }
-#x:hover {
+.x:hover {
   background-color: rgb(247, 16, 16);
   color: rgb(255, 255, 255);
   border-radius: 1ch;
 }
-#x {
+.x {
   grid-area: bt;
   cursor: pointer;
   background-color: rgb(253, 253, 253);
@@ -199,7 +204,7 @@ input[type="submit"] {
 
   border: none;
 }
-#quantity1 {
+.inputs {
   height: 20px;
   width: 50px;
   border-radius: 5px;
@@ -353,6 +358,9 @@ input[type="submit"] {
   .container {
     width: auto;
   }
+  .price-item {
+   width: 5rem;
+  }
 }
 
 @media screen and (max-width: 414px) {
@@ -387,7 +395,6 @@ input[type="submit"] {
   }
   #order {
     padding-top: 10%;
-    /* padding-bottom: 10%; */
   }
   #l1 {
     padding-top: 5%;
