@@ -14,7 +14,13 @@
     <meta name ="viewport" content="width-device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script>
+        $(function () {
+            $('#header').load('header.html');
+            $('#footer').load('footer.html');
+        });
         let tabs = document.getElementsByClassName("tab");
         function changeContentTitle(title){
             const content_title = document.getElementById("content-title");
@@ -62,46 +68,16 @@
 </head>
 
 <body>
-<header class="header">
-    <!-- Using nav we will create the logo using img tag -->
-    <nav class="nav-bar">
-        <h1>Homey Market</h1>
-
-        <a href="#" class="logo-link"><a href="./index.html"><img class="logo" src="../resources/img/logo.png" alt="Logo" /></a>
-        </a>
-
-        <!-- Then we use nav to create links, and create a list of them  -->
-        <div class="nav-links">
-            <ul class="nav-links-ul">
-                <li>
-                    <a href="./index.html">HOME</a>
-                </li>
-                <li>
-                    <a href="./index.html">AISLES</a>
-                </li>
-                <li>
-                    <a href="./login.html">LOG IN</a>
-                </li>
-                <li>
-                    <a href="./signup.html">SIGN UP</a>
-                </li>
-                <li>
-                    <a href="./shoppingcart.html">
-                        <img class="cart" src="../resources/img/cart.png" alt="cart" /></a>
-                </li>
-            </ul>
-        </div>
-        <i class="fa fa-bars"></i>
-    </nav>
-</header>
-<div class = "container">
-    <div class = "nav-bars">
+<div id="header"></div>
+<div class="container">
+    <div class = "content">
+        <div class = "nav-bars">
             <a class="current-tab"><button id="current-button" onclick="toggleTabsVisibility()">Inventory</button></a>
             <a class="tab inventory-tab" onclick="changeContentTitle('Inventory'),changeMainContent('product')" >
                 <h1><span class="tab-icon material-icons-outlined">
                         inventory
                     </span>
-                        Inventory
+                    Inventory
                 </h1>
             </a>
             <a class="tab order-tab" onclick="changeContentTitle('Orders'),changeMainContent('order')">
@@ -127,11 +103,11 @@
                     Settings
                 </h1>
             </a>
-    </div>
-    <div class="main-content">
-        <div id="content-title">
-            Inventory
         </div>
+        <div class="main-content">
+            <div id="content-title">
+                Inventory
+            </div>
             <div class="list product-list">
                 <button class="add-product-btn">
                     <div class="add-product-img">
@@ -435,104 +411,93 @@
                     </div>
                 </div>
             </div>
-        <div class="edit-container">
-            <div class="edit edit-order-container">
-                <div class="field num-field">
-                    <div class="previous-value">
-                        (Current: 123456)
+            <div class="edit-container">
+                <div class="edit edit-order-container">
+                    <div class="field num-field">
+                        <div class="previous-value">
+                            (Current: 123456)
+                        </div>
+                        <input type="number" placeholder="Order id (6 digits)" class="user-input num-input">
                     </div>
-                    <input type="number" placeholder="Order id (6 digits)" class="user-input num-input">
-                </div>
-                <div class="order-type" >
-                    <select>
-                        <option value="" disabled selected>Order type</option>
-                        <option value="Pickup">Pickup</option>
-                        <option value="Delivery">Delivery</option>
-                    </select>
-                </div>
-                <button class="save-changes-btn">
-                    Save changes
-                </button>
-                <button class="cancel-order-btn">
-                    Cancel order
-                </button>
-        </div>
-            <div class="edit edit-product-container">
-                <div id="product-name" class="field txt-field">
-                    <div class="previous-value">
-                        (Current: Apple)
+                    <div class="order-type" >
+                        <select>
+                            <option value="" disabled selected>Order type</option>
+                            <option value="Pickup">Pickup</option>
+                            <option value="Delivery">Delivery</option>
+                        </select>
                     </div>
-                    <input type="text" placeholder="Product name" class="user-input txt-input">
+                    <button class="save-changes-btn">
+                        Save changes
+                    </button>
+                    <button class="cancel-order-btn">
+                        Cancel order
+                    </button>
                 </div>
-                <div id="unit-price" class="field txt-field">
-                    <div class="previous-value">
-                        (Current: 1.99$)
+                <div class="edit edit-product-container">
+                    <div id="product-name" class="field txt-field">
+                        <div class="previous-value">
+                            (Current: Apple)
+                        </div>
+                        <input type="text" placeholder="Product name" class="user-input txt-input">
                     </div>
-                    <input type="number" placeholder="Unit price" class="user-input num-input">
-                </div>
-                <div id="quantity" class="field txt-field">
-                    <div class="previous-value">
-                        (Current: 100)
+                    <div id="unit-price" class="field txt-field">
+                        <div class="previous-value">
+                            (Current: 1.99$)
+                        </div>
+                        <input type="number" placeholder="Unit price" class="user-input num-input">
                     </div>
-                    <input type="number" placeholder="Quantity" class="user-input num-input">
-                </div>
-                <div id="item-description" class="field txt-field">
-                    <div class="field-title">Description:</div>
-                    <textarea placeholder="Product description" class="user-input description-input" oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"'></textarea>
-                </div>
-                <div id="upload-image-container" class="field txt-field">
-                    <div class="field-title">Change image:</div>
-                    <img class="image-box" src="https://i.stack.imgur.com/x3KMH.jpg">
-                </div>
-                <button class="save-changes-btn">
-                    Save changes
-                </button>
-            </div>
-            <div class="edit edit-user-container">
-                <div id="user-firstname" class="field txt-field">
-                    <div class="previous-value">
-                        (Current: Ismail)
+                    <div id="quantity" class="field txt-field">
+                        <div class="previous-value">
+                            (Current: 100)
+                        </div>
+                        <input type="number" placeholder="Quantity" class="user-input num-input">
                     </div>
-                    <input type="text" placeholder="First name" class="user-input txt-input">
-                </div>
-                <div id="user-lastname" class="field txt-field">
-                    <div class="previous-value">
-                        (Current: Feham)
+                    <div id="item-description" class="field txt-field">
+                        <div class="field-title">Description:</div>
+                        <textarea placeholder="Product description" class="user-input description-input" oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"'></textarea>
                     </div>
-                    <input type="text" placeholder="Last name" class="user-input txt-input">
-                </div>
-                <div id="user-email" class="field txt-field">
-                    <div class="previous-value">
-                        (Current: ismailfeham@gmail.com)
+                    <div id="upload-image-container" class="field txt-field">
+                        <div class="field-title">Change image:</div>
+                        <img class="image-box" src="https://i.stack.imgur.com/x3KMH.jpg">
                     </div>
-                    <input type="text" placeholder="Email address" class="user-input txt-input">
+                    <button class="save-changes-btn">
+                        Save changes
+                    </button>
                 </div>
-                <div id="user-location-address" class="field txt-field">
-                    <div class="previous-value">
-                        (Current: 124 Conch St., Bikini Bottom)
+                <div class="edit edit-user-container">
+                    <div id="user-firstname" class="field txt-field">
+                        <div class="previous-value">
+                            (Current: Ismail)
+                        </div>
+                        <input type="text" placeholder="First name" class="user-input txt-input">
                     </div>
-                    <input type="text" placeholder="Home address" class="user-input txt-input">
+                    <div id="user-lastname" class="field txt-field">
+                        <div class="previous-value">
+                            (Current: Feham)
+                        </div>
+                        <input type="text" placeholder="Last name" class="user-input txt-input">
+                    </div>
+                    <div id="user-email" class="field txt-field">
+                        <div class="previous-value">
+                            (Current: ismailfeham@gmail.com)
+                        </div>
+                        <input type="text" placeholder="Email address" class="user-input txt-input">
+                    </div>
+                    <div id="user-location-address" class="field txt-field">
+                        <div class="previous-value">
+                            (Current: 124 Conch St., Bikini Bottom)
+                        </div>
+                        <input type="text" placeholder="Home address" class="user-input txt-input">
+                    </div>
+                    <button class="save-changes-btn">
+                        Save changes
+                    </button>
                 </div>
-                <button class="save-changes-btn">
-                    Save changes
-                </button>
             </div>
         </div>
     </div>
-    <footer>
-        <div class="footer-container">
-            <h1>Contact Information</h1>
-            <a href="./BackStore.html">Back Store</a>
-            <p>
-                email: HomeyMarket@Info.ca <br />
-                Adress: 60211 Valley Street <br />
-                Join our team! Call us at 1-888-490-3404
-            </p>
-        </div>
-    </footer>
-
 </div>
 
-
+<div id="footer"></div>
 </body>
 </html>
