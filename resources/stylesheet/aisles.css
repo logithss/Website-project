@@ -137,6 +137,7 @@ h2{
     border: 1px solid #858585;
     background-color: transparent;
     margin: 10%;
+    z-index: 1;
 }
 
 .quantity button {
@@ -149,7 +150,7 @@ h2{
     cursor: pointer;
 }
 .quantity button:hover{
-    background-color: rgba(131, 131, 131, 0.2);
+    background-color: rgba(133, 133, 133, 0.33);
     transition:  120ms linear;
 }
 .plus-btn{
