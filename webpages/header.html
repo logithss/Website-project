@@ -20,53 +20,55 @@
     />
   </head>
 
-  <header class="header">
-    <nav class="nav-bar">
-      <h1>Homey Market</h1>
+  <body>
+    <header class="header">
+      <nav class="nav-bar">
+        <h1>Homey Market</h1>
 
-      <a href="#" class="logo-link"
-        ><a href="./index.html"
-          ><img class="logo" src="../resources/img/logo.png" alt="Logo"
-        /></a>
-      </a>
+        <a href="#" class="logo-link"
+          ><a href="./index.html"
+            ><img class="logo" src="../resources/img/logo.png" alt="Logo"
+          /></a>
+        </a>
 
-      <div class="nav-links" id="navLinks">
-        <i class="fa fa-window-close" onclick="hideMenu()"></i>
-        <ul class="nav-links-ul">
-          <li>
-            <a href="./index.html">HOME</a>
-          </li>
-          <li>
-            <a href="./index.html">AISLES</a>
-          </li>
-          <li>
-            <a href="./login.html">LOG IN</a>
-          </li>
-          <li>
-            <a href="./signup.html">SIGN UP</a>
-          </li>
-          <li>
-            <a href="./shoppingcart.html">
-              <img class="cart" src="../resources/img/cart.png" alt="cart"
-            /></a>
-          </li>
-        </ul>
-      </div>
-      <i class="fa fa-bars" onclick="showMenu()"></i>
-    </nav>
-    <script>
-      // Create variables
-      var navLinks = document.getElementById("navLinks");
-      var body = document.getElementById("body");
+        <div class="nav-links" id="navLinks">
+          <i class="fa fa-window-close" onclick="hideMenu()"></i>
+          <ul class="nav-links-ul">
+            <li>
+              <a href="./index.html">HOME</a>
+            </li>
+            <li>
+              <a href="./index.html">AISLES</a>
+            </li>
+            <li>
+              <a href="./login.html">LOG IN</a>
+            </li>
+            <li>
+              <a href="./signup.html">SIGN UP</a>
+            </li>
+            <li>
+              <a href="./shoppingcart.html">
+                <img class="cart" src="../resources/img/cart.png" alt="cart"
+              /></a>
+            </li>
+          </ul>
+        </div>
+        <i class="fa fa-bars" onclick="showMenu()"></i>
+      </nav>
+      <script>
+        // Create variables
+        var navLinks = document.getElementById("navLinks");
+        var body = document.getElementById("body");
 
-      function showMenu() {
-        navLinks.style.right = "0";
-        body.style.position = "fixed";
-      }
-      function hideMenu() {
-        navLinks.style.right = "-200px";
-        body.style.position = "absolute";
-      }
-    </script>
-  </header>
+        function showMenu() {
+          navLinks.style.right = "0";
+          body.style.position = "fixed";
+        }
+        function hideMenu() {
+          navLinks.style.right = "-200px";
+          body.style.position = "absolute";
+        }
+      </script>
+    </header>
+  </body>
 </html>
