@@ -146,10 +146,10 @@ input {
   background-color: rgb(3, 82, 13);
   color: rgb(255, 255, 255);
 }
-
 .price-item {
   width: 9rem;
 }
+
 
 input[type="submit"] {
   padding-top: 0%;
@@ -177,7 +177,7 @@ input[type="submit"] {
   flex-direction: row;
   align-items: center;
 }
-#strawberries { {
+#strawberries {
   grid-area: it1;
 }
 #oranges {
