@@ -57,7 +57,7 @@
     <div class="container">
       <div class="item-list">
         <h2 id="cart"><img src="../resources/img/products/shoppingCart.png" id="shoppingCartImage" alt="cart"></i> My cart</h2>
-        <div id="item1" class="item">
+        <div id="strawberries" class="item">
           <img 
             src="../resources/img/products/strawberries.png"
             alt="apple"
@@ -69,17 +69,21 @@
             This is a sample description of the product 1</h5></span>
           </div>
           <input
+            class="inputs"
+            onclick="updateTotalItems(strawberries)"
             type="number"
-            id="quantity1"
+            id="strawberries-quantity"
             min="0"
             step="1"
             value="0"
           />
-          <h5 id="totalPrice">Price: $0,00</h5>
+          <div class="price-item">
+            <h5 id="strawberries-totalPrice">Price: $0,00</h5>
+          </div>
           
-          <input type="submit" value="&#9747" id="x" />
+          <input onclick="removeItem(strawberries)" type="submit" value="&#9747" class="x" id="strawberries-x" />
            </div>
-        <div id="item2" class="item">
+        <div id="oranges" class="item">
           <img 
           src="../resources/img/products/oranges.png"
           alt="apple"
@@ -92,16 +96,21 @@
           This is a sample description of the product 2</h5></span>
         </div>
         <input
+          class="inputs"
+          onclick="updateTotalItems(oranges)"
           type="number"
-          id="quantity1"
+          id="oranges-quantity"     
           min="0"
           step="1"
           value="0"
         />
-        <h5 id="totalPrice">Price: $0,00</h5>
-        <input type="submit" value="&#9747" id="x" />
+        <div class="price-item">
+        <h5 id="oranges-totalPrice">Price: $0,00</h5>
         </div>
-        <div id="item3" class="item">
+          
+        <input onclick="removeItem(oranges)" type="submit" value="&#9747" class="x" id="oranges-x"/>
+        </div>
+        <div id="grapes" class="item">
           <img 
           src="../resources/img/products/grapes.png"
           alt="apple"
@@ -113,16 +122,20 @@
           This is a sample description of the product3</h5></span>
         </div>
         <input
+          class="inputs"
+          onclick="updateTotalItems(grapes)"
           type="number"
-          id="quantity1"
+          id="grapes-quantity"
           min="0"
           step="1"
           value="0"
         />
-        <h5 id="totalPrice">Price: $0,00</h5>
-        <input type="submit" value="&#9747" id="x" />
+         <div class="price-item">
+        <h5 id="grapes-totalPrice">Price: $0,00</h5>
+        </div> 
+        <input onclick="removeItem(grapes)" type="submit" value="&#9747" class="x" id="grapes-x"/>
         </div>
-        <div id="item4" class="item">
+        <div id="Banana" class="item">
           <img 
           src="../resources/img/products/Banana.png"
           alt="apple"
@@ -135,14 +148,18 @@
           This is a sample description of the product</h5></span>
         </div>
         <input
+          class="inputs"
+          onclick="updateTotalItems(Banana)"     
           type="number"
-          id="quantity1"
+          id="Banana-quantity"
           min="0"
           step="1"
           value="0"
         />
-        <h5 id="totalPrice">Price: $0,00</h5>
-        <input type="submit" value="&#9747" id="x" />
+        <div class="price-item">
+        <h5 id="Banana-totalPrice">Price: $0,00</h5>
+        </div>    
+        <input  onclick="removeItem(Banana)" type="submit" value="&#9747" class="x" id="Banana" />
         </div>
       </div>
 
@@ -181,4 +198,91 @@
 
   </body>
 
+	
+  <script>
+    function updateTotalItems(idToUse){
+      
+      var quantity1 = parseInt(document.getElementById("strawberries-quantity").value);
+      var quantity2 = parseInt(document.getElementById("oranges-quantity").value);
+      var quantity3 = parseInt(document.getElementById("grapes-quantity").value);
+      var quantity4 = parseInt(document.getElementById("Banana-quantity").value);
+      let totalItems = parseInt(quantity1 += quantity2 += quantity3 += quantity4);
+      
+      var label = "Total items: ";
+      document.getElementById("l1").innerHTML = label + totalItems;
+      var PriceLabel = "Price: $"
+      var Subtotal = 0;
+      
+      if(idToUse = strawberries){
+        
+        let unitPrice = 4.50;
+        var quantity = parseInt(document.getElementById("strawberries-quantity").value);
+        var itemTotalPrice = unitPrice * quantity;
+        Subtotal +=itemTotalPrice;
+        document.getElementById("strawberries-totalPrice").innerHTML = PriceLabel + itemTotalPrice;
+      }
+      if(idToUse = oranges){
+        let unitPrice = 5.75;
+        var quantity = parseInt(document.getElementById("oranges-quantity").value);
+        var itemTotalPrice = unitPrice * quantity;
+        Subtotal +=itemTotalPrice;
+        document.getElementById("oranges-totalPrice").innerHTML = PriceLabel + itemTotalPrice;
+      }
+      if(idToUse = grapes){
+        let unitPrice = 5;
+        var quantity = parseInt(document.getElementById("grapes-quantity").value);
+        var itemTotalPrice = unitPrice * quantity;
+        Subtotal +=itemTotalPrice;
+        document.getElementById("grapes-totalPrice").innerHTML = PriceLabel + itemTotalPrice;
+      }
+      if(idToUse = Banana){
+        let unitPrice = 3.75;
+        var quantity = parseInt(document.getElementById("Banana-quantity").value);
+        var itemTotalPrice = unitPrice * quantity;
+        Subtotal += itemTotalPrice;
+        document.getElementById("Banana-totalPrice").innerHTML = PriceLabel + itemTotalPrice;
+      }
+      var qst = (0.09975 * Subtotal).toFixed(2);
+      var gst = (0.05 * Subtotal).toFixed(2);
+      var FinalTotalPRice = parseFloat(Subtotal) + parseFloat(qst) + parseFloat(gst);
+      
+      document.getElementById("l3").innerHTML = "Estimated QST(9.975%: $)" + qst;
+      document.getElementById("l4").innerHTML = "Estimated GST(5%: $)" + gst;
+      document.getElementById("l5").innerHTML = "total: $" + FinalTotalPRice.toFixed(2);
+    }
+  </script>
+  <!-- <script>
+  function removeItem(btnParent){
+
+    if(btnParent = oranges){
+      console.log(btnParent);
+      var divToRemove = document.getElementById("oranges");
+      divToRemove.parentNode.removeChild(divToRemove);
+    }
+    if(btnParent = strawberries){
+      console.log(btnParent);
+      var divToRemove = document.getElementById("oranges");
+      divToRemove.parentNode.removeChild(divToRemove);
+    
+    }
+    
+    if(btnParent = grapes){
+      console.log(btnParent);
+      var divToRemove = document.getElementById("grapes");
+      divToRemove.parentNode.removeChild(divToRemove);
+    
+    }
+    if(btnParent = Banana){
+      console.log(btnParent);
+      var divToRemove = document.getElementById("Banana");
+      divToRemove.parentNode.removeChild(divToRemove);
+    
+    }
+
+
+      
+    }
+
+
+  </script> -->
 </html>

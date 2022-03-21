@@ -1,120 +1,17 @@
 body{
     margin: 0px;
     padding: 0px;
-    min-width: 246px;
+    min-width: 340px;
     font-family: "Nunito", sans-serif;
     box-sizing: border-box;
+    height: 100vh;
 }
-
-/* HEADER */
-
-
-.header {
-  height: 180px;
-  min-height: 10vh;
-  width: 100%;
-  /* progressive background color */
-  background-color: rgb(9, 51, 13);
-  background-position: center;
-  background-size: cover;
-  position: relative;
-}
-
-.header h1 {
-  padding-top: 20px;
-  font-size: 30px;
-  color: white;
-}
-
-/* Now design the nav bar  */
-.nav-bar {
-  display: flex;
-  padding: 25px 2% 0 2%;
-  justify-content:space-between;
-  align-items: center;
-}
-
-/* Now access the image in nav */
-.logo {
-  width: 75px;
-  padding-top: 20px;
-}
-
-.cart {
-  width: 40px;
-}
-
-.nav-links {
-  flex: 1;
-  text-align: right;
-}
-
-.nav-links-ul li {
-  list-style: none;
-  display: inline-block;
-  padding: 2px 12px;
-  position: relative;
-}
-
-.nav-links-ul li a{
-  color: white;
-  text-decoration: none;
-  font-size: 20px;
-}
-
-/* Add the bar under the menu hide it with 0% width */
-.nav-links-ul li::after {
-  content: "";
-  width: 0%;
-  height: 2px;
-  background: white;
-  display: block;
-  margin: auto;
-  transition: 0.7s;
-}
-
-/* Then when you hover, it will have 100% width */
-.nav-links ul li:hover::after {
-  width: 100%;
-}
-
-/* Menu bar */
-.nav-bar .fa {
-  display: none;
-}
-
-@media (max-width: 800px) {
-  .header h1 {
-    display: none;
-  }
-
-  .nav-bar .fa {
-    display: none;
-  }
-}
-
-@media (max-width: 600px) {
-  .nav-links {
-    display: none;
-  }
-
-  .nav-bar .fa {
-    display: block;
-    color: white;
-    margin: 30px;
-    font-size: 40px;
-    cursor: pointer;
-  }
-}
-
 
 /* BODY */
-
-
-
 main{
     width: 100%;
     height: 80%;
+    min-height: 970px;
 }
 
 .container{
@@ -125,7 +22,7 @@ main{
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     box-shadow: -2px 0px 33px 0px rgba(0,0,0,0.75);
-    height: fit-content;
+    height: 80%;
 }
 
 .content1{
@@ -148,7 +45,11 @@ main{
 }
 .product-img{
     width: 70%;
-    
+}
+
+.price-details{
+    font-size:large;
+    font-weight: bolder;
 }
 
 .add-button{
@@ -156,11 +57,11 @@ main{
 }
 
 .quantity{
-    width: 2em;
+    width: 3em;
     text-align: center;
 }
 
-.price span{
+.total-ptice-label{
     padding-left: 2px;
     border-left: 4px solid rgb(255,177,33);
 }
@@ -194,7 +95,6 @@ main{
     background-repeat: no-repeat;
     text-align: center;
     background-position: 7% 50%;
-
     background-color: #e1251b;
     border-radius: 4px;
     border: none;
@@ -202,126 +102,9 @@ main{
     display: block;
     margin-left: auto;
     margin-right: auto;
-
-
 }
-
-section{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.accordion-container{
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 1em;
-}
-
-.accordion-item{
-    
-    border-radius: .4rem;
-    padding: 1rem;
-    box-shadow: .5rem 2px .5rem rgba(0,0,0,0.1);
-}
-
-.accordion-link{
-    font-size: 1.3rem;
-    text-decoration: none;
-    color: black;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1rem 0;;
-}
-
-.accordion-link i{
-    padding: .5rem;
-}
-
-.accordion-link .ion-md-remove{
-    display: none;
-}
-
-.description{ 
-    max-height: 0;
-    overflow-y: scroll; 
-    position: relative;
-    background-color: white;
-    transition: max-height 650ms;
-}
-
-.description::before{
-    content: "";
-    position: absolute;
-    width: 0.6rem;
-    height: 70%;
-    background-color: #adf175;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
-}
-
-.description p{
-    font-size: 1rem;
-    padding: 2rem;
-}
-
-.accordion-item:target .description{
-    max-height: 20rem;
-}
-
-.accordion-item:target .accordion-link .ion-md-add{
-    display: none;
-}
-
-
-/* 
-.accordion-button{
-    display: block;
-    cursor: pointer;
-    padding: 1em;
-    width: 100%;
-    border: none;
-    background-color: rgb(255, 255, 255);
-    border-top: 0.7em ridge rgba(112, 220, 50, 0.6);
-    border-bottom: 0.7em ridge rgba(112, 220, 50, 0.6);
-    text-align: left;
-    outline: none;
-    font-size: 1em;
-    transition: 0.4s;
-}
-
-.active, .accordion-button:hover {
-  background-color: rgb(243, 243, 243);
-}
-
-
-.accordion-button:after {
-  content: '\002B';
-  color: #777;
-  font-weight: bold;
-  float: right;
-  margin-left: 5px;
-  
-}
-
-.active:after {
-  content: "\2212";
-}
-
-.panel{
-  padding: 0 18px;
-  background-color: white;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.2s ease-out;
-} */
 
 .wrap {
-    
     width: 100%;
     margin: 0 auto;
     text-align: center;
@@ -335,40 +118,31 @@ section{
     background: linear-gradient(30deg, #adf175 50%, #FFF 50%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-}    
+}   
 
-/*FOOTER*/
-footer{
-  width: 100%;
-  height: 100%;
-  background-image: url(../img/veggie_banner.jpg);
-  text-align: left;
-  padding-bottom: 1em;
-  background-size: 100%;
-  
-  
+details{
+    box-shadow: 0.5rem 2px 0.5rem rgb(0 0 0 / 10%);
+    border-radius: 1em;
+    padding: 1em;
+    margin-top: 2em;
+    cursor: pointer;
 }
 
-.footer-container{
-  padding-left: 1em;
-  width: fit-content;
-  text-align: center;
+details>summary{
+    font-size: 1.3rem;
 }
 
-footer h1 {
-  color: white;
-}
 
-footer p {
-  color: white;
-  margin: 0;
+details>p{
+    margin-top: 1.5em;
+    cursor:default;
 }
-/*footer*/
+ 
 
-@media screen and (min-width:600px) {
+@media screen and (min-width:450px) {
     
     .container{
-       height: 900px;
+       height: 90%;
        overflow:hidden;
    }
     
@@ -388,13 +162,15 @@ footer p {
 
     .description-ul{
        grid-column: 2/3;
+       display: flex;
+       gap: 1em;
+       flex-direction: column;
        background-color: whitesmoke;
        padding: 3em 1em 2em 1em;
     }
 
     .content1{
         padding: 0;
-       
     }
     
     .unofficial-logo{
@@ -403,13 +179,16 @@ footer p {
         grid-column: 2 / 3; 
     }
 
-    .accordion-button{
-        margin-top: 2em;
-    }
     
     .wrap{
-        position: absolute;
-        
+        position: absolute; 
     }
+
+    .form{
+      display: flex;
+      flex-direction: column;
+    }
+
+
 }
 

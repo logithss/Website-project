@@ -6,51 +6,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--Change TITLE-->
-    <title>ITEM</title><!--CHNAGE-->
+    <title>ITEM</title>
+    <!--CHNAGE-->
     <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet" />
     <!--CSS-->
     <link rel="stylesheet" href="../resources/stylesheet/productDescriptionStyle.css">
-    <!--ICONS-->
-    <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
 
-    <!-- link for HEADER icons -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <!-- JS for header/footer -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        $(function () {
+            $('#header').load('header.html');
+            $('#footer').load('footer.html');
+        });
+    </script>
 </head>
 
 <body>
 
-    <header class="header">
-    <!-- Using nav we will create the logo using img tag -->
-    <nav class="nav-bar">
-        <h1>Homey Market</h1>
+    <!-- HEADER -->
+    <div id="header"></div>
 
-        <a href="#" class="logo-link"><a href="./index.html"><img class="logo" src="../resources/img/logo.png" alt="Logo" /></a>
-        </a>
-
-        <!-- Then we use nav to create links, and create a list of them  -->
-        <div class="nav-links">
-            <ul class="nav-links-ul">
-                <li>
-                    <a href="./index.html">HOME</a>
-                </li>
-                <li>
-                    <a href="./index.html">AISLES</a>
-                </li>
-                <li>
-                    <a href="./login.html">LOG IN</a>
-                </li>
-                <li>
-                    <a href="./signup.html">SIGN UP</a>
-                </li>
-                <li>
-                    <a href="./shoppingcart.html">
-                        <img class="cart" src="../resources/img/cart.png" alt="cart" /></a>
-                </li>
-            </ul>
-        </div>
-        <i class="fa fa-bars"></i>
-    </nav>
-</header>
     <main>
         <div class="container">
             <div class="content1">
@@ -67,8 +44,9 @@
                             <h1 id="top">Product Name</h1>
                             <!--CHNAGE-->
                         </li>
-                        <li>
-                            <h3>Price/Details</h3>
+                        <li class="price-details">
+                            <span id="unit-price">4.99</span>$ /
+                            <span>Details</span>
                             <!--CHNAGE-->
                         </li>
                         <li>
@@ -77,41 +55,30 @@
                         <li>
                             <form action="" class="form">
                                 <div class="quantity-control">
-                                    <input class="minus-button" type="button" value="-">
-                                    <input class="quantity" type="number" name="quantity" id="quantity" value="1">
-                                    <input class="plus-button" type="button" value="+">
+                                    <input class="minus-button" type="button" value="-" id="minus-button">
+                                    <input class="quantity" type="number" name="quantity" id="quantity" min="1"
+                                    value="1">
+                                    <input class="plus-button" type="button" value="+" id="plus-button">
                                 </div>
 
-                                <input class="add-button" type="button" value="ADD">
+                                <input class="add-button" type="button" value="ADD" id="add-button">
                                 <br>
                                 <div class="price">
-                                    <span><b>$30.00</b></span>
+                                    <span class="total-ptice-label">
+                                        <b>$<span id="total-price"></span></b>
+                                    </span>
                                     <!--calculator needed-->
                                 </div>
                                 <br>
 
-                                <section>
-                                    <div class="accordion-container">
-                                        <div class="accordion">
-                                            <div class="accordion-item" id="accordion-item">
-                                                <a class="accordion-link" href="#accordion-item">
-                                                    Product Description
-                                                    <i class="icon ion-md-add"></i>
-                                                    <i class="icon ion-md-remove"></i>
-                                                </a>
-                                                <div class="description">
-                                                    <p>
-                                                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate, cumque. Cum sunt fugiat beatae quos illum est
-                                                        dignissimos nam ratione molestias! Accusamus asperiores a quia error illo blanditiis molestiae quam.
-                                                        <br><br>
-                                                        <a href="#top">Close Description</a>
-                                                    </p>
-                                                    
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </section>
+                                <details>
+                                    <summary>Product Description</summary>
+                                    <p class="description-text">
+                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti cumque atque
+                                        ipsum enim architecto mollitia, quod odit ipsam, labore quam quidem dolores
+                                        quis, tenetur soluta. Assumenda tenetur eum sunt nobis.
+                                    </p>
+                                </details>
                             </form>
                         </li>
                     </ul>
@@ -125,18 +92,10 @@
 
 
 
-    <footer>
-        <div class="footer-container">
-            <h1>Contact Information</h1>
-            <a href="./BackStore.html">Back Store</a>
-            <p>
-                email: HomeyMarket@Info.ca <br />
-                Adress: 60211 Valley Street <br />
-                Join our team! Call us at 1-888-490-3404
-            </p>
-        </div>
-    </footer>
+    <!-- FOOTER -->
+    <div id="footer"></div>
 
+    <script src="../JS/productDescription.js"></script>
 </body>
 
 </html>

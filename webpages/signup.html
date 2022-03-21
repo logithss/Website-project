@@ -1,108 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SIGN UP</title>
-    <link rel="stylesheet" href="../resources/stylesheet/header-footer.css">
-    <!--FONT-->
-    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="../resources/stylesheet/signupStyle.css">
-    <!-- link for HEADER icons -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-    
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SIGN UP</title>
+        
+        <!--FONT-->
+        <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet" />
 
-<body>
-<header class="header">
-    <!-- Using nav we will create the logo using img tag -->
-    <nav class="nav-bar">
-        <h1>Homey Market</h1>
+        <!-- CSS -->
+        <link rel="stylesheet" href="../resources/stylesheet/signupStyle.css">
 
-        <a href="#" class="logo-link"><a href="./index.html"><img class="logo" src="../resources/img/logo.png" alt="Logo" /></a>
-        </a>
+        <!-- JS for header/footer -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <script>
+            $(function () {
+                $('#header').load('header.html');
+                $('#footer').load('footer.html');
+            });
+        </script>
+    </head>
 
-        <!-- Then we use nav to create links, and create a list of them  -->
-        <div class="nav-links">
-            <ul class="nav-links-ul">
-                <li>
-                    <a href="./index.html">HOME</a>
-                </li>
-                <li>
-                    <a href="./index.html">AISLES</a>
-                </li>
-                <li>
-                    <a href="./login.html">LOG IN</a>
-                </li>
-                <li>
-                    <a href="./signup.html">SIGN UP</a>
-                </li>
-                <li>
-                    <a href="./shoppingcart.html">
-                        <img class="cart" src="../resources/img/cart.png" alt="cart" /></a>
-                </li>
-            </ul>
-        </div>
-        <i class="fa fa-bars"></i>
-    </nav>
-</header>
-    <main>
-        <form action="#" class="form">
-            <div class="signup-text">
-                <img class="homey-logo" src="../resources/img/logo_simplified.png" alt="aroma simplified logo" width="100px">
-                <p>
-                    <b>Create a Homey Market&#8482; ID</b><br>
-                    Sign up to support your local Homey Market
-                </p>
-            </div>
+    <body>
+        <!-- HEADER -->
+        <div id="header"></div>
+        
+        <!-- CONTENT -->
+        <main>
+            <form action="#" class="form">
+                <div class="signup-text">
+                    <img class="homey-logo" src="../resources/img/logo_simplified.png" alt="aroma simplified logo" width="100px">
+                    <p>
+                        <b>Create a Homey Market&#8482; ID</b><br>
+                        Sign up to support your local Homey Market
+                    </p>
+                </div>
 
-            <div class="form-item first-name">
-                <input type="text" class="form-input" placeholder="First Name" aria-label="first name">
-            </div>
+                <div class="form-item first-name">
+                    <input type="text" class="form-input complete-name" placeholder="First Name" id="first-name" required>
+                </div>
 
-            <div class="form-item last-name">
-                <input type="text" class="form-input" placeholder="Last Name" aria-label="last name">
-            </div>
+                <div class="form-item last-name">
+                    <input type="text" class="form-input complete-name" placeholder="Last Name" id="last-name" required>
+                </div>
 
-            <div class="form-item mail">
-                <input type="email" class="form-input" placeholder="example@gmail.com" aria-label="email">
-            </div>
+                <div class="form-item mail">
+                    <input type="email" class="form-input" placeholder="example@gmail.com" id="email" required>
+                </div>
 
-            <div class="form-item zip-code">
-                <input type="text" class="form-input" placeholder="Zip Code" aria-label="zip code">
-            </div>
+                <div class="form-item zip-code">
+                    <input type="text" class="form-input" placeholder="Zip Code" id="zip-code" required>
+                </div>
 
-            <div class="form-item password">
-                <input type="password" class="form-input" placeholder="Password" aria-label="password">
-            </div>
+                <div class="form-item password">
+                    <input type="password" class="form-input" placeholder="Password" id="password" required>
+                </div>
 
-            <div class="form-item confirm-password">
-                <input type="password" class="form-input" placeholder="Confirm Password" aria-label="password">
-            </div>
+                <div class="form-item confirm-password">
+                    <input type="password" class="form-input" placeholder="Confirm Password" id="confirm-password" required>
+                </div>
 
-            <input type="submit" value="SIGN UP" class="signup-button">
-            <input type="reset" value="RESET" class="reset-button">
-        </form>
+                <input type="submit" value="SIGN UP" class="signup-button" id="signup">
+                <input type="reset" value="RESET" class="reset-button">
+            </form>
 
-    </main>
+        </main>
 
+        <!-- FOOTER -->
+        <div id="footer"></div>
 
-
-
-
-    <footer>
-        <div class="footer-container">
-            <h1>Contact Information</h1>
-            <a href="./BackStore.html">Back Store</a>
-            <p>
-                email: HomeyMarket@Info.ca <br />
-                Adress: 60211 Valley Street <br />
-                Join our team! Call us at 1-888-490-3404
-            </p>
-        </div>
-    </footer>
-</body>
+        <script src="../JS/signup.js"></script>
+    </body>
 
 </html>

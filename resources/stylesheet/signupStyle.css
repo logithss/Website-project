@@ -7,111 +7,8 @@ body{
     padding: 0;
     font-family: "Nunito", sans-serif;
     box-sizing: border-box;
-    
+    min-width: 375px;
 }
-
-/* HEADER */
-
-.header {
-  height: 180px;
-  width: 100%;
-  min-height: 10vh;
-  /* progressive background color */
-  background-color: rgb(9, 51, 13);
-  background-position: center;
-  background-size: cover;
-  position: relative;
-}
-
-.header h1 {
-  padding-top: 20px;
-  font-size: 30px;
-  color: white;
-}
-
-/* Now design the nav bar  */
-.nav-bar {
-  display: flex;
-  padding: 25px 2% 0 2%;
-  justify-content:space-between;
-  align-items: center;
-}
-
-/* Now access the image in nav */
-.logo {
-  width: 75px;
-  padding-top: 20px;
-}
-
-.cart {
-  width: 40px;
-}
-
-.nav-links {
-  flex: 1;
-  text-align: right;
-}
-
-.nav-links-ul li {
-  list-style: none;
-  display: inline-block;
-  padding: 2px 12px;
-  position: relative;
-}
-
-.nav-links-ul li a{
-  color: white;
-  text-decoration: none;
-  font-size: 20px;
-}
-
-/* Add the bar under the menu hide it with 0% width */
-.nav-links-ul li::after {
-  content: "";
-  width: 0%;
-  height: 2px;
-  background: white;
-  display: block;
-  margin: auto;
-  transition: 0.7s;
-}
-
-/* Then when you hover, it will have 100% width */
-.nav-links ul li:hover::after {
-  width: 100%;
-}
-
-/* Menu bar */
-.nav-bar .fa {
-  display: none;
-}
-
-@media (max-width: 800px) {
-  .header h1 {
-    display: none;
-  }
-
-  .nav-bar .fa {
-    display: none;
-  }
-}
-
-@media (max-width: 600px) {
-  .nav-links {
-    display: none;
-  }
-
-  .nav-bar .fa {
-    display: block;
-    color: white;
-    margin: 30px;
-    font-size: 40px;
-    cursor: pointer;
-  }
-}
-
-
-
 
 /* BODY */
 
@@ -217,6 +114,7 @@ footer{
 
 .footer-container{
   width: 100%;
+  height: fit-content;
   padding: 0;
   font-size: large;
   text-align: center;
