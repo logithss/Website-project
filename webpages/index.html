@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Homey Market</title>
+    <link rel="stylesheet" href="../resources/stylesheet/style_FrontPage.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Link for font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito&display=swap"
+      rel="stylesheet"
+    />
+    <!-- link for icons -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body id="body">
+    <!-- Header Section -->
+    <section class="header">
+      <!-- Using nav we will create the logo using img tag -->
+      <nav>
+        <h1>Homey Market</h1>
+        <a href="index.html"
+          ><img src="../resources/img/logo.png" alt="Logo" /> </a
+        >.
+
+        <!-- Then we use nav to create links, and create a list of them  -->
+        <div class="nav-links" id="navLinks">
+          <i class="fa fa-window-close" onclick="hideMenu()"></i>
+          <ul>
+            <li>
+              <a href="./index.html">HOME</a>
+            </li>
+            <li>
+              <a href="#aisle">AISLES</a>
+            </li>
+            <li>
+              <a href="./login.html">LOG IN</a>
+            </li>
+            <li>
+              <a href="./signup.html">SIGN UP</a>
+            </li>
+            <li>
+              <a href="./shoppingcart.html">
+                <img class="cart" src="../resources/img/cart.png" alt="cart"
+              /></a>
+            </li>
+          </ul>
+        </div>
+        <i class="fa fa-bars" onclick="showMenu()"></i>
+      </nav>
+
+      <div class="text-box">
+        <h1>The Homey Market</h1>
+        <p>
+          Feels just like a second home. Fresh and healthy options along with
+          some treats, Homey Market has all that you need.
+        </p>
+      </div>
+    </section>
+
+    <!-- Aisles Section -->
+
+    <section class="aisle" id="aisle">
+      <h1>Choose an aisle</h1>
+      <div class="row-aisle">
+        <div class="aisle-col">
+          <h3>BAKERIES</h3>
+          <div class="aisle-img">
+            <a href="aisles_bakery.html"
+              ><img src="../resources/img/bake.png" alt="bakeries"
+            /></a>
+          </div>
+        </div>
+
+        <div class="aisle-col">
+          <h3>MEAT</h3>
+          <div class="aisle-img">
+            <a href="aisles_meat.html"
+              ><img src="../resources/img/meat.png" alt="meat"
+            /></a>
+          </div>
+        </div>
+        <div class="aisle-col">
+          <h3>SNACKS</h3>
+          <div class="aisle-img">
+            <a href="aisles_snack.html"
+              ><img src="../resources/img/snacks.png" alt="snacks"
+            /></a>
+          </div>
+        </div>
+        <div class="aisle-col">
+          <h3>VEGETABLES</h3>
+          <div class="aisle-img">
+            <a href="aisles_vegetables.html"
+              ><img src="../resources/img/veg.png" alt="vegetables"
+            /></a>
+          </div>
+        </div>
+        <div class="aisle-col">
+          <h3>FRUITS</h3>
+          <div class="aisle-img">
+            <a href="aisles_fruits.html">
+              <img src="../resources/img/fruits.png" alt="fruits"
+            /></a>
+          </div>
+        </div>
+        <div class="aisle-col">
+          <h3>DAIRY</h3>
+          <div class="aisle-img">
+            <a href="aisles_dairy.html"
+              ><img src="../resources/img/dairy.png" alt="dairies"
+            /></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SALES SECTION -->
+
+    <section class="sales">
+      <h1>Current Sales</h1>
+      <p>Best prices all around town ! Visit aisles for referenced products.</p>
+
+      <div class="row">
+        <div class="product-col">
+          <h3>Chicken Breast</h3>
+          <div class="img">
+            <img src="../resources/img/chickenbreast.png" alt="ChickenBreast" />
+          </div>
+          <p>10% OFF</p>
+        </div>
+
+        <div class="product-col">
+          <h3>Popcorn</h3>
+
+          <div class="img">
+            <img src="../resources/img/popcorn.png" alt="Popcorn" />
+          </div>
+
+          <p>20% OFF</p>
+        </div>
+
+        <div class="product-col">
+          <h3>Milk</h3>
+
+          <div class="img">
+            <img src="../resources/img/milk.png" alt="Milk" />
+          </div>
+
+          <p>30% OFF</p>
+        </div>
+
+        <div class="product-col">
+          <h3>Eggs</h3>
+
+          <div class="img">
+            <img src="../resources/img/eggs.png" alt="Eggs" />
+          </div>
+
+          <p>20% OFF</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ****************** Footer ****************** -->
+    <footer>
+      <div class="footer-container">
+        <h1>Contact Information</h1>
+        <p>
+          email: HomeyMarket@Info.ca <br />
+          Adress: 60211 Valley Street <br />
+          Join our team! Call us at 1-888-490-3404
+        </p>
+        <a href="./BackStore.html">Back Store</a>
+      </div>
+    </footer>
+
+    <!-- Javascript for menu  -->
+
+    <script>
+      // Create variables
+      var navLinks = document.getElementById("navLinks");
+      var body = document.getElementById("body");
+
+      function showMenu() {
+        navLinks.style.right = "0";
+        body.style.position = "fixed";
+      }
+      function hideMenu() {
+        navLinks.style.right = "-200px";
+        body.style.position = "absolute";
+      }
+    </script>
+  </body>
+</html>
