@@ -30,7 +30,7 @@
         
         <!-- CONTENT -->
         <main>
-            <form action="#" class="form">
+            <form action="signup.php" method="post" class="form">
                 <div class="signup-text">
                     <img class="homey-logo" src="../resources/img/logo_simplified.png" alt="aroma simplified logo" width="100px">
                     <p>
@@ -40,27 +40,27 @@
                 </div>
 
                 <div class="form-item first-name">
-                    <input type="text" class="form-input complete-name" placeholder="First Name" id="first-name" required>
+                    <input type="text" class="form-input complete-name" placeholder="First Name" id="first-name" name="firstName" required>
                 </div>
 
                 <div class="form-item last-name">
-                    <input type="text" class="form-input complete-name" placeholder="Last Name" id="last-name" required>
+                    <input type="text" class="form-input complete-name" placeholder="Last Name" id="last-name" name="lastName" required>
                 </div>
 
                 <div class="form-item mail">
-                    <input type="email" class="form-input" placeholder="example@gmail.com" id="email" required>
+                    <input type="email" class="form-input" placeholder="example@gmail.com" id="email" name="email" required>
                 </div>
 
                 <div class="form-item zip-code">
-                    <input type="text" class="form-input" placeholder="Zip Code" id="zip-code" required>
+                    <input type="text" class="form-input" placeholder="Zip Code" id="zip-code" name="zipCode" required>
                 </div>
 
                 <div class="form-item password">
-                    <input type="password" class="form-input" placeholder="Password" id="password" required>
+                    <input type="password" class="form-input" placeholder="Password" id="password" name="password" required>
                 </div>
 
                 <div class="form-item confirm-password">
-                    <input type="password" class="form-input" placeholder="Confirm Password" id="confirm-password" required>
+                    <input type="password" class="form-input" placeholder="Confirm Password" id="confirm-password" name="confirmPassword" required>
                 </div>
 
                 <input type="submit" value="SIGN UP" class="signup-button" id="signup">
@@ -73,6 +73,18 @@
         <div id="footer"></div>
 
         <script src="../JS/signup.js"></script>
+
+        <?php
+           
+            if(isset($_POST["firstName"])&&isset($_POST["lastName"])
+            &&isset($_POST["email"])&&isset($_POST["zipCode"])
+            &&isset($_POST["password"])&&isset($_POST["confirmPassword"])){
+                
+                
+            }
+            
+           
+        ?>
     </body>
 
 </html>
