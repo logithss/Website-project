@@ -74,6 +74,44 @@
 
         <script src="../JS/signup.js"></script>
 
+            <?php
+
+                function inputSet(){
+                    return  isset($_POST["firstName"])&&isset($_POST["lastName"])
+                            &&isset($_POST["email"])&&isset($_POST["zipCode"])
+                            &&isset($_POST["password"])&&isset($_POST["confirmPassword"]);
+                }
+            
+                if(inputSet()){
+                    if(isset($_REQUEST["submit"])){
+                        $xml  = new DOMDocument("1.0","UTF-8");
+                        $xml->load("users.xml");
+
+                        $rootTag = $xml->getElementsByTagName("document")->item(0);
+
+                        $dataTag = $xml->createElement("users");
+
+                        $fNameTag = $xml->createElement("firstName",$_REQUEST['firstName']);
+                        $lNameTag = $xml->createElement("lastName",$_REQUEST['lastName']);
+                        $emailTag = $xml->createElement("email",$_REQUEST['email']);
+                        $zipCodeTag = $xml->createElement("zipCode",$_REQUEST['zipCode']);
+                        $passwordTag = $xml->createElement("password",$_REQUEST['password']);
+
+                        
+                        $dataTag->appendChild($fNameTag);
+                        $dataTag->appendChild($lNameTag);
+                        $dataTag->appendChild($emailTag);
+                        $dataTag->appendChild($zipCodeTag);
+                        $dataTag->appendChild($passwordTag);
+
+                        $rootTag->appendChild($dataTag);
+
+                        $xml->save("users.xml");
+                    }
+                }
+               
+            ?>
+
     </body>
 
 </html>
