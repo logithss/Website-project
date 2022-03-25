@@ -74,17 +74,6 @@
 
         <script src="../JS/signup.js"></script>
 
-        <?php
-           
-            if(isset($_POST["firstName"])&&isset($_POST["lastName"])
-            &&isset($_POST["email"])&&isset($_POST["zipCode"])
-            &&isset($_POST["password"])&&isset($_POST["confirmPassword"])){
-                
-                
-            }
-            
-           
-        ?>
     </body>
 
 </html>
