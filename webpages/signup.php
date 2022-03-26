@@ -22,6 +22,8 @@
                 $('#footer').load('footer.html');
             });
         </script>
+        
+        
     </head>
 
     <body>
@@ -66,7 +68,7 @@
                 <input type="submit" value="SIGN UP" class="signup-button" id="signup" name = "submit">
                 <input type="reset" value="RESET" class="reset-button">
             </form>
-
+            
         </main>
 
         <!-- FOOTER -->
@@ -96,18 +98,18 @@
                         "password" => $_POST['password']
                     );
                     
-                    if(filesize("users.json") == 0){
+                    if(filesize("../JSON/users.json") == 0){
                         $first_record = array($new_message);
                         $data_to_save = $first_record;
                     }else{
-                        $old_records = json_decode(file_get_contents("users.json"));
+                        $old_records = json_decode(file_get_contents("../JSON/users.json"));
                         array_push($old_records, $new_message);
                         $data_to_save = $old_records;
                     }
                     
                     $encoded_data = json_encode($data_to_save, JSON_PRETTY_PRINT);
                     
-                    if(!file_put_contents("users.json", $encoded_data, LOCK_EX)){
+                    if(!file_put_contents("../JSON/users.json", $encoded_data, LOCK_EX)){
                         echo '<script>alert("signup ERROR")</script>';
                     }else{
                         echo '<script>alert("signup SUCCESS")</script>';
