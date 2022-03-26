@@ -74,81 +74,81 @@
 
         <script src="../JS/signup.js"></script>
 
-            <?php
+        <?php
 
-                function inputSet(){
-                    return  isset($_POST["firstName"])&&isset($_POST["lastName"])
-                            &&isset($_POST["email"])&&isset($_POST["zipCode"])
-                            &&isset($_POST["password"])&&isset($_POST["confirmPassword"]);
-                }
-            
-                if(inputSet()){
-                    if($_POST["password"]==$_POST["confirmPassword"]){
-                        echo '<script>alert("ok")</script>';
-                        
-                        if(isset($_POST['submit'])){
-   
-                        $new_message = array(
-                            "firstName" => $_POST['firstName'],
-                            "lastName" => $_POST['lastName'],
-                            "email" => $_POST['email'],
-                            "zipCode" => $_POST['zipCode'],
-                            "password" => $_POST['password']
-                        );
-                        
-                        if(filesize("users.json") == 0){
-                            $first_record = array($new_message);
-                            $data_to_save = $first_record;
-                        }else{
-                            $old_records = json_decode(file_get_contents("users.json"));
-                            array_push($old_records, $new_message);
-                            $data_to_save = $old_records;
-                        }
-                        
-                        $encoded_data = json_encode($data_to_save, JSON_PRETTY_PRINT);
-                        
-                        if(!file_put_contents("users.json", $encoded_data, LOCK_EX)){
-                            echo '<script>alert("signup ERROR")</script>';
-                        }else{
-                            echo '<script>alert("signup SUCCESS")</script>';
-                            }
-                        }
-                        
+            function inputSet(){
+                return  isset($_POST["firstName"])&&isset($_POST["lastName"])
+                        &&isset($_POST["email"])&&isset($_POST["zipCode"])
+                        &&isset($_POST["password"])&&isset($_POST["confirmPassword"]);
+            }
+        
+            if(inputSet()){
+                if($_POST["password"]==$_POST["confirmPassword"]){
+                    echo '<script>alert("ok")</script>';
+                    
+                    if(isset($_POST['submit'])){
 
+                    $new_message = array(
+                        "firstName" => $_POST['firstName'],
+                        "lastName" => $_POST['lastName'],
+                        "email" => $_POST['email'],
+                        "zipCode" => $_POST['zipCode'],
+                        "password" => $_POST['password']
+                    );
+                    
+                    if(filesize("users.json") == 0){
+                        $first_record = array($new_message);
+                        $data_to_save = $first_record;
                     }else{
-                        echo '<script>alert("Passwords Not Matching")</script>';
+                        $old_records = json_decode(file_get_contents("users.json"));
+                        array_push($old_records, $new_message);
+                        $data_to_save = $old_records;
                     }
-
-                    /*
-                    if(isset($_REQUEST["submit"])){
-                        $xml  = new DOMDocument("1.0","UTF-8");
-                        $xml->load("users.xml");
-
-                        $rootTag = $xml->getElementsByTagName("document")->item(0);
-
-                        $dataTag = $xml->createElement("users");
-
-                        $fNameTag = $xml->createElement("firstName",$_REQUEST['firstName']);
-                        $lNameTag = $xml->createElement("lastName",$_REQUEST['lastName']);
-                        $emailTag = $xml->createElement("email",$_REQUEST['email']);
-                        $zipCodeTag = $xml->createElement("zipCode",$_REQUEST['zipCode']);
-                        $passwordTag = $xml->createElement("password",$_REQUEST['password']);
-
-                        
-                        $dataTag->appendChild($fNameTag);
-                        $dataTag->appendChild($lNameTag);
-                        $dataTag->appendChild($emailTag);
-                        $dataTag->appendChild($zipCodeTag);
-                        $dataTag->appendChild($passwordTag);
-
-                        $rootTag->appendChild($dataTag);
-
-                        $xml->save("users.xml");
+                    
+                    $encoded_data = json_encode($data_to_save, JSON_PRETTY_PRINT);
+                    
+                    if(!file_put_contents("users.json", $encoded_data, LOCK_EX)){
+                        echo '<script>alert("signup ERROR")</script>';
+                    }else{
+                        echo '<script>alert("signup SUCCESS")</script>';
+                        }
                     }
-                    */
+                    
+
+                }else{
+                    echo '<script>alert("Passwords Not Matching")</script>';
                 }
-               
-            ?>
+
+                /*
+                if(isset($_REQUEST["submit"])){
+                    $xml  = new DOMDocument("1.0","UTF-8");
+                    $xml->load("users.xml");
+
+                    $rootTag = $xml->getElementsByTagName("document")->item(0);
+
+                    $dataTag = $xml->createElement("users");
+
+                    $fNameTag = $xml->createElement("firstName",$_REQUEST['firstName']);
+                    $lNameTag = $xml->createElement("lastName",$_REQUEST['lastName']);
+                    $emailTag = $xml->createElement("email",$_REQUEST['email']);
+                    $zipCodeTag = $xml->createElement("zipCode",$_REQUEST['zipCode']);
+                    $passwordTag = $xml->createElement("password",$_REQUEST['password']);
+
+                    
+                    $dataTag->appendChild($fNameTag);
+                    $dataTag->appendChild($lNameTag);
+                    $dataTag->appendChild($emailTag);
+                    $dataTag->appendChild($zipCodeTag);
+                    $dataTag->appendChild($passwordTag);
+
+                    $rootTag->appendChild($dataTag);
+
+                    $xml->save("users.xml");
+                }
+                */
+            }
+            
+        ?>
 
     </body>
 
