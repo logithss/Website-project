@@ -53,7 +53,7 @@
                             <p>Quantity:</p>
                         </li>
                         <li>
-                            <form action="" class="form">
+                            <form action="productDescription.php" method="post" class="form">
                                 <div class="quantity-control">
                                     <input class="minus-button" type="button" value="-" id="minus-button">
                                     <input class="quantity" type="number" name="quantity" id="quantity" min="1"
@@ -61,7 +61,7 @@
                                     <input class="plus-button" type="button" value="+" id="plus-button">
                                 </div>
 
-                                <input class="add-button" type="button" value="ADD" id="add-button">
+                                <input class="add-button" type="submit" value="ADD" id="add-button" name="add">
                                 <br>
                                 <div class="price">
                                     <span class="total-ptice-label">
@@ -96,6 +96,20 @@
     <div id="footer"></div>
 
     <script src="../JS/productDescription.js"></script>
+
+    <?php
+        function inputSet(){
+            return  isset($_POST['quantity']);
+        }
+
+        if(inputSet()){
+            if(isset($_POST['add'])&&($_POST['quantity']>0)){
+                //add to cart()
+            }else{
+                echo '<script>alert("Put a valid quantity")</script>';
+            }
+        }
+    ?>
 </body>
 
 </html>
