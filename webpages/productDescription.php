@@ -53,6 +53,7 @@
                             <p>Quantity:</p>
                         </li>
                         <li>
+                            <!-- change php action -->
                             <form action="productDescription.php" method="post" class="form">
                                 <div class="quantity-control">
                                     <input class="minus-button" type="button" value="-" id="minus-button">
@@ -67,7 +68,6 @@
                                     <span class="total-ptice-label">
                                         <b>$<span id="total-price"></span></b>
                                     </span>
-                                    <!--calculator needed-->
                                 </div>
                                 <br>
 
@@ -103,7 +103,11 @@
         }
 
         if(inputSet()){
-            if(isset($_POST['add'])&&($_POST['quantity']>0)){
+            $quantity = $_POST['quantity'];
+            if(isset($_POST['add'])&&($quantity>0)){
+                //$productName=$_POST[''];
+                //$productImg=$_POST[''];
+            
                 //add to cart()
             }else{
                 echo '<script>alert("Put a valid quantity")</script>';
