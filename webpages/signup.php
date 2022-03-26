@@ -63,7 +63,7 @@
                     <input type="password" class="form-input" placeholder="Confirm Password" id="confirm-password" name="confirmPassword" required>
                 </div>
 
-                <input type="submit" value="SIGN UP" class="signup-button" id="signup">
+                <input type="submit" value="SIGN UP" class="signup-button" id="signup" name = "submit">
                 <input type="reset" value="RESET" class="reset-button">
             </form>
 
