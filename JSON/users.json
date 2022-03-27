@@ -1,9 +1,10 @@
 [
     {
+        "userID": 0,
         "firstName": "Admin",
         "lastName": "Admin",
         "email": "admin@gmail.com",
         "zipCode": "H3R4T1",
-        "password": "123"
+        "password": "Admin"
     }
 ]

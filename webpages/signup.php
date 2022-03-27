@@ -77,7 +77,11 @@
         <script src="../JS/signup.js"></script>
 
         <?php
-
+            /*
+            check mail doesnt repeat
+            resubmit->data unset
+            auto login
+            */
             function inputSet(){
                 return  isset($_POST["firstName"])&&isset($_POST["lastName"])
                         &&isset($_POST["email"])&&isset($_POST["zipCode"])
@@ -89,8 +93,9 @@
                     echo '<script>alert("ok")</script>';
                     
                     if(isset($_POST['submit'])){
-
+                        
                     $new_message = array(
+                        "userId" => rand(),
                         "firstName" => $_POST['firstName'],
                         "lastName" => $_POST['lastName'],
                         "email" => $_POST['email'],
