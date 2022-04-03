@@ -7,6 +7,12 @@
   font-family: "Nunito", sans-serif;
 }
 
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 .header {
   height: 180px;
   width: 100%;
