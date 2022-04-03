@@ -49,15 +49,16 @@ quantityInput.addEventListener('input', function () {
     */
 });
 
+
 //storing ang getting when reload
 window.onbeforeunload = function () {
-    localStorage.setItem("quantityInput", quantityInput.value);
-    localStorage.setItem("totalPrice", totalPrice.innerHTML);
+    localStorage.setItem(("quantityInput" + document.title), quantityInput.value);
+    localStorage.setItem("totalPrice" + document.title, totalPrice.innerHTML);
 }
 
 window.onload = function () {
-    quantityInput.value = localStorage.getItem("quantityInput");
-    totalPrice.innerHTML = localStorage.getItem("totalPrice");
+    quantityInput.value = localStorage.getItem("quantityInput" + document.title);
+    totalPrice.innerHTML = localStorage.getItem("totalPrice" + document.title);
 }
 
 /*

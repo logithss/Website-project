@@ -106,7 +106,7 @@
             $quantity = $_POST['quantity'];
             if(isset($_POST['add'])&&($quantity>0)){
                 //$productName=$_POST[''];
-                //$productImg=$_POST[''];
+                //$productImg=$_POST['']; use GET
             
                 //add to cart()
             }else{
