@@ -1,0 +1,407 @@
+[
+  {
+    "productID": 0,
+    "productName": "Apple",
+    "quantity": 100,
+    "aisle": "fruit",
+    "price": 1.12,
+    "sale_prc": 0,
+    "description": "Description example",
+    "img_path": "../resources/img/products/apple.png"
+  },
+  {
+    "productID": 1,
+    "productName": "Orange",
+    "quantity": 100,
+    "aisle": "fruit",
+    "price": 1.06,
+    "sale_prc": 0,
+    "description": "Description example",
+    "img_path": "../resources/img/products/orange.png"
+  },
+  {
+    "productID": 2,
+    "productName": "Avocado",
+    "quantity": 100,
+    "aisle": "fruit",
+    "price": 1.23,
+    "sale_prc": 0,
+    "description": "Description example",
+    "img_path": "../resources/img/products/avocado.png"
+  },
+  {
+    "productID": 3,
+    "productName": "Banana",
+    "quantity": 100,
+    "aisle": "fruit",
+    "price": 2.08,
+    "sale_prc": 0,
+    "description": "Description example",
+    "img_path": "../resources/img/products/banana.png"
+  },
+  {
+    "productID": 4,
+    "productName": "Grapes",
+    "quantity": 100,
+    "aisle": "fruit",
+    "price": 2.10,
+    "sale_prc": 0,
+    "description": "Description example",
+    "img_path": "../resources/img/products/grapes.png"
+  },
+  {
+    "productID": 5,
+    "productName": "Lime",
+    "quantity": 100,
+    "aisle": "fruit",
+    "price": 1.45,
+    "sale_prc": 0,
+    "description": "Description example",
+    "img_path": "../resources/img/products/lime.png"
+  },
+  {
+    "productID": 6,
+    "productName": "Strawberries",
+    "quantity": 100,
+    "aisle": "fruit",
+    "price": 1.42,
+    "sale_prc": 0,
+    "description": "Description example",
+    "img_path": "../resources/img/products/strawberry.png"
+  },
+
+
+
+  {
+    "productID": 6,
+    "productName": "Onion",
+    "quantity": 100,
+    "aisle": "vegetable",
+    "price": 0.90,
+    "sale_prc": 0,
+    "description": "Description example",
+    "img_path": "../resources/img/products/onion.png"
+  },
+  {
+    "productID": 6,
+    "productName": "Carrot",
+    "quantity": 100,
+    "aisle": "vegetable",
+    "price": 1.05,
+    "sale_prc": 0,
+    "description": "Description example",
+    "img_path": "../resources/img/products/carrot.png"
+  },
+  {
+    "productID": 6,
+    "productName": "Cauliflower",
+    "quantity": 100,
+    "aisle": "vegetable",
+    "price": 1.13,
+    "sale_prc": 0,
+    "description": "Description example",
+    "img_path": "../resources/img/products/cauliflower.png"
+  },
+  {
+    "productID": 6,
+    "productName": "Broccoli",
+    "quantity": 100,
+    "aisle": "vegetable",
+    "price": 1.24,
+    "sale_prc": 0,
+    "description": "Description example",
+    "img_path": "../resources/img/products/cauliflower.png"
+  },
+  {
+    "productID": 6,
+    "productName": "Garlic",
+    "quantity": 100,
+    "aisle": "vegetable",
+    "price": 1.04,
+    "sale_prc": 0,
+    "description": "Description example",
+    "img_path": "../resources/img/products/garlic.png"
+  },
+  {
+  "productID": 6,
+  "productName": "Lettuce",
+  "quantity": 100,
+  "aisle": "vegetable",
+  "price": 1.16,
+  "sale_prc": 0,
+  "description": "Description example",
+  "img_path": "../resources/img/products/garlic.png"
+  },
+  {
+    "productID": 6,
+    "productName": "Tomato",
+    "quantity": 100,
+    "aisle": "vegetable",
+    "price": 0.96,
+    "sale_prc": 0,
+    "description": "Description example",
+    "img_path": "../resources/img/products/tomato.png"
+  },
+
+
+
+  {
+    "productID": 6,
+    "productName": "Baguette",
+    "quantity": 100,
+    "aisle": "bakery",
+    "price": 2.65,
+    "sale_prc": 0,
+    "description": "Description example",
+    "img_path": "../resources/img/products/baguette.png"
+  },
+  {
+    "productID": 6,
+    "productName": "Bagel",
+    "quantity": 100,
+    "aisle": "bakery",
+    "price": 1.00,
+    "sale_prc": 0,
+    "description": "Description example",
+    "img_path": "../resources/img/products/bagel.png"
+  },
+  {
+    "productID": 6,
+    "productName": "Pita",
+    "quantity": 100,
+    "aisle": "bakery",
+    "price": 2.29,
+    "sale_prc": 0,
+    "description": "Description example",
+    "img_path": "../resources/img/products/pita.png"
+  },
+  {
+    "productID": 6,
+    "productName": "Chocolate",
+    "quantity": 100,
+    "aisle": "snack",
+    "price": 2.30,
+    "sale_prc": 0,
+    "description": "Description example",
+    "img_path": "../resources/img/products/chocolate.png"
+  },
+  {
+    "productID": 6,
+    "productName": "Almonds",
+    "quantity": 100,
+    "aisle": "snack",
+    "price": 2.25,
+    "sale_prc": 0,
+    "description": "Description example",
+    "img_path": "../resources/img/products/almonds.png"
+  },
+  {
+    "productID": 6,
+    "productName": "Crackers",
+    "quantity": 100,
+    "aisle": "snack",
+    "price": 2.39,
+    "sale_prc": 0,
+    "description": "Description example",
+    "img_path": "../resources/img/products/crackers.png"
+  },
+  {
+    "productID": 6,
+    "productName": "Granola",
+    "quantity": 100,
+    "aisle": "snack",
+    "price": 1.80,
+    "sale_prc": 0,
+    "description": "Description example",
+    "img_path": "../resources/img/products/granola.png"
+  },
+  {
+    "productID": 6,
+    "productName": "Cookies",
+    "quantity": 100,
+    "aisle": "snack",
+    "price": 2.69,
+    "sale_prc": 0,
+    "description": "Description example",
+    "img_path": "../resources/img/products/cookies.png"
+  },
+  {
+    "productID": 6,
+    "productName": "Chips",
+    "quantity": 100,
+    "aisle": "snack",
+    "price": 3.20,
+    "sale_prc": 0,
+    "description": "Description example",
+    "img_path": "../resources/img/products/chips.png"
+  },
+  {
+    "productID": 6,
+    "productName": "Donuts",
+    "quantity": 100,
+    "aisle": "snack",
+    "price": 2.99,
+    "sale_prc": 0,
+    "description": "Description example",
+    "img_path": "../resources/img/products/donuts.png"
+  },
+  {
+    "productID": 6,
+    "productName": "Nuts",
+    "quantity": 100,
+    "aisle": "snack",
+    "price": 3.29,
+    "sale_prc": 0,
+    "description": "Description example",
+    "img_path": "../resources/img/products/nuts.png"
+  },
+  {
+    "productID": 6,
+    "productName": "Macarons",
+    "quantity": 100,
+    "aisle": "snack",
+    "price": 3.19,
+    "sale_prc": 0,
+    "description": "Description example",
+    "img_path": "../resources/img/products/macarons.png"
+  },
+  {
+    "productID": 6,
+    "productName": "Popcorn",
+    "quantity": 100,
+    "aisle": "snack",
+    "price": 3.29,
+    "sale_prc": 0,
+    "description": "Description example",
+    "img_path": "../resources/img/products/popcorn.png"
+  },
+
+
+
+  {
+    "productID": 6,
+    "productName": "Beef",
+    "quantity": 100,
+    "aisle": "meat",
+    "price": 3.87,
+    "sale_prc": 0,
+    "description": "Description example",
+    "img_path": "../resources/img/products/beef.png"
+  },
+  {
+    "productID": 6,
+    "productName": "Chicken breast",
+    "quantity": 100,
+    "aisle": "meat",
+    "price": 3.97,
+    "sale_prc": 0,
+    "description": "Description example",
+    "img_path": "../resources/img/products/chickenbreast.png"
+  },
+  {
+    "productID": 6,
+    "productName": "Chicken legs",
+    "quantity": 100,
+    "aisle": "meat",
+    "price": 3.45,
+    "sale_prc": 0,
+    "description": "Description example",
+    "img_path": "../resources/img/products/chickenlegs.png"
+  },
+  {
+    "productID": 6,
+    "productName": "Ground beef",
+    "quantity": 100,
+    "aisle": "meat",
+    "price": 4.63,
+    "sale_prc": 0,
+    "description": "Description example",
+    "img_path": "../resources/img/products/groundbeef.png"
+  },
+  {
+    "productID": 6,
+    "productName": "Mutton",
+    "quantity": 100,
+    "aisle": "meat",
+    "price": 4.78,
+    "sale_prc": 0,
+    "description": "Description example",
+    "img_path": "../resources/img/products/mutton.png"
+  },
+  {
+    "productID": 6,
+    "productName": "Sausage",
+    "quantity": 100,
+    "aisle": "meat",
+    "price": 2.99,
+    "sale_prc": 0,
+    "description": "Description example",
+    "img_path": "../resources/img/products/sausage.png"
+  },
+  {
+    "productID": 6,
+    "productName": "Chicken",
+    "quantity": 100,
+    "aisle": "meat",
+    "price": 5.89,
+    "sale_prc": 0,
+    "description": "Description example",
+    "img_path": "../resources/img/products/wholechicken.png"
+  },
+
+
+
+  {
+    "productID": 6,
+    "productName": "Butter",
+    "quantity": 100,
+    "aisle": "dairy",
+    "price": 2.69,
+    "sale_prc": 0,
+    "description": "Description example",
+    "img_path": "../resources/img/products/butter.png"
+  },
+  {
+    "productID": 6,
+    "productName": "Cheese",
+    "quantity": 100,
+    "aisle": "dairy",
+    "price": 2.97,
+    "sale_prc": 0,
+    "description": "Description example",
+    "img_path": "../resources/img/products/sausage.png"
+  },
+  {
+    "productID": 6,
+    "productName": "Eggs",
+    "quantity": 100,
+    "aisle": "dairy",
+    "price": 3.49,
+    "sale_prc": 0,
+    "description": "Description example",
+    "img_path": "../resources/img/products/eggs.png"
+  },
+  {
+    "productID": 6,
+    "productName": "Milk 2%",
+    "quantity": 100,
+    "aisle": "dairy",
+    "price": 3.96,
+    "sale_prc": 0,
+    "description": "Description example",
+    "img_path": "../resources/img/products/milk.jpg"
+  },
+  {
+    "productID": 6,
+    "productName": "Yogurt",
+    "quantity": 100,
+    "aisle": "dairy",
+    "price": 4.25,
+    "sale_prc": 0,
+    "description": "Description example",
+    "img_path": "../resources/img/products/yogourt.jpg"
+  }
+
+
+
+]
