@@ -85,8 +85,8 @@ select{
 
 .container{
     margin-top: 18px;
-    margin-left: 20%;
-    margin-right: 20%;
+    margin-left: 12%;
+    margin-right: 12%;
     gap: 20px;
     display: grid;
     align-content: center;
@@ -100,13 +100,13 @@ select{
     list-style-type: none;
     display: grid;
     flex-flow: column;
-    margin-bottom: 2rem;
+    margin-bottom: 7rem;
 }
 .item .product-image{
     background-size: cover;
-    width: 100px;
     height: 200px;
-    margin-top: 10%;
+    width: auto;
+    padding: 10% 8% 0 8%;
     margin-bottom: auto;
 }
 
@@ -126,6 +126,7 @@ select{
     justify-content: center;
     align-items: center;
     height: 100%;
+    width: 100%;
 }
 .item:hover{
     border: 1px solid #6e6e6e;

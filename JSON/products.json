@@ -1,6 +1,6 @@
 [
   {
-    "productID": 0,
+    "productID": 900,
     "productName": "Apple",
     "quantity": 100,
     "aisle": "fruit",
@@ -369,7 +369,7 @@
     "price": 2.97,
     "sale_prc": 0,
     "description": "Description example",
-    "img_path": "../resources/img/products/sausage.png"
+    "img_path": "../resources/img/products/cheese.jpg"
   },
   {
     "productID": 6,

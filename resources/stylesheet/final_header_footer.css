@@ -121,7 +121,7 @@ footer p {
   }
 
   .nav-links {
-    position: absolute;
+    position: fixed;
     background: rgb(18, 32, 13);
     height: 100vh;
     width: 200px;
@@ -130,16 +130,23 @@ footer p {
     text-align: left;
     z-index: 2;
     transition: 1s;
+
+  }
+
+  .logo{
+    margin-left: 58px;
   }
 
   /* add icon to smaller screens */
   nav .fa {
-    display: block;
+    display: flex;
     color: white;
     margin: 22px;
     font-size: 35px;
     cursor: pointer;
   }
+
+
 
   .nav-links ul {
     padding: 40px;
