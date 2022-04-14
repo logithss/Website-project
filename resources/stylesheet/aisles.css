@@ -41,12 +41,6 @@ body {
     font-size: 4rem;
 
 }
-.footer{
-    height: 200px;
-    background-color: #222a1d;
-    padding: 50px 25% 0 25%;
-    color: lightgray;
-}
 .item-anchor{
     text-decoration: none;
 }
@@ -100,7 +94,7 @@ select{
     list-style-type: none;
     display: grid;
     flex-flow: column;
-    margin-bottom: 7rem;
+    margin-bottom: 5rem;
 }
 .item .product-image{
     background-size: cover;
@@ -109,12 +103,6 @@ select{
     padding: 10% 8% 0 8%;
     margin-bottom: auto;
 }
-
-/*.item .product-image{*/
-/*    background-size: cover;*/
-/*    width: 75%;*/
-/*    margin-top: 20%;*/
-/*}*/
 .item{
     color: black;
     text-align: center;

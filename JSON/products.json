@@ -110,7 +110,7 @@
     "price": 1.24,
     "sale_prc": 0,
     "description": "Description example",
-    "img_path": "../resources/img/products/cauliflower.png"
+    "img_path": "../resources/img/products/broccoli.png"
   },
   {
     "productID": 6,
@@ -130,7 +130,7 @@
   "price": 1.16,
   "sale_prc": 0,
   "description": "Description example",
-  "img_path": "../resources/img/products/garlic.png"
+  "img_path": "../resources/img/products/lettuce.png"
   },
   {
     "productID": 6,
@@ -179,7 +179,7 @@
     "productID": 6,
     "productName": "Chocolate",
     "quantity": 100,
-    "aisle": "snack",
+    "aisle": "snacks",
     "price": 2.30,
     "sale_prc": 0,
     "description": "Description example",
@@ -189,17 +189,17 @@
     "productID": 6,
     "productName": "Almonds",
     "quantity": 100,
-    "aisle": "snack",
+    "aisle": "snacks",
     "price": 2.25,
     "sale_prc": 0,
     "description": "Description example",
-    "img_path": "../resources/img/products/almonds.png"
+    "img_path": "../resources/img/products/almonds.jpg"
   },
   {
     "productID": 6,
     "productName": "Crackers",
     "quantity": 100,
-    "aisle": "snack",
+    "aisle": "snacks",
     "price": 2.39,
     "sale_prc": 0,
     "description": "Description example",
@@ -209,7 +209,7 @@
     "productID": 6,
     "productName": "Granola",
     "quantity": 100,
-    "aisle": "snack",
+    "aisle": "snacks",
     "price": 1.80,
     "sale_prc": 0,
     "description": "Description example",
@@ -219,7 +219,7 @@
     "productID": 6,
     "productName": "Cookies",
     "quantity": 100,
-    "aisle": "snack",
+    "aisle": "snacks",
     "price": 2.69,
     "sale_prc": 0,
     "description": "Description example",
@@ -229,7 +229,7 @@
     "productID": 6,
     "productName": "Chips",
     "quantity": 100,
-    "aisle": "snack",
+    "aisle": "snacks",
     "price": 3.20,
     "sale_prc": 0,
     "description": "Description example",
@@ -239,17 +239,17 @@
     "productID": 6,
     "productName": "Donuts",
     "quantity": 100,
-    "aisle": "snack",
+    "aisle": "snacks",
     "price": 2.99,
     "sale_prc": 0,
     "description": "Description example",
-    "img_path": "../resources/img/products/donuts.png"
+    "img_path": "../resources/img/products/donuts.jpg"
   },
   {
     "productID": 6,
     "productName": "Nuts",
     "quantity": 100,
-    "aisle": "snack",
+    "aisle": "snacks",
     "price": 3.29,
     "sale_prc": 0,
     "description": "Description example",
@@ -259,7 +259,7 @@
     "productID": 6,
     "productName": "Macarons",
     "quantity": 100,
-    "aisle": "snack",
+    "aisle": "snacks",
     "price": 3.19,
     "sale_prc": 0,
     "description": "Description example",
@@ -269,7 +269,7 @@
     "productID": 6,
     "productName": "Popcorn",
     "quantity": 100,
-    "aisle": "snack",
+    "aisle": "snacks",
     "price": 3.29,
     "sale_prc": 0,
     "description": "Description example",

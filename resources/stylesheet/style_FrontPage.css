@@ -16,7 +16,7 @@ body {
   width: 100%;
   /* progressive background color */
   background-image: linear-gradient(rgb(0, 0, 0), rgba(255, 255, 255, 0)),
-    url(../img/greenback.png);
+    url(../img/banners/granola_banner.png);
   background-position: center;
   background-size: cover;
   position: relative;
@@ -107,7 +107,7 @@ nav .fa {
 /* ****************** AISLES ******************* */
 .aisle {
   background-color: rgba(255, 208, 164, 0.781);
-  border-radius: 5%;
+  border-radius: 20px;
   padding: 20px;
   margin: 25px;
   text-align: center;
@@ -159,21 +159,27 @@ nav .fa {
   margin-top: 4%;
   display: flex;
   justify-content: space-around;
-  padding: 0 100px 0 100px;
+  padding: 0 100px 5% 100px;
 }
 
 .product-col {
   flex-basis: 21%;
   border-radius: 10px;
   background: rgb(255, 255, 255);
-  margin-bottom: 5%;
   padding: 20px 12px;
   box-sizing: border-box;
+  height: 100%;
 }
 
 .product-col img {
-  margin-top: 5%;
-  width: 70%;
+  margin-top: 16px;
+  width: auto;
+  height: max(8vw,100px);
+  cursor: pointer;
+}
+
+.product-col p{
+  margin-top: auto;
 }
 
 /* ********** FOOTER **********/
@@ -326,6 +332,7 @@ footer p {
 
   /* Sales */
   .sales {
+    padding-top: 22px;
     width: 100%;
     text-align: center;
     background-color: rgba(34, 82, 19, 0.068);
