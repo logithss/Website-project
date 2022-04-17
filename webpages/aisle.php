@@ -7,6 +7,7 @@
     if(isset($_GET['aisle'])) {
         $aisle = $_GET['aisle'];
     }
+
     if(isset($_GET['sort'])) {
         $sort_type = $_GET['sort'];
         $sort_order = $_GET['order'];
@@ -40,6 +41,7 @@
     function int_cmp($a,$b){
         return ($a-$b) ? ($a-$b)/abs($a-$b) : 0;
     }
+
     function addProduct($product){
         $productName = $product->productName;
         $imgPath = $product->img_path;

@@ -6,5 +6,141 @@
         "email": "admin@gmail.com",
         "zipCode": "H3R4T1",
         "password": "Admin"
+    },
+    {
+        "userID": 1,
+        "firstName": "Ismail",
+        "lastName": "Feham",
+        "email": "ismail@gmail.com",
+        "zipCode": "H4R4J1",
+        "password": "ismail123"
+    },
+    {
+        "userID": 2,
+        "firstName": "Merouane",
+        "lastName": "Issad",
+        "email": "merouane@gmail.com",
+        "zipCode": "H3R4T2",
+        "password": "merouane123"
+    },
+    {
+        "userID": 3,
+        "firstName": "Oussama",
+        "lastName": "Cherifi",
+        "email": "oussama@gmail.com",
+        "zipCode": "H3R4T2",
+        "password": "oussama123"
+    },
+    {
+        "userID": 4,
+        "firstName": "Sathu",
+        "lastName": "Sathththyvel",
+        "email": "merouane@gmail.com",
+        "zipCode": "H3R4T2",
+        "password": "sathu123"
+    },
+    {
+        "userID": 5,
+        "firstName": "Sarah",
+        "lastName": "Amanis",
+        "email": "sarah@gmail.com",
+        "zipCode": "H3R4T2",
+        "password": "sarah123"
+    },
+    {
+        "userID": 6,
+        "firstName": "Gevorg",
+        "lastName": "Gev",
+        "email": "gevorg@gmail.com",
+        "zipCode": "H3R4T2",
+        "password": "gevorg123"
+    },
+    {
+        "userID": 7,
+        "firstName": "Mohammed",
+        "lastName": "Anes",
+        "email": "mohammed@gmail.com",
+        "zipCode": "H3R4T2",
+        "password": "mohammed123"
+    },
+    {
+        "userID": 8,
+        "firstName": "Haroune",
+        "lastName": "Lakadi",
+        "email": "haroune@gmail.com",
+        "zipCode": "H3R4T2",
+        "password": "haroune123"
+    },
+    {
+        "userID": 9,
+        "firstName": "Hatim",
+        "lastName": "Hartak",
+        "email": "hatim@gmail.com",
+        "zipCode": "H3R4T2",
+        "password": "hatim123"
+    },
+    {
+        "userID": 10,
+        "firstName": "Nabil",
+        "lastName": "Bouteflika",
+        "email": "nabil@gmail.com",
+        "zipCode": "H3R4T2",
+        "password": "nabil"
+    },
+    {
+        "userID": 10,
+        "firstName": "Nabil",
+        "lastName": "Bouteflika",
+        "email": "nabil@gmail.com",
+        "zipCode": "H3R4T2",
+        "password": "nabil"
+    },
+    {
+        "userID": 10,
+        "firstName": "Nabil",
+        "lastName": "Bouteflika",
+        "email": "nabil@gmail.com",
+        "zipCode": "H3R4T2",
+        "password": "nabil"
+    },
+    {
+        "userID": 10,
+        "firstName": "Nabil",
+        "lastName": "Bouteflika",
+        "email": "nabil@gmail.com",
+        "zipCode": "H3R4T2",
+        "password": "nabil"
+    },
+    {
+        "userID": 10,
+        "firstName": "Nabil",
+        "lastName": "Bouteflika",
+        "email": "nabil@gmail.com",
+        "zipCode": "H3R4T2",
+        "password": "nabil"
+    },
+    {
+        "userID": 10,
+        "firstName": "Nabil",
+        "lastName": "Bouteflika",
+        "email": "nabil@gmail.com",
+        "zipCode": "H3R4T2",
+        "password": "nabil"
+    },
+    {
+        "userID": 10,
+        "firstName": "Nabil",
+        "lastName": "Bouteflika",
+        "email": "nabil@gmail.com",
+        "zipCode": "H3R4T2",
+        "password": "nabil"
+    },
+    {
+        "userID": 10,
+        "firstName": "Nabil",
+        "lastName": "Bouteflika",
+        "email": "nabil@gmail.com",
+        "zipCode": "H3R4T2",
+        "password": "nabil"
     }
 ]

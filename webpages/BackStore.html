@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../resources/stylesheet/backstore-users.css">
     <link rel="stylesheet" href="../resources/stylesheet/backstore-inventory-list.css">
     <link rel="stylesheet" href="../resources/stylesheet/backstore-orders.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <link rel="stylesheet" href="../resources/stylesheet/header-footer.css">
     <meta name ="viewport" content="width-device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap" rel="stylesheet">
@@ -109,6 +110,14 @@
                 Inventory
             </div>
             <div class="list product-list">
+                <div class="search-box">
+                    <input id="search-product" class="search-txt" type="text" name="" placeholder="Search by product name">
+                    <a class="search-btn" href="#">
+                        <span class="material-icons-outlined">
+                            search
+                        </span>
+                    </a>
+                </div>
                 <button class="add-product-btn">
                     <div class="add-product-img">
                         <img class="box-img" src ="https://icon-library.com/images/inventory-icon-png/inventory-icon-png-17.jpg" >
@@ -119,76 +128,94 @@
                 <div class="product">
                     <div class="product-info">
                         <div class="product-img">
+                            <img src="../resources/img/products/chocolate.png">
+                        </div>
+                        <div class="product-middle">
+                            <div class="product-label">
+                                <div class="product-name">
+                                    Chocolate
+                                </div>
+                                <div class="product-price">
+                                    $1.99
+                                </div>
+                                <div class="product-quantity">
+                                    Quantity: 100
+                                </div>
+                            </div>
+                            <div class="product-btns">
+                                <button class ="edit-product-btn" onclick="changeEditContent('product')">Edit</button>
+                                <button class ="delete-product-btn">Delete</button>
+                            </div>
+                        </div>
+                        <div class="product-availability">
+                            In stock
+                        </div>
+                    </div>
+                </div>
+                <div class="product">
+                    <div class="product-info">
+                        <div class="product-img">
                             <img src="../resources/img/products/apple.png">
                         </div>
-                        <div class="product-name">
-                            Apple
-                        </div>
-
-                        <div class="product-price">
-                            $1.99
-                        </div>
-                        <div class="product-quantity">
-                            Quantity: 100
+                        <div class="product-middle">
+                            <div class="product-label">
+                                <div class="product-name">
+                                    Apple
+                                </div>
+                                <div class="product-price">
+                                    $1.99
+                                </div>
+                                <div class="product-quantity">
+                                    Quantity: 100
+                                </div>
+                            </div>
+                            <div class="product-btns">
+                                <button class ="edit-product-btn" onclick="changeEditContent('product')">Edit</button>
+                                <button class ="delete-product-btn">Delete</button>
+                            </div>
                         </div>
                         <div class="product-availability">
                             In stock
                         </div>
-                    </div>
-                    <div class="product-btns">
-                        <button class ="edit-product-btn" onclick="changeEditContent('product')">Edit</button>
-                        <button class ="delete-product-btn">Delete</button>
                     </div>
                 </div>
                 <div class="product">
                     <div class="product-info">
                         <div class="product-img">
-                            <img src="../resources/img/products/lime.png">
+                            <img src="../resources/img/products/orange.png">
                         </div>
-                        <div class="product-name">
-                            Lime
-                        </div>
-                        <div class="product-price">
-                            $1.95
-                        </div>
-                        <div class="product-quantity">
-                            Quantity: 120
-                        </div>
-                        <div class="product-availability">
-                            In stock
-                        </div>
-                    </div>
-                    <div class="product-btns">
-                        <button class ="edit-product-btn" onclick="changeEditContent('product')">Edit</button>
-                        <button class ="delete-product-btn">Delete</button>
-                    </div>
-                </div>
-                <div class="product">
-                    <div class="product-info">
-                        <div class="product-img">
-                            <img src="../resources/img/products/grapes.png">
-                        </div>
-                        <div class="product-name">
-                            Grapes
-                        </div>
-
-                        <div class="product-price">
-                            $0.99
-                        </div>
-                        <div class="product-quantity">
-                            Quantity: 20
+                        <div class="product-middle">
+                            <div class="product-label">
+                                <div class="product-name">
+                                    Orange
+                                </div>
+                                <div class="product-price">
+                                    $1.99
+                                </div>
+                                <div class="product-quantity">
+                                    Quantity: 100
+                                </div>
+                            </div>
+                            <div class="product-btns">
+                                <button class ="edit-product-btn" onclick="changeEditContent('product')">Edit</button>
+                                <button class ="delete-product-btn">Delete</button>
+                            </div>
                         </div>
                         <div class="product-availability">
                             In stock
                         </div>
-                    </div>
-                    <div class="product-btns">
-                        <button class ="edit-product-btn" onclick="changeEditContent('product')">Edit</button>
-                        <button class ="delete-product-btn">Delete</button>
                     </div>
                 </div>
             </div>
             <div class="list user-list">
+                <div class="search-box">
+                    <input id="search-user" class="search-txt" type="text" name="" placeholder="Search by user name">
+                    <a class="search-btn" href="#">
+                        <span class="material-icons-outlined">
+                            search
+                        </span>
+                    </a>
+                </div>
                 <button class="add-user-btn">
                     <span class="add-person-icon material-icons-outlined">
                     person_add
@@ -314,6 +341,14 @@
                 </div>
             </div>
             <div class="list order-list">
+                <div class="search-box">
+                    <input id="search-order" class="search-txt" type="text" name="" placeholder="Search by order ID">
+                    <a class="search-btn" href="#">
+                        <span class="material-icons-outlined">
+                            search
+                        </span>
+                    </a>
+                </div>
                 <button class="add-order-btn">
                 <span class="material-icons-outlined">
                     note_add
@@ -497,7 +532,6 @@
         </div>
     </div>
 </div>
-
 <div id="footer"></div>
 </body>
 </html>

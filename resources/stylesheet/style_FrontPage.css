@@ -189,7 +189,6 @@ footer {
   grid-row: 3/4;
   width: 100%;
   height: 100%;
-  background-image: url(../img/veggie_banner.jpg);
   padding-bottom: 1em;
   background-size: 200%;
 }
@@ -364,7 +363,7 @@ footer p {
 
   .product-col img {
     margin-top: 5%;
-    width: 45%;
+    /*width: 45%;*/
   }
 
   /* FOOTER */

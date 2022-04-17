@@ -25,16 +25,19 @@
     padding: 15px 0;
     font-size: 100%;
     font-weight: bold;
+    box-shadow: 0 4px 8px -8px gray;
+    position: relative;
+    z-index: 1;
 }
 
 .add-user-btn:hover{
+    box-shadow: none;
     background-color: #e1e1e1;
     transition: 0.15s ease-in;
 }
 
 .user{
     width: 100%;
-    height: 100%;
     flex-wrap: wrap;
     display: flex;
     flex-direction: column;
@@ -78,6 +81,7 @@
     width: 80%;
 }
 .edit-user-btn, .delete-user-btn{
+    font-weight: bold;
     padding: .2rem;
     font-size: clamp(12px, 1.2vw, 16px);
     display: flex;
@@ -88,11 +92,18 @@
     border: #777777 1px solid;
     border-radius: 2px;
 }
-.edit-user-btn:hover,.delete-user-btn:hover{
+.delete-user-btn:hover{
+    border:none;
+    color: white;
+    background-color: #b42e3b;
+    transition: 360ms ease-in;
+}
+.edit-user-btn:hover{
     cursor: pointer;
     background-color: #eaeaea;
     transition: 120ms ease-in;
 }
+
 .user-icon{
     font-size: 18px !important;
     padding-top: 2px;
