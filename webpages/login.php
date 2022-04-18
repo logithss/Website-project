@@ -8,8 +8,6 @@
     <!-- my font-->
     <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
 
-
-
     <!-- my css-->
     <link rel="stylesheet" href="../resources/stylesheet/loginStyle.css">
 
@@ -26,6 +24,32 @@
             });
     </script>
 
+
+    <?php
+
+        if(isset($_GET['email']) && isset($_GET['password']))
+        {
+            $em = $_GET['email'];
+            $pass = $_GET['password'];
+
+            echo "Email: " . $em . ", Password: " . $pass;
+            echo "<br></br>";
+            $userList = json_decode(file_get_contents("../JSON/users.json"));
+
+            foreach($userList as $user)
+            {
+                //print_r($user);
+                echo "Email: " . $user['email'] . "<br>";
+                if($user['email'] == $em && $user['password'] == $pass)
+                {
+                    echo "<br>LOGED IN";
+                    break;
+                }
+            }
+        }
+
+    ?>
+
     <script>
         function login() {
             var username = document.getElementById("username").value;
@@ -34,12 +58,7 @@
             var errorText = document.getElementById("errorText");
             console.log(errorText);
 
-            if (username == "user1" && password == "123") {
-                console.log("login successful");
-                errorText.style.display = "none";
-                window.location.href = "login_logged.html";
-            }
-            else {
+            if (username === "" || password === "") {
                 console.log("login failed");
                 if (errorText.style.display == "block") {
                     errorText.style.display = "none";
@@ -49,6 +68,10 @@
                 else {
                     errorText.style.display = "block";
                 }
+            }
+            else
+            {
+                window.location.href = "login.php?email=a&password=passpass";
             }
         }
     </script>
