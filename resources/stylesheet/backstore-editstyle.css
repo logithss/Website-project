@@ -27,6 +27,22 @@ input::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
+form{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+textarea{
+    resize: none;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+.error-txt{
+    color: #b20000;
+    font-size: 18px;
+    font-weight: bold;
+}
 .field{
     font-weight: bold;
     font-size: clamp(.6rem, 3vw, 1rem);
@@ -80,11 +96,21 @@ input::-webkit-inner-spin-button {
     outline: none;
     border:none;
 }
-.order-type > select{
-
+.order-type > form > label > select {
+    width: 100%;
     padding: 1%;
     font-size: calc(clamp(.6rem, 3vw, 1rem) + .2rem);
     color: black;
+}
+.order-type > form > label > select > option{
+    text-align: center;
+}
+.order-type > form > label {
+    width: 30%;
+}
+.order-items{
+    width: 60%;
+    border: 1px solid #d0d0d0;
 }
 
 .cancel-order-btn{

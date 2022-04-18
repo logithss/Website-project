@@ -24,11 +24,11 @@ function removeContent(){
     });
 }
 
-function changeEditContent(type){
+function changeEditContent(type, title){
     removeContent();
 
+    changeContentTitle(title)
     let content = document.querySelector(".edit-"+type+"-container");
-    console.log(content.className);
     content.style.display = 'flex';
     content.style.visibility = 'visible';
 
@@ -39,16 +39,18 @@ function changeMainContent(type){
     let content = document.querySelector("."+type+"-list");
     content.style.display = 'flex';
     content.style.visibility = 'visible';
-    console.log(content.className);
     let capitalTitle = type.charAt(0).toUpperCase() + type.slice(1);
+    if(type === 'product') capitalTitle = 'Inventory'
     changeContentTitle(capitalTitle);
 }
 
 function changeContentTitle(title){
     const content_title = document.getElementById("content-title");
-    const current_button = document.getElementById("current-button");
     content_title.textContent = title;
-    current_button.textContent = title;
+    if(title.toLowerCase() === 'inventory' || title.toLowerCase() === 'user' || title.toLowerCase() === 'order'){
+        const current_button = document.getElementById("current-button");
+        current_button.textContent = title;
+    }
 }
 
 function filterItems(type) {
@@ -70,8 +72,4 @@ function filterItems(type) {
             items[i].style.display = "none";
         }
     }
-}
-
-function alertDeletion(id){
-    const jsonData= require('./students.json');
 }
