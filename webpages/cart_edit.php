@@ -3,12 +3,12 @@
     session_start();
     $products = $_SESSION["cart"];
 
-    if(isset($_GET['productID']) && isset($_GET['quantity']))
+    if(isset($_REQUEST['productID']) && isset($_REQUEST['quantity']))
     {
         $id = $_GET['productID'];
         $quantity = $_GET['quantity'];
 
-        $selectedProduct = 0;
+        $productFound = false;
         foreach($products as $product)
         {
             if($product->id == $id)
@@ -23,17 +23,30 @@
                         $product["quantity"] = $quantity;
                     }
                 }
+                $productFound = true;
+                break;
             }
         }
 
-        $newProduct["id"] = $selectedProduct["id"]
-                        $newProduct["productName"] = $selectedProduct["productName"]
-                        $newProduct["quantity"] = $selectedProduct["quantity"]
-                        $newProduct["aisle"] = $selectedProduct["aisle"]
-                        $newProduct["price"] = $selectedProduct["price"]
-                        $newProduct["sale_prc"] = $selectedProduct["sale_prc"]
-                        $newProduct["description"] = $selectedProduct["description"]
-                        $newProduct["img_path"] = $selectedProduct["img_path"]
+        if($productFound == false)
+        {
+            $newProduct = [];
+            $newProduct["productID"] = $_REQUEST['productID'];
+            $newProduct["quantity"] = $_REQUEST['quantity'];
+
+            push_array($_SESSION["cart"], $newProduct);
+        }
+    }
+
+    print_r();
+
+    if(isset($_REQUEST['previousURL']))
+    {
+        //header('Location: '. $_REQUEST['previousURL']);
+    }
+    else
+    {
+        //header('Location: '. "./index.html");
     }
 
 ?>
