@@ -33,9 +33,13 @@ body {
   /* progressive background color */
 
   background-image: linear-gradient(rgb(0, 0, 0), rgba(255, 255, 255, 0)),
+<<<<<<< HEAD
 
     url(../img/banners/granola_banner.png);
 
+=======
+    url(../img/banners/granola_banner.png);
+>>>>>>> a4f1b6530d7b5c7653e1aeb602ecf6ed8b858519
   background-position: center;
 
   background-size: cover;
@@ -215,9 +219,13 @@ nav .fa {
 .aisle {
 
   background-color: rgba(255, 208, 164, 0.781);
+<<<<<<< HEAD
 
   border-radius: 20px;
 
+=======
+  border-radius: 20px;
+>>>>>>> a4f1b6530d7b5c7653e1aeb602ecf6ed8b858519
   padding: 20px;
 
   margin: 25px;
@@ -321,9 +329,13 @@ nav .fa {
   display: flex;
 
   justify-content: space-around;
+<<<<<<< HEAD
 
   padding: 0 100px 5% 100px;
 
+=======
+  padding: 0 100px 5% 100px;
+>>>>>>> a4f1b6530d7b5c7653e1aeb602ecf6ed8b858519
 }
 
 
@@ -335,18 +347,26 @@ nav .fa {
   border-radius: 10px;
 
   background: rgb(255, 255, 255);
+<<<<<<< HEAD
 
+=======
+>>>>>>> a4f1b6530d7b5c7653e1aeb602ecf6ed8b858519
   padding: 20px 12px;
 
   box-sizing: border-box;
+<<<<<<< HEAD
 
   height: 100%;
 
+=======
+  height: 100%;
+>>>>>>> a4f1b6530d7b5c7653e1aeb602ecf6ed8b858519
 }
 
 
 
 .product-col img {
+<<<<<<< HEAD
 
   margin-top: 16px;
 
@@ -356,6 +376,16 @@ nav .fa {
 
   cursor: pointer;
 
+=======
+  margin-top: 16px;
+  width: auto;
+  height: max(8vw,100px);
+  cursor: pointer;
+}
+
+.product-col p{
+  margin-top: auto;
+>>>>>>> a4f1b6530d7b5c7653e1aeb602ecf6ed8b858519
 }
 
 
@@ -381,9 +411,12 @@ footer {
   width: 100%;
 
   height: 100%;
+<<<<<<< HEAD
 
   background-image: url(../img/veggie_banner.jpg);
 
+=======
+>>>>>>> a4f1b6530d7b5c7653e1aeb602ecf6ed8b858519
   padding-bottom: 1em;
 
   background-size: 200%;
@@ -667,9 +700,13 @@ footer p {
   /* Sales */
 
   .sales {
+<<<<<<< HEAD
 
     padding-top: 22px;
 
+=======
+    padding-top: 22px;
+>>>>>>> a4f1b6530d7b5c7653e1aeb602ecf6ed8b858519
     width: 100%;
 
     text-align: center;
@@ -731,9 +768,13 @@ footer p {
   .product-col img {
 
     margin-top: 5%;
+<<<<<<< HEAD
 
     width: 45%;
 
+=======
+    /*width: 45%;*/
+>>>>>>> a4f1b6530d7b5c7653e1aeb602ecf6ed8b858519
   }
 
 

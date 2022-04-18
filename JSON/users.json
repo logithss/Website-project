@@ -1,10 +1,182 @@
 [
     {
-        "userID": 0,
+        "id": 0,
         "firstName": "Admin",
         "lastName": "Admin",
         "email": "admin@gmail.com",
-        "zipCode": "H3R4T1",
-        "password": "Admin"
+        "address": "2515 Rue Notre-Dame Ouest",
+        "password": "Admin",
+        "isAdmin": true
+    },
+    {
+        "id": 9911,
+        "firstName": "Admin",
+        "lastName": "Admin",
+        "email": "admin@gmail.com",
+        "address": "2515 Rue Notre-Dame Ouest",
+        "password": "Admin",
+        "isAdmin": true
+    },
+    {
+        "id": 992,
+        "firstName": "Admin",
+        "lastName": "Admin",
+        "email": "admin@gmail.com",
+        "address": "2515 Rue Notre-Dame Ouest",
+        "password": "Admin",
+        "isAdmin": true
+    },
+    {
+        "id": 12321,
+        "firstName": "Admin",
+        "lastName": "Admin",
+        "email": "admin@gmail.com",
+        "address": "2515 Rue Notre-Dame Ouest",
+        "password": "Admin",
+        "isAdmin": true
+    },
+    {
+        "id": 2131,
+        "firstName": "Admin",
+        "lastName": "Admin",
+        "email": "admin@gmail.com",
+        "address": "2515 Rue Notre-Dame Ouest",
+        "password": "Admin",
+        "isAdmin": true
+    },
+    {
+        "id": 1,
+        "firstName": "Ismail",
+        "lastName": "Feham",
+        "email": "ismail@gmail.com",
+        "address": "2700 Boulevard de la Concorde Est",
+        "password": "ismail123",
+        "isAdmin": true
+    },
+    {
+        "id": 2,
+        "firstName": "Merouane",
+        "lastName": "Issad",
+        "email": "merouane@gmail.com",
+        "address": "4980 Boulevard de la Rive Sud",
+        "password": "merouane123",
+        "isAdmin": true
+    },
+    {
+        "id": 3,
+        "firstName": "Oussama",
+        "lastName": "Cherifi",
+        "email": "oussama@gmail.com",
+        "address": "3426 Rue Notre-Dame Ouest",
+        "password": "oussama123",
+        "isAdmin": false
+    },
+    {
+        "id": 4,
+        "firstName": "Sathu",
+        "lastName": "Sathththyvel",
+        "email": "merouane@gmail.com",
+        "address": "5791 St Laurent",
+        "password": "sathu123",
+        "isAdmin": false
+    },
+    {
+        "id": 5,
+        "firstName": "Sarah",
+        "lastName": "Amanis",
+        "email": "sarah@gmail.com",
+        "address": "4650 Boulevard Industriel",
+        "password": "sarah123",
+        "isAdmin": false
+    },
+    {
+        "id": 6,
+        "firstName": "Gevorg",
+        "lastName": "Gev",
+        "email": "gevorg@gmail.com",
+        "address": "835 Bd Maloney E",
+        "password": "gevorg123",
+        "isAdmin": false
+    },
+    {
+        "id": 7,
+        "firstName": "Mohammed",
+        "lastName": "Anes",
+        "email": "mohammed@gmail.com",
+        "address": "367 Avenue du Mont-Royal Est",
+        "password": "mohammed123",
+        "isAdmin": false
+    },
+    {
+        "id": 8,
+        "firstName": "Haroune",
+        "lastName": "Lakadi",
+        "email": "haroune@gmail.com",
+        "address": "1181 Union Ave",
+        "password": "haroune123",
+        "isAdmin": false
+    },
+    {
+        "id": 9,
+        "firstName": "Hatim",
+        "lastName": "Hartak",
+        "email": "hatim@gmail.com",
+        "address": "2360 Nicolas Pinel",
+        "password": "hatim123",
+        "isAdmin": false
+    },
+    {
+        "id": 10,
+        "firstName": "Nabil",
+        "lastName": "Bouteflika",
+        "email": "nabil@gmail.com",
+        "address": "H3R4T2",
+        "password": "nabil",
+        "isAdmin": false
+    },
+    {
+        "id": 10,
+        "firstName": "Nabil",
+        "lastName": "Bouteflika",
+        "email": "nabil@gmail.com",
+        "address": "H3R4T2",
+        "password": "nabil",
+        "isAdmin": false
+    },
+    {
+        "id": 10,
+        "firstName": "Nabil",
+        "lastName": "Bouteflika",
+        "email": "nabil@gmail.com",
+        "address": "H3R4T2",
+        "password": "nabil",
+        "isAdmin": false
+    },
+    {
+        "id": 10,
+        "firstName": "Nabil",
+        "lastName": "Bouteflika",
+        "email": "nabil@gmail.com",
+        "address": "H3R4T2",
+        "password": "nabil",
+        "isAdmin": false
+    },
+    {
+        "id": 10,
+        "firstName": "Nabil",
+        "lastName": "Bouteflika",
+        "email": "nabil@gmail.com",
+        "address": "H3R4T2",
+        "password": "nabil",
+        "isAdmin": false
+    },
+    {
+        "id": 10,
+        "firstName": "Nabil",
+        "lastName": "Bouteflika",
+        "email": "nabil@gmail.com",
+        "address": "H3R4T2",
+        "password": "nabil",
+        "isAdmin": false
     }
 ]

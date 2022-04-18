@@ -2,7 +2,11 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
+<<<<<<< HEAD
       <webServer id="1bc0ff95-6983-46fe-8d53-065be228c365" name="Website server" url="http://ftpupload.net">
+=======
+      <webServer id="7537c9a8-4517-469f-b263-6fee82397f2d" name="Website Project" url="http://homeymarket.epizy.com/">
+>>>>>>> a4f1b6530d7b5c7653e1aeb602ecf6ed8b858519
         <fileTransfer host="ftpupload.net" port="21">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
