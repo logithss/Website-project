@@ -1,4 +1,29 @@
-﻿<!doctype html>
+﻿
+<?php
+        if(isset($_GET['email']) && isset($_GET['password']))
+        {
+            $em = $_GET['email'];
+            $pass = $_GET['password'];
+
+            $userList = json_decode(file_get_contents("../JSON/users.json"));
+
+            foreach($userList as $currentUser)
+            {
+                if($currentUser->email == $em && $currentUser->password == $pass)
+                {
+                    echo "top<br>";
+                    print_r($currentUser);
+                    setcookie("userID", $currentUser->id, time() + (86400 * 30));
+                    header('Location: '. "http://homeymarket.epizy.com/webpages/index.html");
+                    break;
+                }
+            }
+        }
+
+?>
+
+
+<!doctype html>
 <html lang="en">
 <head>
     <!-- Required meta tags -->
@@ -11,7 +36,7 @@
     <!-- my css-->
     <link rel="stylesheet" href="../resources/stylesheet/loginStyle.css">
 
-    
+
     <title>LogIn</title>
 
     <!-- JS for header/footer -->
@@ -23,32 +48,6 @@
                 $('#footer').load('footer.html');
             });
     </script>
-
-
-    <?php
-
-        if(isset($_GET['email']) && isset($_GET['password']))
-        {
-            $em = $_GET['email'];
-            $pass = $_GET['password'];
-
-            echo "Email: " . $em . ", Password: " . $pass;
-            echo "<br></br>";
-            $userList = json_decode(file_get_contents("../JSON/users.json"));
-
-            foreach($userList as $user)
-            {
-                //print_r($user);
-                echo "Email: " . $user['email'] . "<br>";
-                if($user['email'] == $em && $user['password'] == $pass)
-                {
-                    echo "<br>LOGED IN";
-                    break;
-                }
-            }
-        }
-
-    ?>
 
     <script>
         function login() {
