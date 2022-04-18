@@ -1,7 +1,17 @@
 [
   {
     "id": 999,
-    "productName": "APPLE TO DELETE",
+    "productName": "Apple",
+    "quantity": 10,
+    "aisle": "fruit",
+    "price": 1.12,
+    "sale_prc": 0,
+    "description": "Description example",
+    "img_path": "../resources/img/products/apple.png"
+  },
+  {
+    "id": 231231,
+    "productName": "Apple",
     "quantity": 100,
     "aisle": "fruit",
     "price": 1.12,
@@ -20,7 +30,7 @@
     "img_path": "../resources/img/products/apple.png"
   },
   {
-    "id": 900,
+    "id": 997,
     "productName": "Apple",
     "quantity": 100,
     "aisle": "fruit",

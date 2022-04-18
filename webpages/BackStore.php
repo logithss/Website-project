@@ -1,29 +1,75 @@
 <?php
+include 'item_handler.php';
+$url = "$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+
 $products = json_decode(file_get_contents("../JSON/products.json"));
 $users    = json_decode(file_get_contents("../JSON/users.json"));
 $orders   = json_decode(file_get_contents("../JSON/orders.json"));
+$isEditing = false;
+$change_content = false;
+$add = false;
+
+if(isset($_GET['type']) && isset($_GET['id'])){
+    $type = $_GET['type'];
+    $id   = $_GET['id'];
+    $itemToEdit = getItem($type, $id);
+    $isEditing = true;
+}
+
+if(isset($_GET['add']) && $_GET['type']){
+    $type = $_GET['type'];
+    $add = true;
+}
+
+if(isset($_GET['content'])){
+    $change_content = true;
+    $content = $_GET['content'];
+}
 
 function printProducts(){
     foreach ($GLOBALS['products'] as $product) {
-        addProduct($product);
+        insertProduct($product);
     }
 }
 
 function printUsers(){
     foreach ($GLOBALS['users'] as $user) {
-        addUser($user);
+        insertUser($user);
     }
 }
 
 function printOrders(){
     foreach ($GLOBALS['orders'] as $order) {
-//        addOrder($order);
+        insertOrder($order);
     }
 }
 
-function addProduct($product){
-    $productName = $product->productName;
-    $imgPath = $product->img_path;
+function printOrderItems($order){
+    foreach($order->items as $item){
+        $product = getItem("product", $item->id);
+    echo '<div class="product">';
+    echo '    <div class="product-info">';
+    echo '        <div class="product-img">';
+    echo '             <img src="'.$product->img_path.'">';
+    echo '        </div>';
+    echo '        <div class="product-middle">';
+    echo '            <div class="product-label">';
+    echo '                <div class="product-name">'.$product->productName.'</div>';
+    echo '                <div class="product-price">'.$product->price.'$</div>';
+    echo '                <div class="product-quantity">Qt: '.$item->quantity.'</div>';
+    echo '            </div>';
+    echo '            <div class="product-btns">';
+    echo '                <button class ="delete-btn delete-product-btn" style="width: unset"
+                                onClick="someFunction()">Delete</button>';
+    echo '            </div>';
+    echo '        </div>';
+    echo '        <div class="product-availability"> </div>';
+    echo '    </div>';
+    echo '</div>';
+    }
+}
+
+function insertProduct($product){
     $quantity = $product->quantity;
     $availability = "In stock";
     $color = "#009927";
@@ -31,21 +77,21 @@ function addProduct($product){
         $availability = "Out of stock";
         $color = "#b42e3b";
     }
-    $price = $product->price;
     echo '<div class="product">';
     echo '    <div class="product-info">';
     echo '        <div class="product-img">';
-    echo '             <img src="'.$imgPath.'">';
+    echo '             <img src="'.$product->img_path.'">';
     echo '        </div>';
     echo '        <div class="product-middle">';
     echo '            <div class="product-label">';
-    echo '                <div class="product-name">'.$productName.'</div>';
-    echo '                <div class="product-price">'.$price.'$</div>';
+    echo '                <div class="product-name">'.$product->productName.'</div>';
+    echo '                <div class="product-price">'.$product->price.'$</div>';
     echo '                <div class="product-quantity">Qt: '.$quantity.'</div>';
     echo '            </div>';
     echo '            <div class="product-btns">';
-    echo '                <button class ="edit-product-btn" onclick="changeEditContent(\'product\')">Edit</button>';
-    echo '                <button class ="delete-btn delete-product-btn" onClick="alertDeletion(\''.$product->id.'\')">Delete</button>';
+    echo '                <button class ="edit-product-btn" onclick="redirectEdit(\'product\', \''.$product->id.'\')">Edit</button>';
+    echo '                <button class ="delete-btn delete-product-btn" 
+                                onClick="alertDeletion(\'product\',\''.$product->id.'\',\''.$product->productName.'\')">Delete</button>';
     echo '            </div>';
     echo '        </div>';
     echo '        <div class="product-availability" style="color:'.$color.'">'.$availability.'</div>';
@@ -53,23 +99,42 @@ function addProduct($product){
     echo '</div>';
 }
 
-function addUser($user){
+function insertUser($user){
     echo '<div class="user">';
     echo '    <div class="user-profile">';
     echo '        <span class="user-icon material-icons-outlined">person_outline</span>';
     echo '        <div class="user-name">'.$user->firstName.' '.$user->lastName.'</div>';
     echo '    </div>';
     echo '    <div class="user-btns">';
-    echo '        <button href="./BackStore.php?type=user&id='.$user->id.'" class ="edit-user-btn" onclick="changeEditContent(\'user\')">Edit user</button>';
-    echo '        <button class ="delete-btn delete-user-btn onClick="alertDeletion(\''.$user->id.'\')"">Delete user</button>';
+    echo '        <button  class ="edit-user-btn" onclick=
+                  "redirectEdit(\'user\', \''.$user->firstName.' '.$user->lastName.'\')">Edit user</button>';
+    echo '        <button class ="delete-btn delete-user-btn" 
+                       onClick="alertDeletion(\'user\',\''.$user->id.'\',\''.$user->firstName.' '.$user->lastName.'\')">Delete user</button>';
     echo '    </div>';
     echo '</div>';
 }
 
-function addOrder($order){
-
+function insertOrder($order){
+    echo '<div class="order">';
+    echo '    <div class="order-icon">';
+    echo '        <span class="material-icons-outlined">';
+    echo '          receipt_long';
+    echo '        </span>';
+    echo '    </div>';
+    echo '    <div class="order-id">';
+    echo '        <h3>Order id:</h3>';
+    echo '         '.$order->id;
+    echo '    </div>';
+    echo '    <div class="order-btns">';
+    echo '        <button class ="edit-order-btn" 
+                          onclick="redirectEdit(\'order\', \''.$order->id.'\')">Edit</button>';
+    echo '        <button class ="delete-order-btn" 
+                          onclick="alertDeletion(\'order\',\''.$order->id.'\',\'Order: '.$order->id.'\')">Delete</button>';
+    echo '    </div>';
+    echo '</div>';
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -95,13 +160,13 @@ function addOrder($order){
     <div class = "content">
         <div class="nav-bars">
             <a class="current-tab"><button id="current-button" onclick="toggleTabsVisibility()">Inventory</button></a>
-            <a class="tab inventory-tab" onclick="changeMainContent('product')" >
+            <a class="tab inventory-tab" onclick="redirectContent('product')" >
                 <h1><span class="tab-icon material-icons-outlined">
                         inventory</span>
                     Inventory
                 </h1>
             </a>
-            <a class="tab user-tab" onclick="changeMainContent('user')">
+            <a class="tab user-tab" onclick="redirectContent('user')">
                 <h1>
                     <span class="tab-icon material-icons-outlined">
                         portrait
@@ -109,7 +174,7 @@ function addOrder($order){
                     Users
                 </h1>
             </a>
-            <a class="tab order-tab" onclick="changeMainContent('order')">
+            <a class="tab order-tab" onclick="redirectContent('order')">
                 <h1>
                     <span class="tab-icon material-icons-outlined">
                         list_alt
@@ -138,13 +203,14 @@ function addOrder($order){
                         </span>
                     </a>
                 </div>
-                <button class="add-product-btn">
+                <a href="BackStore.php?type=product&add=1">
+                    <button class="add-product-btn">
                     <div class="add-product-img">
                         <img class="box-img" src ="https://icon-library.com/images/inventory-icon-png/inventory-icon-png-17.jpg" >
                         <img class="plus-img" src="https://img.icons8.com/ios-glyphs/30/000000/plus-math.png"/>
                     </div>
                     <h3>Add a new product</h3>
-                </button>
+                </button></a>
                 <ul class="unordered-list" id="ul-product">
                     <?=printProducts()?>
                 </ul>
@@ -158,12 +224,14 @@ function addOrder($order){
                         </span>
                     </a>
                 </div>
-                <button class="add-user-btn">
+                <a href="BackStore.php?type=user&add=1">
+                    <button class="add-user-btn">
                     <span class="add-person-icon material-icons-outlined">
                     person_add
                     </span>
                     Add new User
-                </button>
+                    </button>
+                </a>
                 <ul class="unordered-list" id="ul-user">
                     <?=printUsers()?>
                 </ul>
@@ -177,104 +245,103 @@ function addOrder($order){
                         </span>
                     </a>
                 </div>
-                <button class="add-order-btn">
-                <span class="material-icons-outlined">
+                <a href="BackStore.php?type=order&add=1">
+                    <button class="add-order-btn">
+                    <span class="material-icons-outlined">
                     note_add
-                </span>
-                    <h3>Add a new order</h3>
-                </button>
+                    </span>
+                        <h3>Add a new order</h3>
+                    </button>
+                </a>
                 <ul class="unordered-list" id="ul-order">
-                <div class="order">
-                    <div class="order-icon">
-                <span class="material-icons-outlined">
-                receipt_long
-            </span>
-                    </div>
-                    <div class="order-id">
-                        <h3>Order id: </h3>
-                        123456
-                    </div>
-                    <div class="order-btns">
-                        <button class ="edit-order-btn" onclick="changeEditContent('order')">Edit</button>
-                        <button class ="delete-order-btn">Delete</button>
-                    </div>
-                </div>
+                    <?=printOrders()?>
             </div>
             <div class="edit-container">
                 <div class="edit edit-order-container">
                     <div class="field num-field">
-                        <div class="previous-value">
-                            (Current: 123456)
-                        </div>
-                        <input type="number" placeholder="Order id (6 digits)" class="user-input num-input">
+                        <label for="order-id" class="field-title">Order id:</label>
+                        <form><input name="order-id" type="number" placeholder="<?=$itemToEdit->id?>" class="user-input num-input"></form>
                     </div>
-                    <div class="order-type" >
-                        <select>
-                            <option value="" disabled selected>Order type</option>
-                            <option value="Pickup">Pickup</option>
-                            <option value="Delivery">Delivery</option>
-                        </select>
+                    <ul class="order-items">
+                        <?=printOrderItems($itemToEdit)?>
+                    </ul>
+                    <div class="order-type">
+                        <form><label>
+                                <select name="order-type">
+                                        <option value="" disabled selected>Order type</option>
+                                        <option value="Pickup">Pickup</option>
+                                        <option value="Delivery">Delivery</option>
+                                    </select>
+                        </label></form>
                     </div>
-                    <button class="save-changes-btn">
-                        Save changes
-                    </button>
+                    <div class="error-txt" style="display: none">Error Submitting. Make sure all fields have valid inputs.</div>
+                    <form>
+                        <button name="save-changes" class="save-changes-btn">Save changes</button>
+                    </form>
                 </div>
                 <div class="edit edit-product-container">
                     <div id="product-name" class="field txt-field">
-                        <div class="previous-value">
-                            (Current: Apple)
-                        </div>
-                        <input type="text" placeholder="Product name" class="user-input txt-input">
+                        <label for="product-name" class="field-title">
+                            Product name:
+                        </label>
+                        <form><input name="product-name" type="text" placeholder="<?=$itemToEdit->productName?>" class="user-input txt-input"></form>
                     </div>
                     <div id="unit-price" class="field txt-field">
-                        <div class="previous-value">
-                            (Current: 1.99$)
-                        </div>
-                        <input type="number" placeholder="Unit price" class="user-input num-input">
-                    </div>
+                        <label for="product-price" class="field-title">
+                            Product price:
+                        </label>
+                        <form><input name="product-price" type="number" placeholder="<?=$itemToEdit->price?>" class="user-input num-input"></form>
+                    </div id="unit-price">
                     <div id="quantity" class="field txt-field">
-                        <div class="previous-value">
-                            (Current: 100)
-                        </div>
-                        <input type="number" placeholder="Quantity" class="user-input num-input">
+                        <label for="quantity" class="field-title">
+                            Quantity:
+                        </label>
+                        <form><input type="number" name="quantity" placeholder="<?= $itemToEdit->quantity ?>"
+                                     class="user-input num-input"></form>
                     </div>
                     <div id="item-description" class="field txt-field">
-                        <div class="field-title">Description:</div>
-                        <textarea placeholder="Product description" class="user-input description-input" oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"'></textarea>
+                        <label for="description" class="field-title">Description:</label>
+                        <form><textarea name="description" placeholder="<?= $itemToEdit->description ?>"
+                              class="user-input description-input" oninput='this.style.height = "";
+                              this.style.height = this.scrollHeight + "px"'></textarea>
+                        </form>
                     </div>
-                    <div id="upload-image-container" class="field txt-field">
-                        <div class="field-title">Change image:</div>
-                        <img class="image-box" src="https://i.stack.imgur.com/x3KMH.jpg">
+                    <div id="image-url" class="field txt-field">
+                        <label for="image-url" class="field-title">Change image:</label>
+                        <form><input type="url" name="image-url" placeholder="<?= $itemToEdit->img_path?>"
+                                     class="user-input num-input"></form>
                     </div>
+                    <div class="error-txt" style="display: none">Error Submitting. Make sure all fields have valid inputs.</div>
                     <button class="save-changes-btn">
                         Save changes
                     </button>
                 </div>
                 <div class="edit edit-user-container">
                     <div id="user-firstname" class="field txt-field">
-                        <div class="previous-value">
-                            (Current: Ismail)
-                        </div>
-                        <input type="text" placeholder="First name" class="user-input txt-input">
+                        <label for="first-name" class="field-title">
+                            First name:
+                        </label>
+                        <input type="text" name="first-name" placeholder="<?=$itemToEdit->firstName?>" class="user-input txt-input">
                     </div>
                     <div id="user-lastname" class="field txt-field">
-                        <div class="previous-value">
-                            (Current: Feham)
-                        </div>
-                        <input type="text" placeholder="Last name" class="user-input txt-input">
+                        <label for="last-name" class="field-title">
+                            Last name:
+                        </label>
+                        <input type="text" name="last-name" placeholder="<?=$itemToEdit->lastName?>" class="user-input txt-input">
                     </div>
                     <div id="user-email" class="field txt-field">
-                        <div class="previous-value">
-                            (Current: ismailfeham@gmail.com)
-                        </div>
-                        <input type="text" placeholder="Email address" class="user-input txt-input">
+                        <label for="email" class="field-title">
+                            Email address:
+                        </label>
+                        <input type="text" name="email" placeholder="<?=$itemToEdit->email?>" class="user-input txt-input">
                     </div>
                     <div id="user-location-address" class="field txt-field">
-                        <div class="previous-value">
-                            (Current: 124 Conch St., Bikini Bottom)
-                        </div>
-                        <input type="text" placeholder="Home address" class="user-input txt-input">
+                        <label for="address" class="field-title">
+                            Home address:
+                        </label>
+                        <input type="text" name="address" placeholder="<?=$itemToEdit->address?>" class="user-input txt-input">
                     </div>
+                    <div class="error-txt" style="display: none">Error Submitting. Make sure all fields have valid inputs.</div>
                     <button class="save-changes-btn">
                         Save changes
                     </button>
@@ -284,11 +351,41 @@ function addOrder($order){
     </div>
 </div>
 <div id="footer"></div>
-<?php
-//if($filtered){
-//    echo '<script>changeMainContent("'.$type.'")</script>';
-//}
-?>
 
+<script>
+    <?php
+        if($isEditing){
+            $title = "";
+            if($type == "product") $title = $itemToEdit->productName;
+            if($type == "user")    $title = $itemToEdit->firstName.' '.$itemToEdit->lastName;
+            if($type == "order")   $title = 'Order id: '.$itemToEdit->id;
+            echo 'changeEditContent("'.$type.'", "'.$title.'");';
+        }
+        if($add){
+            echo 'changeEditContent("'.$type.'", "Adding new '.$type.'");';
+        }
+        if($change_content){
+            echo 'changeMainContent("'.$content.'");';
+        }
+    ?>
+    function alertDeletion(type, id, name) {
+        let text = 'Are you sure you want to delete this ' + type + ': ' + name + '?';
+        let content = '?content=' + type;
+        if(type === 'product') content = '';
+        if (confirm(text)){
+                window.location = 'http://homeymarket.epizy.com/webpages/edit_'+
+                    type + '.php?task=delete&id='+id+
+                    '&url=http://homeymarket.epizy.com/webpages/BackStore.php'+content;
+        }
+    }
+
+    function redirectContent(content){
+        window.location.href = 'http://homeymarket.epizy.com/webpages/BackStore.php?content='+ content;
+    }
+
+    function redirectEdit(type, id){
+        window.location.href = 'http://homeymarket.epizy.com/webpages/BackStore.php?type='+ type + '&id=' + id;
+    }
+</script>
 </body>
 </html>

@@ -17,7 +17,7 @@
     function printProducts(){
         foreach ($GLOBALS['products'] as $product) {
             if ($product->aisle == $GLOBALS['aisle']){
-                addProduct($product);
+                insertProduct($product);
             }
         }
     }
@@ -42,7 +42,7 @@
         return ($a-$b) ? ($a-$b)/abs($a-$b) : 0;
     }
 
-    function addProduct($product){
+    function insertProduct($product){
         $productName = $product->productName;
         $imgPath = $product->img_path;
         $price = $product->price;

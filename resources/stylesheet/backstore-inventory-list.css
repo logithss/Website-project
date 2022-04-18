@@ -25,6 +25,7 @@
     width: 100%;
     align-items: center;
     position: relative;
+    cursor: pointer;
     z-index: 1;
 }
 .add-product-btn:hover{
@@ -140,7 +141,7 @@ h3{
     transition: 120ms ease-in;
 }
 .delete-product-btn:hover{
-    border:none;
+    border-color: #4e1c25;
     color: white;
     background-color: #b42e3b;
     transition: 360ms ease-in;
