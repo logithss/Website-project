@@ -14,7 +14,7 @@
                     echo "top<br>";
                     print_r($currentUser);
                     setcookie("userID", $currentUser->id, time() + (86400 * 30));
-                    header('Location: '. "http://homeymarket.epizy.com/webpages/index.html");
+                    header('Location: '. "index.html");
                     break;
                 }
             }
