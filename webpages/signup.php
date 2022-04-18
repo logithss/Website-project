@@ -132,7 +132,9 @@
                         if(!file_put_contents("../JSON/users.json", $encoded_data, LOCK_EX)){
                             echo '<script>alert("signup ERROR")</script>';
                         }else{
-                            echo '<script>alert("signup SUCCESS")</script>';
+                            //echo '<script>location.href="login.php"</script>'; 
+                            echo '<script>location.href="login.php?email='.$_POST['email'].'&password='.$_POST['password'].'"</script>';
+                            //echo '<script>alert("signup SUCCESS")</script>';
                             }
                         }
                         
@@ -172,7 +174,6 @@
                     echo '<script>alert("USER ALREADY REGISTERED")</script>';
                 }
             }
-            
         ?>
 
     </body>
