@@ -1,7 +1,10 @@
 
+const inputs = document.getElementsByTagName("input");
+const plusBtns = document.getElementsByClassName('plus-btn');
+const minusBtns = document.getElementsByClassName('minus-btn');
+
 function initializeBtns(){
-    const plusBtns = document.getElementsByClassName('plus-btn');
-    const minusBtns = document.getElementsByClassName('minus-btn');
+
     for (let i = 0; i < plusBtns.length; i++) {
         let plusBtn = plusBtns[i];
         let minusBtn = minusBtns[i];
@@ -11,6 +14,18 @@ function initializeBtns(){
         plusBtn.onclick   = function () { return incrementValue(plusBtn)  };
         minusBtn.onclick  = function () { return decrementValue(minusBtn) };
     }
+}
+
+function initializeInputs(){
+    for (let i = 0; i < inputs.length; i++) {
+        let productName = inputs[i].parentElement.previousElementSibling.previousElementSibling.innerHTML
+        inputs[i].setAttribute('id', productName)
+    }
+}
+
+function display(){
+    const n = document.getElementById("Bagel")
+    console.log(n.value)
 }
 
 function incrementValue(element){
@@ -29,4 +44,7 @@ function decrementValue(element){
     return false;
 }
 
+
+
 initializeBtns();
+initializeInputs();

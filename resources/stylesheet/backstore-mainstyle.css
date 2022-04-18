@@ -10,7 +10,7 @@
     --default-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.2);
 }
 .container{
-    min-height: 33vw;
+    min-height: calc(100vh - 180px - 131px);
 }
 .content {
     height: 100%;
@@ -89,6 +89,43 @@ body{
     box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
 }
 
+.search-box{
+    margin: 20px auto 20px auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    width: fit-content;
+    border: black 2px;
+    background-color: #e9ecee;
+    border-radius: 40px;
+    padding: 10px;
+}
+.search-box a{
+    color: white;
+}
+.search-btn{
+    width: 50px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgb(175, 185, 192);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s;
+    text-decoration: none;
+}
+.search-txt{
+    border: none;
+    background: none;
+    outline: none;
+    float: left;
+    padding: 0;
+    font-size: 16px;
+    /*line-height: 40px;*/
+    width: 100%;
+}
 
 #content-title{
     background-color: #f5f5f5;
@@ -130,6 +167,52 @@ body{
         padding: 1.8rem 1.1rem 1.8rem .9rem;
         display: flex;
         justify-content: flex-start;
+    }
+    .search-txt{
+        width: 0;
+    }
+    .search-box:hover > .search-txt{
+        width: 240px;
+        padding: 0 6px;
+        top: 50px;
+    }
+    .search-box:hover > .search-btn{
+        background: #1d3f59;
+    }
+    .search-box:hover{
+        background: rgba(192, 201, 208, 0.26);
+    }
+    .search-box{
+        width: fit-content;
+        border: black 2px;
+        background: none;
+        border-radius: 40px;
+        padding: 10px;
+    }
+    .search-box a{
+        color: white;
+    }
+    .search-btn{
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: rgb(175, 185, 192);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 0.4s;
+        text-decoration: none;
+    }
+    .search-txt{
+        border: none;
+        background: none;
+        outline: none;
+        float: left;
+        padding: 0;
+        font-size: 16px;
+        transition: 0.4s;
+        line-height: 40px;
+        width: 0;
     }
 }
 

@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../resources/stylesheet/backstore-users.css">
     <link rel="stylesheet" href="../resources/stylesheet/backstore-inventory-list.css">
     <link rel="stylesheet" href="../resources/stylesheet/backstore-orders.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <link rel="stylesheet" href="../resources/stylesheet/header-footer.css">
     <meta name ="viewport" content="width-device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap" rel="stylesheet">
@@ -109,6 +110,14 @@
                 Inventory
             </div>
             <div class="list product-list">
+                <div class="search-box">
+                    <input id="search-product" class="search-txt" type="text" name="" placeholder="Search by product name">
+                    <a class="search-btn" href="#">
+                        <span class="material-icons-outlined">
+                            search
+                        </span>
+                    </a>
+                </div>
                 <button class="add-product-btn">
                     <div class="add-product-img">
                         <img class="box-img" src ="https://icon-library.com/images/inventory-icon-png/inventory-icon-png-17.jpg" >
@@ -119,17 +128,18 @@
                 <div class="product">
                     <div class="product-info">
                         <div class="product-img">
-                            <img src="../resources/img/products/apple.png">
+                            <img src="../resources/img/products/chocolate.png">
                         </div>
-                        <div class="product-name">
-                            Apple
-                        </div>
-
-                        <div class="product-price">
-                            $1.99
-                        </div>
-                        <div class="product-quantity">
-                            Quantity: 100
+                        <div class="product-label">
+                            <div class="product-name">
+                                Apple
+                            </div>
+                            <div class="product-price">
+                                $1.99
+                            </div>
+                            <div class="product-quantity">
+                                Quantity: 100
+                            </div>
                         </div>
                         <div class="product-availability">
                             In stock
