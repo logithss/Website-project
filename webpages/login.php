@@ -1,4 +1,29 @@
-﻿<!doctype html>
+﻿
+<?php
+        if(isset($_REQUEST['email']) && isset($_REQUEST['password']))
+        {
+            $em = $_GET['email'];
+            $pass = $_GET['password'];
+
+            $userList = json_decode(file_get_contents("../JSON/users.json"));
+
+            foreach($userList as $currentUser)
+            {
+                if($currentUser->email == $em && $currentUser->password == $pass)
+                {
+                    echo "top<br>";
+                    print_r($currentUser);
+                    setcookie("userID", $currentUser->id, time() + (86400 * 30));
+                    header('Location: '. "http://homeymarket.epizy.com/webpages/index.html");
+                    break;
+                }
+            }
+        }
+
+?>
+
+
+<!doctype html>
 <html lang="en">
 <head>
     <!-- Required meta tags -->
@@ -8,12 +33,10 @@
     <!-- my font-->
     <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
 
-
-
     <!-- my css-->
     <link rel="stylesheet" href="../resources/stylesheet/loginStyle.css">
 
-    
+
     <title>LogIn</title>
 
     <!-- JS for header/footer -->
@@ -34,12 +57,7 @@
             var errorText = document.getElementById("errorText");
             console.log(errorText);
 
-            if (username == "user1" && password == "123") {
-                console.log("login successful");
-                errorText.style.display = "none";
-                window.location.href = "login_logged.html";
-            }
-            else {
+            if (username === "" || password === "") {
                 console.log("login failed");
                 if (errorText.style.display == "block") {
                     errorText.style.display = "none";
@@ -50,6 +68,10 @@
                     errorText.style.display = "block";
                 }
             }
+            else
+            {
+                window.location.href = "login.php?email="+username+"&password=" + password;
+            }
         }
     </script>
 
@@ -59,8 +81,6 @@
 
   <!-- HEADER -->
   <div id="header"></div>
-
-  <a href="test.php">Go to php page</a>
 
     <div class="main-box">
 
@@ -73,18 +93,26 @@
 
             <h1>Login</h1>
             <!-- username input -->
-            <input class="form-input" type="email" id="username" placeholder="Enter a valid email address"/>
+            <input class="form-input" type="email" id="username" placeholder="Enter a valid email address" value="<?php echo $em; ?>"/>
             <p class="label-form">Email address</p>
 
 
             <!-- Password input -->
-            <input class="form-input" type="password" id="password" placeholder="Enter a valid email address"/>
+            <input class="form-input" type="password" id="password" placeholder="Enter a valid email address" value="<?php echo $pass; ?>"/>
             <p class="label-form">Password</p>
             <a href="login_passwordForgotten.html">Forgot password?</a>
 
             <!-- Login error Label -->
             <br />
-            <h4 class="label-error" id="errorText"> Your login information is incorrect</h4>
+            <?php
+
+                if(isset($_REQUEST['email']) && isset($_REQUEST['password']))
+                {
+                    echo "<h4 class=\"label-error\" style=\"display: block\" id=\"errorText\"> Your login information is incorrect</h4>";
+                }
+                else
+                    echo "<h4 class=\"label-error\" id=\"errorText\"> Your login information is incorrect</h4>";
+            ?>
 
             <!-- submit input -->
             <br />
