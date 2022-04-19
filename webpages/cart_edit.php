@@ -34,11 +34,11 @@
             $newProduct["productID"] = $_REQUEST['productID'];
             $newProduct["quantity"] = $_REQUEST['quantity'];
 
-            push_array($_SESSION["cart"], $newProduct);
+            //push_array($_SESSION["cart"], $newProduct);
         }
     }
 
-    print_r();
+    print_r($_SESSION["cart"]);
 
     if(isset($_REQUEST['previousURL']))
     {

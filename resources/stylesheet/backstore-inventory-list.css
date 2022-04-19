@@ -77,6 +77,8 @@
 }
 .add-product-img{
     /*display: flex;*/
+<<<<<<< HEAD
+=======
 }
 .product-middle{
     width: 100%;
@@ -85,6 +87,7 @@
     justify-content: center;
     align-items: center;
     height: 100%;
+>>>>>>> a4f1b6530d7b5c7653e1aeb602ecf6ed8b858519
 }
 .product-info{
     width: 100%;
@@ -102,10 +105,13 @@
 .product-name, .product-img, .product-quantity, .product-price, .product-availability{
     font-size: clamp(.8rem, 2vw, 1rem);
     width: fit-content;
+<<<<<<< HEAD
+=======
 }
 .product-name{
     white-space: nowrap;
     font-weight: bolder;
+>>>>>>> a4f1b6530d7b5c7653e1aeb602ecf6ed8b858519
 }
 .product-availability{
     display:none;
@@ -152,6 +158,10 @@ h3{
         gap: 0;
     }
     .product-label{
+<<<<<<< HEAD
+        width: min-content;
+=======
+>>>>>>> a4f1b6530d7b5c7653e1aeb602ecf6ed8b858519
         flex-direction: row;
         gap: 5%;
     }
@@ -169,6 +179,17 @@ h3{
     .product-img > img{
         width: clamp(30px, 20vw, 50px)  !important;
     }
+<<<<<<< HEAD
+    .product-info{
+        width: 100%;
+        height: fit-content;
+        flex-direction: row;
+        align-self: center;
+        justify-content: center;
+        gap: 2%;
+        padding: 1% 5% 0 5%;
+    }
+=======
     .product-middle{
         width: auto;
     }
@@ -180,6 +201,7 @@ h3{
         gap: 2%;
         padding: 0 5% 0 5%;
     }
+>>>>>>> a4f1b6530d7b5c7653e1aeb602ecf6ed8b858519
     .edit-product-btn, .delete-product-btn{
         width: clamp(2rem, 6vw, 6rem);
     }
@@ -188,12 +210,23 @@ h3{
         flex-basis: 0;
     }
     .product-availability{
+<<<<<<< HEAD
+        margin-left: auto;
+        width: max-content;
+=======
         display: block;
         text-align: right;
+>>>>>>> a4f1b6530d7b5c7653e1aeb602ecf6ed8b858519
     }
     .product-quantity{
         width: fit-content;
         white-space: nowrap;
+<<<<<<< HEAD
+    }
+    .product-img{
+        margin-right:auto;
+=======
+>>>>>>> a4f1b6530d7b5c7653e1aeb602ecf6ed8b858519
     }
 }
 

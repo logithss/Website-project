@@ -7,7 +7,10 @@
     if(isset($_GET['aisle'])) {
         $aisle = $_GET['aisle'];
     }
+<<<<<<< HEAD
+=======
 
+>>>>>>> a4f1b6530d7b5c7653e1aeb602ecf6ed8b858519
     if(isset($_GET['sort'])) {
         $sort_type = $_GET['sort'];
         $sort_order = $_GET['order'];
@@ -17,7 +20,11 @@
     function printProducts(){
         foreach ($GLOBALS['products'] as $product) {
             if ($product->aisle == $GLOBALS['aisle']){
+<<<<<<< HEAD
+                addProduct($product);
+=======
                 insertProduct($product);
+>>>>>>> a4f1b6530d7b5c7653e1aeb602ecf6ed8b858519
             }
         }
     }
@@ -41,8 +48,12 @@
     function int_cmp($a,$b){
         return ($a-$b) ? ($a-$b)/abs($a-$b) : 0;
     }
+<<<<<<< HEAD
+    function addProduct($product){
+=======
 
     function insertProduct($product){
+>>>>>>> a4f1b6530d7b5c7653e1aeb602ecf6ed8b858519
         $productName = $product->productName;
         $imgPath = $product->img_path;
         $price = $product->price;

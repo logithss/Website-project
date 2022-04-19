@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+<<<<<<< HEAD
+  <component name="PublishConfigData" autoUpload="On explicit save action" serverName="Website server" remoteFilesAllowedToDisappearOnAutoupload="false">
+    <serverData>
+      <paths name="Website server">
+=======
   <component name="PublishConfigData" autoUpload="On explicit save action" serverName="Website Project" remoteFilesAllowedToDisappearOnAutoupload="false" autoUploadExternalChanges="true" showEqualInSync="true">
     <serverData>
       <paths name="Website Project">
+>>>>>>> a4f1b6530d7b5c7653e1aeb602ecf6ed8b858519
         <serverdata>
           <mappings>
             <mapping deploy="/htdocs/" local="$PROJECT_DIR$" web="/" />
