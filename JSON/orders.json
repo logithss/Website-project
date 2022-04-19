@@ -1,23 +1,25 @@
 [
   {
-    "id": 123456,
+    "id": 123455,
+    "isDelivery": false,
     "items": [
-        {
-          "id": 1,
-          "quantity": 2
-        },
-        {
-          "id": 2,
-          "quantity": 1
-        },
-        {
-          "id": 3,
-          "quantity": 4
-        }
+      {
+        "id": 1,
+        "quantity": 3
+      },
+      {
+        "id": 1,
+        "quantity": 1
+      },
+      {
+        "id": 1,
+        "quantity": 4
+      }
     ]
   },
   {
     "id": 654321,
+    "isDelivery": false,
     "items": [
       {
         "id": 4,
@@ -35,26 +37,28 @@
   },
   {
     "id": 111222,
+    "isDelivery": true,
     "items": [
       {
         "id": 4,
         "quantity": 2
       },
       {
-        "id": 7,
+        "id": 5,
         "quantity": 1
       }
     ]
   },
   {
-    "id": 111222,
+    "id": 111442,
+    "isDelivery": true,
     "items": [
       {
         "id": 4,
         "quantity": 2
       },
       {
-        "id": 7,
+        "id": 6,
         "quantity": 1
       }
     ]

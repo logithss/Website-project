@@ -13,20 +13,26 @@
     if($task == "add")    addProduct();
     if($task == "edit")   editItem();
 
+//  ORDERS-------
+    if(isset($_POST['save-changes-order-add'])){ //ADD
 
-//    function deleteItem($type){
-//        $id   = $GLOBALS['id'];
-//
-//        $list = $GLOBALS[''.$type.'s'];
-//        unset($list[getItemIndex(''.$type, $id)]);
-//
-//        $list = array_values($list);
-//        file_put_contents('../JSON/'.$type.'s.json', json_encode($list));
-//
-//        echo 'deletion successful';
-//
-//    }
+        echo $_POST['order-id'];
+        echo '<br>';
+        echo $_GET['orderID'];
+        echo '<br>';
+        echo $_POST['order-type'];
+        header('Location: '.$_GET['url']);
+    }
 
-    header('Location: '.$url);
+    if(isset($_POST['save-changes-order'])){ //EDIT
+        echo $_POST['order-id'];
+        echo '<br>';
+        echo $_GET['orderID'];
+        echo '<br>';
+        echo $_POST['order-type'];
+        header('Location: '.$_GET['url']);
+    }
+
+
 
 ?>

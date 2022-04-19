@@ -1,10 +1,10 @@
 [
     {
-        "id": 0,
+        "id": 39228,
         "firstName": "Admin",
         "lastName": "Admin",
         "email": "admin@gmail.com",
-        "address": "2515 Rue Notre-Dame Ouest",
+        "zipcode": "J7M 0T9",
         "password": "Admin",
         "isAdmin": true
     },
@@ -13,7 +13,7 @@
         "firstName": "Admin",
         "lastName": "Admin",
         "email": "admin@gmail.com",
-        "address": "2515 Rue Notre-Dame Ouest",
+        "zipcode": "J7M 0T9",
         "password": "Admin",
         "isAdmin": true
     },
@@ -22,7 +22,7 @@
         "firstName": "Admin",
         "lastName": "Admin",
         "email": "admin@gmail.com",
-        "address": "2515 Rue Notre-Dame Ouest",
+        "zipcode": "J7M 0T9",
         "password": "Admin",
         "isAdmin": true
     },
@@ -31,7 +31,7 @@
         "firstName": "Admin",
         "lastName": "Admin",
         "email": "admin@gmail.com",
-        "address": "2515 Rue Notre-Dame Ouest",
+        "zipcode": "L4P 8G1",
         "password": "Admin",
         "isAdmin": true
     },
@@ -40,7 +40,7 @@
         "firstName": "Admin",
         "lastName": "Admin",
         "email": "admin@gmail.com",
-        "address": "2515 Rue Notre-Dame Ouest",
+        "zipcode": "P2B 0T3",
         "password": "Admin",
         "isAdmin": true
     },
@@ -49,7 +49,7 @@
         "firstName": "Ismail",
         "lastName": "Feham",
         "email": "ismail@gmail.com",
-        "address": "2700 Boulevard de la Concorde Est",
+        "zipcode": "E4E 1P9",
         "password": "ismail123",
         "isAdmin": true
     },
@@ -58,7 +58,7 @@
         "firstName": "Merouane",
         "lastName": "Issad",
         "email": "merouane@gmail.com",
-        "address": "4980 Boulevard de la Rive Sud",
+        "zipcode": "G0N 2G6",
         "password": "merouane123",
         "isAdmin": true
     },
@@ -67,7 +67,7 @@
         "firstName": "Oussama",
         "lastName": "Cherifi",
         "email": "oussama@gmail.com",
-        "address": "3426 Rue Notre-Dame Ouest",
+        "zipcode": "T9N 5R7",
         "password": "oussama123",
         "isAdmin": false
     },
@@ -76,7 +76,7 @@
         "firstName": "Sathu",
         "lastName": "Sathththyvel",
         "email": "merouane@gmail.com",
-        "address": "5791 St Laurent",
+        "zipcode": "E6G 0S3",
         "password": "sathu123",
         "isAdmin": false
     },
@@ -85,7 +85,7 @@
         "firstName": "Sarah",
         "lastName": "Amanis",
         "email": "sarah@gmail.com",
-        "address": "4650 Boulevard Industriel",
+        "zipcode": "R1N 2P7",
         "password": "sarah123",
         "isAdmin": false
     },
@@ -94,7 +94,7 @@
         "firstName": "Gevorg",
         "lastName": "Gev",
         "email": "gevorg@gmail.com",
-        "address": "835 Bd Maloney E",
+        "zipcode": "J9Z 4H0",
         "password": "gevorg123",
         "isAdmin": false
     },
@@ -103,7 +103,7 @@
         "firstName": "Mohammed",
         "lastName": "Anes",
         "email": "mohammed@gmail.com",
-        "address": "367 Avenue du Mont-Royal Est",
+        "zipcode": "G9X 5S7",
         "password": "mohammed123",
         "isAdmin": false
     },
@@ -112,7 +112,7 @@
         "firstName": "Haroune",
         "lastName": "Lakadi",
         "email": "haroune@gmail.com",
-        "address": "1181 Union Ave",
+        "zipcode": "E4E 1P9",
         "password": "haroune123",
         "isAdmin": false
     },
@@ -121,7 +121,7 @@
         "firstName": "Hatim",
         "lastName": "Hartak",
         "email": "hatim@gmail.com",
-        "address": "2360 Nicolas Pinel",
+        "zipcode": "N0G 3J4",
         "password": "hatim123",
         "isAdmin": false
     },
@@ -130,7 +130,7 @@
         "firstName": "Nabil",
         "lastName": "Bouteflika",
         "email": "nabil@gmail.com",
-        "address": "H3R4T2",
+        "zipcode": "H3R4T2",
         "password": "nabil",
         "isAdmin": false
     },
@@ -139,7 +139,7 @@
         "firstName": "Nabil",
         "lastName": "Bouteflika",
         "email": "nabil@gmail.com",
-        "address": "H3R4T2",
+        "zipcode": "H3R4T2",
         "password": "nabil",
         "isAdmin": false
     },
@@ -148,7 +148,7 @@
         "firstName": "Nabil",
         "lastName": "Bouteflika",
         "email": "nabil@gmail.com",
-        "address": "H3R4T2",
+        "zipcode": "H3R4T2",
         "password": "nabil",
         "isAdmin": false
     },
@@ -157,7 +157,7 @@
         "firstName": "Nabil",
         "lastName": "Bouteflika",
         "email": "nabil@gmail.com",
-        "address": "H3R4T2",
+        "zipcode": "H3R4T2",
         "password": "nabil",
         "isAdmin": false
     },
@@ -166,7 +166,7 @@
         "firstName": "Nabil",
         "lastName": "Bouteflika",
         "email": "nabil@gmail.com",
-        "address": "H3R4T2",
+        "zipcode": "H3R4T2",
         "password": "nabil",
         "isAdmin": false
     },
@@ -175,7 +175,7 @@
         "firstName": "Nabil",
         "lastName": "Bouteflika",
         "email": "nabil@gmail.com",
-        "address": "H3R4T2",
+        "zipcode": "H3R4T2",
         "password": "nabil",
         "isAdmin": false
     }

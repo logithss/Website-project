@@ -66,7 +66,7 @@ nav img {
   background: white;
   display: block;
   margin: auto;
-  transition: 0.7s;
+  transition: 0.4s;
 }
 
 /* Then when you hover, it will have 100% width */

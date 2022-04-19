@@ -8,8 +8,10 @@ $orders   = json_decode(file_get_contents("../JSON/orders.json"));
 $isEditing = false;
 $change_content = false;
 $add = false;
+$base_url = 'http://homeymarket.epizy.com/webpages/BackStore.php';
 
 if(isset($_GET['type']) && isset($_GET['id'])){
+    $add_button_text = 'Submit Changes';
     $type = $_GET['type'];
     $id   = $_GET['id'];
     $itemToEdit = getItem($type, $id);
@@ -17,6 +19,7 @@ if(isset($_GET['type']) && isset($_GET['id'])){
 }
 
 if(isset($_GET['add']) && $_GET['type']){
+    $add_button_text = 'Add ' . $_GET['type'];
     $type = $_GET['type'];
     $add = true;
 }
@@ -60,7 +63,7 @@ function printOrderItems($order){
     echo '            </div>';
     echo '            <div class="product-btns">';
     echo '                <button class ="delete-btn delete-product-btn" style="width: unset"
-                                onClick="someFunction()">Delete</button>';
+                                onClick="deleteOrderItem(\''.$order->id.'\',\''.$product->id.'\')">Delete</button>';
     echo '            </div>';
     echo '        </div>';
     echo '        <div class="product-availability"> </div>';
@@ -107,7 +110,7 @@ function insertUser($user){
     echo '    </div>';
     echo '    <div class="user-btns">';
     echo '        <button  class ="edit-user-btn" onclick=
-                  "redirectEdit(\'user\', \''.$user->firstName.' '.$user->lastName.'\')">Edit user</button>';
+                  "redirectEdit(\'user\', \''.$user->id.'\')">Edit user</button>';
     echo '        <button class ="delete-btn delete-user-btn" 
                        onClick="alertDeletion(\'user\',\''.$user->id.'\',\''.$user->firstName.' '.$user->lastName.'\')">Delete user</button>';
     echo '    </div>';
@@ -257,94 +260,137 @@ function insertOrder($order){
                     <?=printOrders()?>
             </div>
             <div class="edit-container">
-                <div class="edit edit-order-container">
-                    <div class="field num-field">
-                        <label for="order-id" class="field-title">Order id:</label>
-                        <form><input name="order-id" type="number" placeholder="<?=$itemToEdit->id?>" class="user-input num-input"></form>
-                    </div>
-                    <ul class="order-items">
-                        <?=printOrderItems($itemToEdit)?>
-                    </ul>
-                    <div class="order-type">
-                        <form><label>
-                                <select name="order-type">
-                                        <option value="" disabled selected>Order type</option>
-                                        <option value="Pickup">Pickup</option>
-                                        <option value="Delivery">Delivery</option>
-                                    </select>
-                        </label></form>
-                    </div>
-                    <div class="error-txt" style="display: none">Error Submitting. Make sure all fields have valid inputs.</div>
-                    <form>
-                        <button name="save-changes" class="save-changes-btn">Save changes</button>
-                    </form>
-                </div>
                 <div class="edit edit-product-container">
+                    <form id="form-product" action="edit_item.php?id=<?=$itemToEdit->id?>&url=<?=$base_url?>" method="post"></form>
+                    <div class="edit-select-container">
+                        <select name="aisle-type" form="form-order">
+                            <option value="" disabled selected>Aisle:</option>
+                            <?php
+                                $aisles = array("Fruit", "Vegetable", "Bakery", "Meat", "Snacks", "Dairy");
+                                foreach ($aisles as $aisle){
+                                    $selected = "";
+                                    if($itemToEdit->aisle == strtolower($aisle))$selected = "selected=\"selected\"";
+                                    echo '<option value="'.$aisle.'"'.$selected.'">'.$aisle.'</option>';
+                                }
+                            ?>
+                        </select>
+                    </div>
                     <div id="product-name" class="field txt-field">
-                        <label for="product-name" class="field-title">
-                            Product name:
-                        </label>
-                        <form><input name="product-name" type="text" placeholder="<?=$itemToEdit->productName?>" class="user-input txt-input"></form>
+                        <label for="product-name" class="field-title">Product name:</label>
+                        <input name="product-name" type="text" placeholder="<?=$itemToEdit->productName?>"
+                               class="user-input txt-input" form="form-product">
                     </div>
                     <div id="unit-price" class="field txt-field">
-                        <label for="product-price" class="field-title">
-                            Product price:
-                        </label>
-                        <form><input name="product-price" type="number" placeholder="<?=$itemToEdit->price?>" class="user-input num-input"></form>
+                        <label for="product-price" class="field-title">Product price:</label>
+                        <input name="product-price" type="number" placeholder="<?=$itemToEdit->price?>"
+                               class="user-input num-input" form="form-product">
                     </div id="unit-price">
                     <div id="quantity" class="field txt-field">
-                        <label for="quantity" class="field-title">
-                            Quantity:
-                        </label>
-                        <form><input type="number" name="quantity" placeholder="<?= $itemToEdit->quantity ?>"
-                                     class="user-input num-input"></form>
+                        <label for="quantity" class="field-title">Quantity:</label>
+                        <input type="number" name="quantity" placeholder="<?= $itemToEdit->quantity ?>"
+                               class="user-input num-input" form="form-product">
                     </div>
                     <div id="item-description" class="field txt-field">
                         <label for="description" class="field-title">Description:</label>
-                        <form><textarea name="description" placeholder="<?= $itemToEdit->description ?>"
-                              class="user-input description-input" oninput='this.style.height = "";
-                              this.style.height = this.scrollHeight + "px"'></textarea>
-                        </form>
+                        <textarea name="description" placeholder="<?= $itemToEdit->description ?>"
+                                  class="user-input description-input" oninput='this.style.height = "";
+                              this.style.height = this.scrollHeight + "px"' form="form-product"></textarea>
                     </div>
                     <div id="image-url" class="field txt-field">
-                        <label for="image-url" class="field-title">Change image:</label>
-                        <form><input type="url" name="image-url" placeholder="<?= $itemToEdit->img_path?>"
-                                     class="user-input num-input"></form>
+                        <label for="image-url" class="field-title">Image url:</label>
+                        <input type="url" name="image-url" placeholder="<?= $itemToEdit->img_path?>"
+                               class="user-input num-input" form="form-product">
                     </div>
                     <div class="error-txt" style="display: none">Error Submitting. Make sure all fields have valid inputs.</div>
-                    <button class="save-changes-btn">
-                        Save changes
-                    </button>
+                    <input type="submit" name="save-changes-product<?php if($add) echo '-add';?>"
+                           value="<?=$add_button_text?>" class="save-changes-btn" form="form-product">
                 </div>
                 <div class="edit edit-user-container">
+                    <form id="form-user" action="edit_item.php?id=<?=$itemToEdit->id?>&url=<?=$base_url?>" method="post"></form>
                     <div id="user-firstname" class="field txt-field">
-                        <label for="first-name" class="field-title">
-                            First name:
-                        </label>
-                        <input type="text" name="first-name" placeholder="<?=$itemToEdit->firstName?>" class="user-input txt-input">
+                        <label for="first-name" class="field-title">First name:</label>
+                        <input type="text" name="first-name" placeholder="<?=$itemToEdit->firstName?>"
+                               class="user-input txt-input" form="form-user">
                     </div>
                     <div id="user-lastname" class="field txt-field">
-                        <label for="last-name" class="field-title">
-                            Last name:
-                        </label>
-                        <input type="text" name="last-name" placeholder="<?=$itemToEdit->lastName?>" class="user-input txt-input">
+                        <label for="last-name" class="field-title">Last name:</label>
+                        <input type="text" name="last-name" placeholder="<?=$itemToEdit->lastName?>"
+                               class="user-input txt-input" form="form-user">
                     </div>
                     <div id="user-email" class="field txt-field">
-                        <label for="email" class="field-title">
-                            Email address:
-                        </label>
-                        <input type="text" name="email" placeholder="<?=$itemToEdit->email?>" class="user-input txt-input">
+                        <label for="email" class="field-title">Email address:</label>
+                        <input type="text" name="email" placeholder="<?=$itemToEdit->email?>"
+                               class="user-input txt-input" form="form-user">
                     </div>
-                    <div id="user-location-address" class="field txt-field">
-                        <label for="address" class="field-title">
-                            Home address:
-                        </label>
-                        <input type="text" name="address" placeholder="<?=$itemToEdit->address?>" class="user-input txt-input">
+                    <div id="user-zipcode" class="field txt-field">
+                        <label for="zipcode" class="field-title">Zip code:</label>
+                        <input type="text" name="zipcode" placeholder="<?=$itemToEdit->zipcode?>"
+                               class="user-input txt-input" form="form-user">
+                    </div>
+                    <div id="user-admin" class="field txt-field">
+                        <label for="isAdmin" class="field-title">Is Administrator?</label>
+                        <input type="checkbox" name="isAdmin" checked="<?php if($itemToEdit->isAdmin)echo 'checked';?>"
+                               class="checkbox-input" form="form-user">
                     </div>
                     <div class="error-txt" style="display: none">Error Submitting. Make sure all fields have valid inputs.</div>
-                    <button class="save-changes-btn">
-                        Save changes
-                    </button>
+                    <input type="submit" name="save-changes-users<?php if($add) echo '-add';?>" class="save-changes-btn"
+                           value="<?=$add_button_text?>" form="form-user">
+                </div>
+                <div class="edit edit-order-container">
+                    <form id="form-order" action="edit_item.php?orderID=<?=$itemToEdit->id?>&url=<?=$base_url?>?content=order"
+                          method="post"></form>
+                    <?php
+                        if(!$add){
+                            echo'<form id="form-add-order-item" 
+                            action="edit_item.php?orderID='.$itemToEdit->id.'&url='.$base_url.'?type=order&id='.$itemToEdit->id.'"method="post">';
+                            echo '</form>';
+                        }
+                    ?>
+                    <div class="field num-field">
+                        <label for="order-id" class="field-title">Order id:</label>
+                        <input name="order-id" type="number" placeholder="<?=$itemToEdit->id?>"
+                               class="user-input num-input" form="form-order">
+                    </div>
+<!--                ADD PRODUCT FUNCTIONALITY-->
+                    <?php
+                        if(!$add){
+                            echo '<div class="field add-order-item-container">';
+                            echo '    <label for="order-id" class="field-title">Add Product:</label>';
+                            echo '    <div class="add-order-item-box">';
+                            echo '    <label for="order-id" class="field-title">P_ID: </label>';
+                            echo '    <input name="item-id" type="number" placeholder="Product ID"
+                                        class="user-input num-input" form="form-add-order-item">';
+                            echo '    <label for="order-id" class="field-title">Qt: </label>';
+                            echo '    <input name="item-quantity" type="number" placeholder="Quantity"
+                                        class="user-input num-input" form="form-add-order-item">';
+                            echo '    <input type="submit" name="add-order-item" value="Add Item" id="add-order-item-btn"
+                                        class="save-changes-btn" form="form-add-order-item">';
+                            echo '</div>';
+                            echo '</div>';
+                        }
+                    ?>
+                    <div class="order-items-container">
+                        <ul class="order-items">
+                            <?=printOrderItems($itemToEdit)?>
+                        </ul>
+                    </div>
+                    <div class="edit-select-container">
+                            <select name="order-type" form="form-order">
+                                <option value="" disabled selected>Order type</option>
+                                <?php
+                                    if($itemToEdit->isDelivery){
+                                        echo '<option value="Pickup">Pickup</option>';
+                                        echo '<option value="Delivery" selected="selected">Delivery</option>';
+                                    }else{
+                                        echo '<option value="Pickup" selected="selected">Pickup</option>';
+                                        echo '<option value="Delivery">Delivery</option>';
+                                    }
+                                ?>
+                             </select>
+                    </div>
+                    <div class="error-txt" style="display: none">Error Submitting. Make sure all fields have valid inputs.</div>
+                        <input type="submit" name="save-changes-order<?php if($add) echo '-add';?>"
+                               value="<?=$add_button_text?>" class="save-changes-btn" form="form-order">
                 </div>
             </div>
         </div>
@@ -373,12 +419,19 @@ function insertOrder($order){
         let content = '?content=' + type;
         if(type === 'product') content = '';
         if (confirm(text)){
-                window.location = 'http://homeymarket.epizy.com/webpages/edit_'+
-                    type + '.php?task=delete&id='+id+
-                    '&url=http://homeymarket.epizy.com/webpages/BackStore.php'+content;
+                window.location = 'http://homeymarket.epizy.com/webpages/edit_item.php?'
+                    + 'delete=1&id=' +id + '&type=' + type
+                    + '&url=http://homeymarket.epizy.com/webpages/BackStore.php'+content;
         }
     }
-
+    function deleteOrderItem(orderID, productID) {
+        let text = 'Are you sure you want to delete this order item?';
+        if (confirm(text)){
+            window.location = 'http://homeymarket.epizy.com/webpages/edit_item.php?'
+                + 'delete=1&orderID=' + orderID + '&productID=' + productID
+                + '&url=http://homeymarket.epizy.com/webpages/BackStore.php?type=order';
+        }
+    }
     function redirectContent(content){
         window.location.href = 'http://homeymarket.epizy.com/webpages/BackStore.php?content='+ content;
     }
