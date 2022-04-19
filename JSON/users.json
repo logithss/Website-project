@@ -3,7 +3,7 @@
         "id": 0,
         "firstName": "Admin",
         "lastName": "Admin",
-        "email": "admin@gmail.com",
+        "email": "Admin",
         "address": "2515 Rue Notre-Dame Ouest",
         "password": "Admin",
         "isAdmin": true
