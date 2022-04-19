@@ -2,8 +2,6 @@
   {
     "id": 9929,
     "productName": "Apple",
-<<<<<<< HEAD
-=======
     "quantity": 10,
     "aisle": "fruit",
     "price": 1.12,
@@ -14,7 +12,6 @@
   {
     "id": 231231,
     "productName": "Apple",
->>>>>>> a4f1b6530d7b5c7653e1aeb602ecf6ed8b858519
     "quantity": 100,
     "aisle": "fruit",
     "price": 1.12,
