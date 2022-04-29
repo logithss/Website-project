@@ -1,9 +1,8 @@
-﻿
-<?php
+﻿<?php
         if(isset($_REQUEST['email']) && isset($_REQUEST['password']))
         {
-            $em = $_GET['email'];
-            $pass = $_GET['password'];
+            $em = $_REQUEST['email'];
+            $pass = $_REQUEST['password'];
 
             $userList = json_decode(file_get_contents("../JSON/users.json"));
 
@@ -19,7 +18,6 @@
                 }
             }
         }
-
 ?>
 
 
@@ -50,7 +48,8 @@
     </script>
 
     <script>
-        function login() {
+        function login()
+        {
             var username = document.getElementById("username").value;
             var password = document.getElementById("password").value;
 
@@ -58,7 +57,7 @@
             console.log(errorText);
 
             if (username === "" || password === "") {
-                console.log("login failed");
+                errorText.textContent = "Your login information is incomplete";
                 if (errorText.style.display == "block") {
                     errorText.style.display = "none";
                     //display after delay if message was already shown
@@ -70,8 +69,23 @@
             }
             else
             {
-                window.location.href = "login.php?email="+username+"&password=" + password;
+                if(validateEmail(username)){
+                    window.location.href = "login.php?email="+username+"&password=" + password;
+                }
+                else
+                {
+                    errorText.textContent = "Please enter a valid email (ex: user@gmail.com)";
+                    errorText.style.display = "none";
+                    //display after delay if message was already shown
+                    setTimeout(() => { errorText.style.display = "block"; }, 100);
+                }
             }
+        }
+
+        function validateEmail(email)
+        {
+            var re = /\S+@\S+\.\S+/;
+            return re.test(email);
         }
     </script>
 
@@ -98,7 +112,7 @@
 
 
             <!-- Password input -->
-            <input class="form-input" type="password" id="password" placeholder="Enter a valid email address" value="<?php echo $pass; ?>"/>
+            <input class="form-input" type="password" id="password" placeholder="Enter password" value="<?php echo $pass; ?>"/>
             <p class="label-form">Password</p>
             <a href="login_passwordForgotten.html">Forgot password?</a>
 
@@ -111,7 +125,7 @@
                     echo "<h4 class=\"label-error\" style=\"display: block\" id=\"errorText\"> Your login information is incorrect</h4>";
                 }
                 else
-                    echo "<h4 class=\"label-error\" id=\"errorText\"> Your login information is incorrect</h4>";
+                    echo "<h4 class=\"label-error\" id=\"errorText\"> Your login information is incomplete</h4>";
             ?>
 
             <!-- submit input -->

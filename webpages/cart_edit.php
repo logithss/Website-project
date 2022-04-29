@@ -1,52 +1,66 @@
 <?php
 
     session_start();
+
+    if(isset($_REQUEST['unset']))
+    {
+        unset($_SESSION["cart"]);
+    }
+
+    if(!isset($_SESSION["cart"]))
+    {
+        echo "wasn't set";
+        $_SESSION["cart"] = array();
+    }
+
     $products = $_SESSION["cart"];
+
+    echo "previous: ";
+    print_r($products);
 
     if(isset($_REQUEST['productID']) && isset($_REQUEST['quantity']))
     {
-        $id = $_GET['productID'];
-        $quantity = $_GET['quantity'];
+        $id = $_REQUEST['productID'];
+        $quantity = $_REQUEST['quantity'];
 
         $productFound = false;
-        foreach($products as $product)
+
+
+        if(isset($_SESSION["cart"][$id]))
         {
-            if($product->id == $id)
+            if($quantity > 0)
             {
-                if($quantity <= 0){
-                    unset($product);
-                }
-                else
-                {
-                    if($quantity > 0)
-                    {
-                        $product["quantity"] = $quantity;
-                    }
-                }
-                $productFound = true;
-                break;
+                $_SESSION["cart"][$id]["quantity"] = $quantity;
+            }
+            else
+            {
+                unset($_SESSION["cart"][$id]);
             }
         }
-
-        if($productFound == false)
+        else if($quantity > 0)
         {
+            echo "<br><br> product is NOT found <br><br>";
             $newProduct = [];
-            $newProduct["productID"] = $_REQUEST['productID'];
-            $newProduct["quantity"] = $_REQUEST['quantity'];
-
-            //push_array($_SESSION["cart"], $newProduct);
+            $newProduct["productID"] = $id;
+            $newProduct["quantity"] = $quantity;
+            $_SESSION["cart"][$id] = $newProduct;
         }
     }
 
+    echo "<br>current: ";
     print_r($_SESSION["cart"]);
 
     if(isset($_REQUEST['previousURL']))
     {
-        //header('Location: '. $_REQUEST['previousURL']);
+        if($_REQUEST['previousURL'] != "stay"){
+            echo "go to previous";
+            header('Location: '. $_REQUEST['previousURL']);
+        }
     }
     else
     {
-        //header('Location: '. "./index.html");
+        echo "go to home page";
+        header('Location: '. "./index.html");
     }
 
 ?>
