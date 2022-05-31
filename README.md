@@ -1,2 +1,2 @@
 *URL*
-http://homeymarket.epizy.com/webpages/index.html
+http://homeymarket.epizy.com/webpages/
